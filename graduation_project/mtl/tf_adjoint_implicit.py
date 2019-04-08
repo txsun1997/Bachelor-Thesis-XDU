@@ -154,18 +154,33 @@ class Embeddings(nn.Module):
         if freeze:
             self.word_embeddings.weight.requires_grad = False
         # self.LayerNorm = LayerNorm(embed_dim)
+        self.cls_embeddings = nn.Embedding(16, embed_dim)
         self.dropout = nn.Dropout(p=0.5)
 
-    def forward(self, x):
+    def forward(self, task_id, x):
+        bsz = x.size(0)
         seq_len = x.size(1)
         position_ids = torch.arange(seq_len, dtype=torch.long, device=x.device)
         position_ids = position_ids.unsqueeze(0).expand_as(x)
 
         word_embeddings = self.word_embeddings(x)
+        # bsz x seq_len x embed_dim
         position_embeddings = self.position_embeddings(position_ids)
         embeddings = word_embeddings + position_embeddings
+        cls_embedding = self.cls_embeddings(task_id)
+        embeddings = torch.cat([cls_embedding, embeddings], dim=1)
         embeddings = self.dropout(embeddings)
         return embeddings
+
+
+class TS(nn.Module):
+    def __init__(self, d_model, n_class, dropout=0.5):
+        super(TS, self).__init__()
+        self.fc = nn.Linear(d_model, n_class)
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x):
+        return self.fc(self.dropout(x))
 
 
 class MLP(nn.Module):
@@ -205,8 +220,9 @@ class Transformer(nn.Module):
         self.encoder = Encoder(c(layer), N)
         self.dropout = nn.Dropout(p=0.5)
 
-        mlp = MLP(d_model, d_ff, self.n_class)
-        self.out = clones(mlp, 16)
+        # ts = TS(d_model, args.n_class)
+        # self.out = MLP(d_model, d_ff, args.n_class)
+        self.out = TS(d_model, args.n_class)
 
         for name, p in self.named_parameters():
             if p.dim() > 1 and name != 'embed.word_embeddings.weight':
@@ -217,13 +233,19 @@ class Transformer(nn.Module):
         self.criterion = nn.CrossEntropyLoss()
 
     def forward(self, task_id, x, y):
-        mask = (x != 0).unsqueeze(-2)
-        x = self.embed(x)
+        bsz = x.size(0)
+        mask = (x != 0)
+
+        cls_mask = torch.ByteTensor([1] * bsz).unsqueeze(1)
+        mask, cls_mask = mask.cuda(), cls_mask.cuda()
+        mask = torch.cat([cls_mask, mask], dim=1)
+
+        x = self.embed(task_id.reshape(bsz, 1), x)
         x = self.linear(x)
-        x = self.encoder(x, mask)
+        x = self.encoder(x, mask.unsqueeze(-2))
         # x: bsz x seq_len x d_model
-        x = torch.mean(x, dim=1)
-        logit = self.out[task_id[0]](x)
+        x = x[:, 0, :]
+        logit = self.out(x)
         # logit: bsz x n_class
         loss = self.criterion(logit, y)
         pred = torch.argmax(logit, dim=1)

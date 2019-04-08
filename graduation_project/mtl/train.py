@@ -9,7 +9,11 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
-from transformer import Transformer
+# from transformer import Transformer
+# from tf_stack_mean_pooling import Transformer
+# from tf_stack_cls import Transformer
+# from tf_adjoint_implicit import Transformer
+from tf_adjoint_explicit import Transformer
 from tensorboardX import SummaryWriter
 
 
@@ -259,7 +263,7 @@ if __name__ == '__main__':
     parser.add_argument('-model_config', type=str,
                         default='tf-6-4-512.config')
     parser.add_argument('-model_descript', type=str,
-                        default='mean_pooling')
+                        default='stack_mean_pooling')
     parser.add_argument('-log_dir', type=str,
                         default='/remote-home/txsun/fnlp/watchboard/product/mtl')
     parser.add_argument('-save_path', type=str,
@@ -299,43 +303,45 @@ if __name__ == '__main__':
         task.init_data_loader(bsz)
     print('done.')
 
-    # print('====== Loading Word Embedding =======')
-    # word_embedding = np.load('data/word_embedding.npy')
-    # args.vocab_size = word_embedding.shape[0]
-    # print('vocab size: {}.'.format(args.vocab_size))
-    # print('done.')
-    #
-    # print('========== Preparing Model ==========')
-    # model = Transformer(args, model_config, word_embedding)
-    #
-    # print('Model parameters:')
-    # params = list(model.named_parameters())
-    # sum_param = 0
-    # for name, param in params:
-    #     if param.requires_grad == True:
-    #         print('{}: {}'.format(name, param.shape))
-    #         sum_param += param.numel()
-    # print('# Parameters: {}.'.format(sum_param))
-    #
-    # print('========== Training Model ==========')
-    # lr = float(model_config['lr'])
-    # if args.same_lr or args.freeze:
-    #     opt = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()),
-    #                      lr=lr)
-    # else:
-    #     word_embed_params = list(map(id, model.embed.word_embeddings.parameters()))
-    #     base_params = filter(lambda p: id(p) not in word_embed_params, model.parameters())
-    #     opt = optim.Adam([
-    #         {'params': base_params},
-    #         {'params': model.embed.word_embeddings.parameters(), 'lr': lr * 0.1}
-    #     ], lr=lr)
-    #
-    # trainer = Trainer(model, args.model_descript, task_lst, opt, args.log_dir, args.save_path,
-    #                   args.accumulation_steps, args.print_every)
-    #
-    # trainer.train(args.n_epoch)
+    print('====== Loading Word Embedding =======')
+    word_embedding = np.load('data/word_embedding.npy')
+    args.vocab_size = word_embedding.shape[0]
+    print('vocab size: {}.'.format(args.vocab_size))
+    print('done.')
+
+    print('========== Preparing Model ==========')
+    model = Transformer(args, model_config, word_embedding)
+
+    print('Model parameters:')
+    params = list(model.named_parameters())
+    sum_param = 0
+    for name, param in params:
+        if param.requires_grad == True:
+            print('{}: {}'.format(name, param.shape))
+            sum_param += param.numel()
+    print('# Parameters: {}.'.format(sum_param))
+
+    print('========== Training Model ==========')
+    lr = float(model_config['lr'])
+    if args.same_lr or args.freeze:
+        opt = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()),
+                         lr=lr)
+    else:
+        word_embed_params = list(map(id, model.embed.word_embeddings.parameters()))
+        base_params = filter(lambda p: id(p) not in word_embed_params, model.parameters())
+        opt = optim.Adam([
+            {'params': base_params},
+            {'params': model.embed.word_embeddings.parameters(), 'lr': lr * 0.1}
+        ], lr=lr)
+
+    trainer = Trainer(model, args.model_descript, task_lst, opt, args.log_dir, args.save_path,
+                      args.accumulation_steps, args.print_every)
+
+    trainer.train(args.n_epoch)
 
     print('========== Testing Model ==========')
     model = torch.load(os.path.join(args.save_path, args.model_descript))
     test_loss, test_acc = test_model(model, task_lst)
-    print(test_acc)
+    print(args.model_descript)
+    for acc in test_acc.items():
+        print(acc)
