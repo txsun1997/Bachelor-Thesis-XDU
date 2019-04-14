@@ -1,0 +1,81 @@
+
+%\documentclass{xduthesis}
+\documentclass[bachelor,print,msfonts]{xduthesis}
+
+% 这里是可能用到的其他宏包，根据自己论文撰写的需要添加
+\usepackage{listings}
+\usepackage{overpic}
+\lstset{language=TeX, basicstyle=\ttfamily}
+
+\newcommand{\figref}[1]{图\ref{#1}}
+\newcommand{\sArt}{state-of-the-art}
+\newcommand{\wyh}[1]{{\textcolor{blue}{#1}}}
+\newcommand{\secref}[1]{Sec. \ref{#1}}
+\newcommand{\tabref}[1]{Tab.~\ref{#1}}
+\newcommand{\thudot}[1]{}
+\renewcommand{\emph}[1]{\texttt{#1}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%
+%% 论文前置部分
+%%%%%%%%%%%%%%%
+\frontmatter
+
+% 论文相关信息（封面）
+\classid{1513018}
+\studentid{15130188018}
+
+\cschool{计算机科学与技术学院}
+\ctitle{基于多任务学习的文本\\表示方法研究}
+\cauthor{孙天祥}
+\cmajor{软件工程}
+\csupervisor{邱锡鹏~副教授}
+
+% 中英文摘要声明
+\input{abstract}
+
+% 生成论文的封面、声明页、中英文摘要
+\makecover
+
+% 论文目录
+\tableofcontents
+
+%%%%%%%%%%%%%%%
+%% 论文正文
+%%%%%%%%%%%%%%%
+\mainmatter
+
+\input{ch01-intro}
+\input{ch02-related_work}
+\input{ch03-model}
+\input{ch04-exp}
+\input{ch05-conclusions}
+
+%%%%%%%%%%%%%%%
+%% 论文后置部分
+%%%%%%%%%%%%%%%
+\backmatter
+
+%% 插图索引
+% \listoffigures
+%% 表格索引
+% \listoftables
+
+%% 致谢
+\input{acknowledgments}
+
+% 参考文献
+\bibliographystyle{gbt7714-2005}
+\bibliography{refs}
+%\input{ch06-bibliography}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% TeX-master: t
+%%% End:
+%% ----------------------------------------------------------------------
+%%% END OF FILE
+%% ---------------------------------------------------------------------- 

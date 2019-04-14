@@ -1,0 +1,37 @@
+\begin{cabstract}
+	近年来，随着数据量的增加、算力的增强以及算法的成熟，以神经网络为代表的深度学习为自然语言处理领域带来了深刻的变革。在自然语言处理任务中，文本表示对模型性能起着关键作用。
+	
+	然而，现实场景中常常因为文本标注难度大、成本高等原因导致训练数据有限，进而导致一般的深度学习算法难以学到泛化的表示。本文试图探索多任务学习在文本表示上的应用，以期与近期取得巨大成功的迁移学习范式互为补充，进一步提升神经网络模型的泛化能力。
+	
+	目前，多任务学习方法已经被广泛地用在了卷积神经网络和循环神经网络两种主流的结构中，在计算机视觉和自然语言处理领域的多个任务上取得了成功。在本文中，我们在一种新的网络结构 -- Transformer -- 上探索了多任务学习的应用。首先，我们验证了两种传统的多任务学习架构在Transformer的应用，然后，我们针对Transformer的特点提出了两种逐层分化的多任务学习架构。在多个文本分类任务上的实验表明，四种多任务模型的准确率较单任务学习模型均取得了提升，其中，我们的逐层分化架构在四种架构中取得了最高的分类准确率。
+	
+	最后，我们对模型进行了实例分析，总结了现有工作，并展望了未来多任务学习在自然语言处理以及深度学习的发展。
+\end{cabstract}
+
+
+\begin{ckeywords}
+	自然语言处理\ \ \ \ \ \ 表示学习\ \ \ \ \ \ 多任务学习
+\end{ckeywords}
+
+%\cthesistype{应用基础技术}
+
+
+\begin{eabstract}
+	In recent years, with the increase of data volume, the enhancement of computing power and the maturity of learning algorithms, deep neural networks has brought profound changes to the field of natural language processing. In natural language processing tasks, text representation plays a key role in model performance.
+	
+	However, in real scenes, due to the difficulty and high cost of text annotation, training data is often limited, which makes it difficult for deep learning algorithms to learn a well-generalized representation. This paper attempts to explore the application of multi-task learning in text representation, in order to complement the paradigm of transfer learning, which achieved a great success recently, to further improve the generalization ability of deep neural networks.
+	
+	At present, multi-task learning methods have been widely used in the two common networks, convolutional neural networks and recurrent neural networks, in the field of computer vision and natural language processing. However, this paper explores the application of multi-task learning on a new network, Transformer. First, we verify the application of two traditional multi-task learning architectures in Transformer. Then, considering the characteristics of Transformer, we propose two new architectures which are \textit{layerwise differentiated}. Experiments on multiple text classification tasks show that the accuracies of our four multi-task models are consistently higher than single-task learning model. Particularly, our proposed \textit{layerwise differentiated} architecture achieves the highest classification accuracy among the four architectures.
+	
+	
+	Finally, we conduct case study for our proposed model, summarize the existing works, and look forward to the future development of multi-task learning in natural language processing and deep learning.
+	
+	
+\end{eabstract}
+
+
+\begin{ekeywords}
+	Natural Language Processing\ \ \ \ Deep Learning\ \ \ \ Multi-Task Learning
+\end{ekeywords}
+
+%\ethesistype{Applied Basic Technology}
