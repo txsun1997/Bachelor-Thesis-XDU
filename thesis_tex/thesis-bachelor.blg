@@ -10,8 +10,22 @@ Repeated entry---line 888 of file refs.bib
  : @inproceedings{DBLP:conf/nips/McCannBXS17
  :                                          ,
 I'm skipping whatever remains of this entry
-Warning--entry type for "1705.08142" isn't style-file defined
---line 906 of file refs.bib
+Repeated entry---line 931 of file refs.bib
+ : @proceedings{DBLP:conf/cvpr/2016
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1171 of file refs.bib
+ : @inproceedings{DBLP:conf/cvpr/KendallGC18
+ :                                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1189 of file refs.bib
+ : @proceedings{DBLP:conf/cvpr/2018
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1230 of file refs.bib
+ : @proceedings{DBLP:conf/emnlp/2014
+ :                                  ,
+I'm skipping whatever remains of this entry
 A bad cross reference---entry "DBLP:conf/iclr/SubramanianTBP18"
 refers to entry "DBLP:conf/iclr/2018", which doesn't exist
 Warning--I didn't find a database entry for "DBLP:conf/iclr/2018"
@@ -53,7 +67,7 @@ Warning--Require address: DBLP:conf/ijcai/ZhengCQ18
 Warning--Require citedate: DBLP:conf/ijcai/ZhengCQ18
 Warning--Require address: DBLP:conf/cvpr/MisraSGH16
 Warning--Require citedate: DBLP:conf/cvpr/MisraSGH16
-Warning--Unsupported entry type for 1705.08142
+Warning--Require journal: 1705.08142
 Warning--Require citedate: Caruana1997
 Warning--Require address: DBLP:conf/nips/ArgyriouEP06
 Warning--Require citedate: DBLP:conf/nips/ArgyriouEP06
@@ -65,50 +79,74 @@ Warning--Require address: DBLP:conf/icassp/DengHK13
 Warning--Require citedate: DBLP:conf/icassp/DengHK13
 Warning--Require citedate: DBLP:journals/corr/RamsundarKRWKP15
 Warning--Require citedate: book:nndl
+Warning--Require address: DBLP:conf/cvpr/KendallGC18
+Warning--Require citedate: DBLP:conf/cvpr/KendallGC18
+Warning--Require booktitle: Hinton:1986:DR:104279.104287
+Warning--Require citedate: Hinton:1986:DR:104279.104287
+Warning--Require address: DBLP:conf/icml/GehringAGYD17
+Warning--Require citedate: DBLP:conf/icml/GehringAGYD17
+Warning--Require address: DBLP:conf/emnlp/Kim14
+Warning--Require citedate: DBLP:conf/emnlp/Kim14
+Warning--Require address: DBLP:conf/acl/MaH16
+Warning--Require citedate: DBLP:conf/acl/MaH16
+Warning--Require address: DBLP:conf/emnlp/WenGMSVY15
+Warning--Require citedate: DBLP:conf/emnlp/WenGMSVY15
+Warning--Require citedate: DBLP:journals/corr/BahdanauCB14
+Warning--Require citedate: DBLP:conf/nips/VaswaniSPUJGKP17
+Warning--Require address: DBLP:conf/emnlp/TangMRS18
+Warning--Require citedate: DBLP:conf/emnlp/TangMRS18
+Warning--Require journal: guo2019gaussian
+Warning--Require address: DBLP:conf/lrec/ConneauK18
+Warning--Require citedate: DBLP:conf/lrec/ConneauK18
+Warning--Require address: DBLP:conf/cvpr/HeZRS16
+Warning--Require citedate: DBLP:conf/cvpr/HeZRS16
 Warning--Require citedate: DBLP:conf/nips/2014
 Warning--Require address: DBLP:conf/emnlp/2014
 Warning--Require editor: DBLP:conf/acl/2015-1
 Warning--Require address: DBLP:conf/acl/2015-1
 Warning--Require citedate: DBLP:conf/acl/2015-1
-You've used 43 entries,
+Warning--Require editor: DBLP:conf/cvpr/2016
+Warning--Require address: DBLP:conf/cvpr/2016
+Warning--Require citedate: DBLP:conf/cvpr/2016
+You've used 59 entries,
             3107 wiz_defined-function locations,
-            1060 strings with 22239 characters,
-and the built_in function-call counts, 105913 in all, are:
-= -- 12215
-> -- 196
-< -- 477
-+ -- 10204
-- -- 690
-* -- 2480
-:= -- 12592
+            1179 strings with 27906 characters,
+and the built_in function-call counts, 150533 in all, are:
+= -- 17395
+> -- 279
+< -- 686
++ -- 14565
+- -- 982
+* -- 3501
+:= -- 17975
 add.period$ -- 0
-call.type$ -- 43
-change.case$ -- 306
+call.type$ -- 59
+change.case$ -- 440
 chr.to.int$ -- 0
-cite$ -- 97
-duplicate$ -- 14965
-empty$ -- 3280
-format.name$ -- 612
-if$ -- 28441
+cite$ -- 138
+duplicate$ -- 21234
+empty$ -- 4617
+format.name$ -- 880
+if$ -- 40481
 int.to.chr$ -- 0
-int.to.str$ -- 43
+int.to.str$ -- 59
 missing$ -- 0
-newline$ -- 153
-num.names$ -- 57
-pop$ -- 1304
+newline$ -- 204
+num.names$ -- 82
+pop$ -- 1815
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 737
+skip$ -- 1063
 stack$ -- 0
-substring$ -- 12835
-swap$ -- 2148
+substring$ -- 18240
+swap$ -- 2988
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 55
-while$ -- 1261
-width$ -- 45
-write$ -- 676
-(There were 2 error messages)
+warning$ -- 79
+while$ -- 1776
+width$ -- 61
+write$ -- 933
+(There were 6 error messages)
