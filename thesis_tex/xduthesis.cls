@@ -674,7 +674,7 @@
               font=xdu@capfont,
               justification=centering}
 \captionsetup[table]{position=top, belowskip={12bp-\intextsep}, aboveskip=3bp}
-\captionsetup[figure]{position=bottom, belowskip={12bp-\intextsep}, aboveskip=3bp}
+\captionsetup[figure]{position=bottom, belowskip={12bp-\intextsep}, aboveskip=6bp}
 \captionsetup[subfloat]{font=xdu@capfont,captionskip=6bp,%
                         nearskip=6bp,farskip=0bp,topadjust=0bp}
 \renewenvironment{table}{%

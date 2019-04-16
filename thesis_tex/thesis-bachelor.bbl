@@ -514,6 +514,24 @@
   normalization}\bibmark{[J]}\@. \bibjournal{arXiv preprint
   arXiv:1607.06450}\@, \bibyear{2016}\@.
 
+\bibitem{sanh2018hierarchical}
+\bibauthor{SANH V\@, WOLF T\@, RUDER S}\@. \bibtitle{A hierarchical multi-task
+  approach for learning embeddings from semantic tasks}\bibmark{[J]}\@.
+  \bibjournal{arXiv preprint arXiv:1811.06031}\@, \bibyear{2018}\@.
+
+\bibitem{DBLP:journals/tacl/KiperwasserB18}
+\bibauthor{KIPERWASSER E\@, BALLESTEROS M}\@. \bibtitle{Scheduled Multi-Task
+  Learning: From Syntax to Translation}\bibmark{[J/OL]}\@.
+  \bibjournal{{TACL}}\@, \bibyear{2018}\@,
+  \bibvolume{6}\thinspace{}\textnormal{:
+  }\bibpages{225\thinspace{}\textnormal{--}\thinspace{}240}\@.
+  \newline\url{https://transacl.org/ojs/index.php/tacl/article/view/1338}\@.
+
+\bibitem{kingma2015adam}
+\bibauthor{KINGMA D\@, BA J}\@. \bibtitle{Adam: a method for stochastic
+  optimization (2014)}\bibmark{[J]}\@. \bibjournal{arXiv preprint
+  arXiv:1412.6980}\@, \bibyear{2015}\@, \bibvolume{15}\@.
+
 \bibitem{DBLP:conf/nips/2014}
 \bibeditor{GHAHRAMANI Z\@, WELLING M\@, CORTES C, et~al}\@.
   \bibbooktitle{Advances in Neural Information Processing Systems 27: Annual

@@ -24,14 +24,13 @@
 \contentsline {subsection}{\numberline {3.2.4}L-E结构}{25}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}实现细节}{26}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}训练过程}{26}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}超参数设定}{26}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}代码设计}{26}{subsection.3.3.3}
-\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{四}章\hskip 1ex实验}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}任务描述}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}数据集}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}实验结果}{27}{section.4.3}
-\contentsline {section}{\numberline {4.4}实验分析}{27}{section.4.4}
-\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{五}章\hskip 1ex总结与展望}{29}{chapter.5}
-\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 致谢}{31}{section*.20}
-\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 参考文献}{33}{section*.21}
+\contentsline {subsection}{\numberline {3.3.2}超参数设定}{27}{subsection.3.3.2}
+\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{四}章\hskip 1ex实验}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}任务描述}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}数据集}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}实验结果}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}实验分析}{30}{section.4.4}
+\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{五}章\hskip 1ex总结与展望}{31}{chapter.5}
+\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 致谢}{33}{section*.22}
+\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 参考文献}{35}{section*.23}
 \contentsfinish 

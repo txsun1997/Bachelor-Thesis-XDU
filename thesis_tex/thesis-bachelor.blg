@@ -100,6 +100,7 @@ Warning--Require address: DBLP:conf/lrec/ConneauK18
 Warning--Require citedate: DBLP:conf/lrec/ConneauK18
 Warning--Require address: DBLP:conf/cvpr/HeZRS16
 Warning--Require citedate: DBLP:conf/cvpr/HeZRS16
+Warning--Require citedate: DBLP:journals/tacl/KiperwasserB18
 Warning--Require citedate: DBLP:conf/nips/2014
 Warning--Require address: DBLP:conf/emnlp/2014
 Warning--Require editor: DBLP:conf/acl/2015-1
@@ -108,45 +109,45 @@ Warning--Require citedate: DBLP:conf/acl/2015-1
 Warning--Require editor: DBLP:conf/cvpr/2016
 Warning--Require address: DBLP:conf/cvpr/2016
 Warning--Require citedate: DBLP:conf/cvpr/2016
-You've used 59 entries,
+You've used 62 entries,
             3107 wiz_defined-function locations,
-            1179 strings with 27906 characters,
-and the built_in function-call counts, 150533 in all, are:
-= -- 17395
-> -- 279
-< -- 686
-+ -- 14565
-- -- 982
-* -- 3501
-:= -- 17975
+            1195 strings with 28446 characters,
+and the built_in function-call counts, 154817 in all, are:
+= -- 17860
+> -- 289
+< -- 709
++ -- 14950
+- -- 1013
+* -- 3630
+:= -- 18478
 add.period$ -- 0
-call.type$ -- 59
-change.case$ -- 440
+call.type$ -- 62
+change.case$ -- 454
 chr.to.int$ -- 0
-cite$ -- 138
-duplicate$ -- 21234
-empty$ -- 4617
-format.name$ -- 880
-if$ -- 40481
+cite$ -- 142
+duplicate$ -- 21811
+empty$ -- 4768
+format.name$ -- 908
+if$ -- 41625
 int.to.chr$ -- 0
-int.to.str$ -- 59
+int.to.str$ -- 62
 missing$ -- 0
-newline$ -- 204
-num.names$ -- 82
-pop$ -- 1815
+newline$ -- 213
+num.names$ -- 85
+pop$ -- 1869
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1063
+skip$ -- 1109
 stack$ -- 0
-substring$ -- 18240
-swap$ -- 2988
+substring$ -- 18726
+swap$ -- 3106
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 79
-while$ -- 1776
-width$ -- 61
-write$ -- 933
+warning$ -- 80
+while$ -- 1832
+width$ -- 64
+write$ -- 971
 (There were 6 error messages)
