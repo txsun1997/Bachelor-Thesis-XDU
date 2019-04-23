@@ -26,9 +26,6 @@ Repeated entry---line 1230 of file refs.bib
  : @proceedings{DBLP:conf/emnlp/2014
  :                                  ,
 I'm skipping whatever remains of this entry
-A bad cross reference---entry "DBLP:conf/iclr/SubramanianTBP18"
-refers to entry "DBLP:conf/iclr/2018", which doesn't exist
-Warning--I didn't find a database entry for "DBLP:conf/iclr/2018"
 Warning--Require address: DBLP:conf/asru/MikolovDPBC11
 Warning--Require citedate: DBLP:conf/asru/MikolovDPBC11
 Warning--Require address: DBLP:conf/apsipa/LiHYW13
@@ -42,6 +39,8 @@ Warning--Require citedate: DBLP:conf/emnlp/BordesCW14
 Warning--Require address: DBLP:conf/acl/JeanCMB15
 Warning--Require citedate: DBLP:conf/acl/JeanCMB15
 Warning--Require citedate: DBLP:conf/nips/SutskeverVL14
+Warning--Require address: DBLP:conf/cvpr/DengDSLL009
+Warning--Require citedate: DBLP:conf/cvpr/DengDSLL009
 Warning--Require address: DBLP:conf/emnlp/WangSMHLB18
 Warning--Require citedate: DBLP:conf/emnlp/WangSMHLB18
 Warning--Require citedate: DBLP:conf/nips/MikolovSCCD13
@@ -62,6 +61,7 @@ Warning--Require citedate: DBLP:conf/acl/LiuQH17
 Warning--Require address: DBLP:conf/acl/SogaardG16
 Warning--Require citedate: DBLP:conf/acl/SogaardG16
 Warning--Require citedate: DBLP:conf/nips/McCannBXS17
+Warning--Require address: DBLP:conf/iclr/SubramanianTBP18
 Warning--Require citedate: DBLP:conf/iclr/SubramanianTBP18
 Warning--Require address: DBLP:conf/ijcai/ZhengCQ18
 Warning--Require citedate: DBLP:conf/ijcai/ZhengCQ18
@@ -79,18 +79,24 @@ Warning--Require address: DBLP:conf/icassp/DengHK13
 Warning--Require citedate: DBLP:conf/icassp/DengHK13
 Warning--Require citedate: DBLP:journals/corr/RamsundarKRWKP15
 Warning--Require citedate: book:nndl
+Warning--Require address: DBLP:conf/iclr/MeyersonM18
+Warning--Require citedate: DBLP:conf/iclr/MeyersonM18
 Warning--Require address: DBLP:conf/cvpr/KendallGC18
 Warning--Require citedate: DBLP:conf/cvpr/KendallGC18
 Warning--Require booktitle: Hinton:1986:DR:104279.104287
 Warning--Require citedate: Hinton:1986:DR:104279.104287
-Warning--Require address: DBLP:conf/icml/GehringAGYD17
-Warning--Require citedate: DBLP:conf/icml/GehringAGYD17
+Warning--Require address: DBLP:conf/nips/BengioDV00
+Warning--Require citedate: DBLP:conf/nips/BengioDV00
 Warning--Require address: DBLP:conf/emnlp/Kim14
 Warning--Require citedate: DBLP:conf/emnlp/Kim14
-Warning--Require address: DBLP:conf/acl/MaH16
-Warning--Require citedate: DBLP:conf/acl/MaH16
+Warning--Require address: DBLP:conf/icml/GehringAGYD17
+Warning--Require citedate: DBLP:conf/icml/GehringAGYD17
+Warning--Require address: DBLP:conf/interspeech/MikolovKBCK10
+Warning--Require citedate: DBLP:conf/interspeech/MikolovKBCK10
 Warning--Require address: DBLP:conf/emnlp/WenGMSVY15
 Warning--Require citedate: DBLP:conf/emnlp/WenGMSVY15
+Warning--Require address: DBLP:conf/acl/MaH16
+Warning--Require citedate: DBLP:conf/acl/MaH16
 Warning--Require citedate: DBLP:journals/corr/BahdanauCB14
 Warning--Require citedate: DBLP:conf/nips/VaswaniSPUJGKP17
 Warning--Require address: DBLP:conf/emnlp/TangMRS18
@@ -101,6 +107,12 @@ Warning--Require citedate: DBLP:conf/lrec/ConneauK18
 Warning--Require address: DBLP:conf/cvpr/HeZRS16
 Warning--Require citedate: DBLP:conf/cvpr/HeZRS16
 Warning--Require citedate: DBLP:journals/tacl/KiperwasserB18
+Warning--Require address: DBLP:conf/acl/BlitzerDP07
+Warning--Require citedate: DBLP:conf/acl/BlitzerDP07
+Warning--Require address: DBLP:conf/acl/MaasDPHNP11
+Warning--Require citedate: DBLP:conf/acl/MaasDPHNP11
+Warning--Require address: DBLP:conf/acl/PangL05
+Warning--Require citedate: DBLP:conf/acl/PangL05
 Warning--Require citedate: DBLP:conf/nips/2014
 Warning--Require address: DBLP:conf/emnlp/2014
 Warning--Require editor: DBLP:conf/acl/2015-1
@@ -109,45 +121,48 @@ Warning--Require citedate: DBLP:conf/acl/2015-1
 Warning--Require editor: DBLP:conf/cvpr/2016
 Warning--Require address: DBLP:conf/cvpr/2016
 Warning--Require citedate: DBLP:conf/cvpr/2016
-You've used 62 entries,
+Warning--Require editor: DBLP:conf/iclr/2018
+Warning--Require address: DBLP:conf/iclr/2018
+Warning--Require citedate: DBLP:conf/iclr/2018
+You've used 72 entries,
             3107 wiz_defined-function locations,
-            1195 strings with 28446 characters,
-and the built_in function-call counts, 154817 in all, are:
-= -- 17860
-> -- 289
-< -- 709
-+ -- 14950
-- -- 1013
-* -- 3630
-:= -- 18478
+            1277 strings with 32126 characters,
+and the built_in function-call counts, 181296 in all, are:
+= -- 20920
+> -- 338
+< -- 832
++ -- 17527
+- -- 1184
+* -- 4266
+:= -- 21665
 add.period$ -- 0
-call.type$ -- 62
-change.case$ -- 454
+call.type$ -- 72
+change.case$ -- 532
 chr.to.int$ -- 0
-cite$ -- 142
-duplicate$ -- 21811
-empty$ -- 4768
-format.name$ -- 908
-if$ -- 41625
+cite$ -- 170
+duplicate$ -- 25517
+empty$ -- 5559
+format.name$ -- 1064
+if$ -- 48742
 int.to.chr$ -- 0
-int.to.str$ -- 62
+int.to.str$ -- 72
 missing$ -- 0
-newline$ -- 213
-num.names$ -- 85
-pop$ -- 1869
+newline$ -- 243
+num.names$ -- 100
+pop$ -- 2175
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1109
+skip$ -- 1301
 stack$ -- 0
-substring$ -- 18726
-swap$ -- 3106
+substring$ -- 21917
+swap$ -- 3650
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 80
-while$ -- 1832
-width$ -- 64
-write$ -- 971
-(There were 6 error messages)
+warning$ -- 98
+while$ -- 2136
+width$ -- 74
+write$ -- 1141
+(There were 5 error messages)

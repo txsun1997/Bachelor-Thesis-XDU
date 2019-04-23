@@ -6,7 +6,7 @@
 
 \begin{figure}[htb]
 	\centering
-	\begin{tikzpicture}[scale=0.8]
+	\begin{tikzpicture}[scale=0.7]
 	\draw (-4,3) rectangle (4,-3);
 	\draw[draw = black] (-1.5,0) circle (2);
 	\draw[draw = black] (1.5,0) circle (2);
@@ -20,11 +20,11 @@
 
 \section{深度学习与神经网络}
 \label{sec:dl}
-近年来，深度学习（Deep Learning）发展十分迅速，在人工智能的很多子领域上取得了巨大成功，如语音识别\cite{DBLP:conf/asru/MikolovDPBC11}\cite{DBLP:conf/apsipa/LiHYW13}、计算机视觉\cite{DBLP:journals/cacm/KrizhevskySH17}\cite{DBLP:journals/pami/FarabetCNL13}\cite{DBLP:conf/nips/TompsonJLB14}、自然语言处理\cite{DBLP:journals/jmlr/CollobertWBKKK11}\cite{DBLP:conf/emnlp/BordesCW14}\cite{DBLP:conf/acl/JeanCMB15}\cite{DBLP:conf/nips/SutskeverVL14}等。
+近年来，\emph{深度学习}（Deep Learning）发展十分迅速，在人工智能的很多子领域上取得了巨大成功，如语音识别\cite{DBLP:conf/asru/MikolovDPBC11}\cite{DBLP:conf/apsipa/LiHYW13}、计算机视觉\cite{DBLP:journals/cacm/KrizhevskySH17}\cite{DBLP:journals/pami/FarabetCNL13}\cite{DBLP:conf/nips/TompsonJLB14}、自然语言处理\cite{DBLP:journals/jmlr/CollobertWBKKK11}\cite{DBLP:conf/emnlp/BordesCW14}\cite{DBLP:conf/acl/JeanCMB15}\cite{DBLP:conf/nips/SutskeverVL14}等。
 
 从要研究的问题来看，深度学习属于机器学习的一个分支，都是研究如何从有限个样例中通过某种算法总结出一般性规律或模式，并将其应用到新的未知数据上去。例如，通过机器学习或深度学习算法，可以根据历史病例总结出症状与疾病之间的规律，当遇到新的病人时可以利用算法总结出来的规律来帮助判断这个病人得了什么疾病\footnote{例子来源：《神经网络与深度学习》，邱锡鹏，\url{https://nndl.github.io}}。
 
-同时，深度学习又与机器学习有很大的不同。从模型的构成来说，深度学习模型一般更加复杂，参数量更多。由于数据从输入到输出需要经过多个线性或非线性组件，信息传递路径较长，因此被称作深度学习。深度学习模型的一个最典型代表就是人工神经网络（Artificial Neural Network，ANN），下面简称神经网络。神经网络是一种受人脑神经系统启发的复杂数学模型，由神经元以及它们之间的连接组成。通过这些神经元的加工，原始数据从底层特征开始经过一道道加工逐渐得到抽象的高层语义特征。
+同时，深度学习又与机器学习有很大的不同。从模型的构成来说，深度学习模型一般更加复杂，参数量更多。由于数据从输入到输出需要经过多个线性或非线性组件，信息传递路径较长，因此被称作深度学习。深度学习模型的一个最典型代表就是\emph{人工神经网络}（Artificial Neural Network，ANN），下面简称\emph{神经网络}。神经网络是一种受人脑神经系统启发的复杂数学模型，由神经元以及它们之间的连接组成。通过这些神经元的加工，原始数据从底层特征开始经过一道道加工逐渐转换为抽象的高层语义特征。
 
 总的来说，神经网络可以被看做一个包含大量参数的复合函数，该函数描述了输入和输出之间的复杂关系，因此可以被用于处理很多模式识别任务，如语音识别、图像识别等。形式化地，神经网络可以这样描述：
 \begin{equation}
@@ -32,11 +32,11 @@
 \end{equation}
 其中，函数~$\mathcal{F}$~受参数~$\theta$~控制。
 
-给定包含大量样例的集合，参数~$\theta$~可以通过随机梯度下降等优化算法得到，求解参数的优化过程就被称为\emph{学习过程}，通过学习得到的参数被称为\emph{可学习参数}，常简称为参数。还有一部分不可以被学习的参数，例如神经网络的层数，被称为\emph{超参数}，意为控制参数的参数，超参数通常根据经验指定或根据实验效果来确定。
+给定包含大量样例的集合，参数~$\theta$~可以通过随机梯度下降等优化算法得到，求解参数的优化过程就被称为\emph{学习过程}，通过学习得到的参数被称为\emph{可学习参数}，常简称为\emph{参数}。还有一部分不可以被学习的参数，例如神经网络的层数，被称为\emph{超参数}，意为控制参数的参数，超参数通常根据经验指定或根据实验效果来确定。
 
 前面提到，参数学习需要一个包含大量样例的集合，该集合就是\emph{数据集}。在有监督学习中，每个样例一般包含输入~$\mathbf{x}$~和输出~$y$，输出也常被称为标签。其中，输入一般为一个向量，向量的每一个维度表示了样本的一个属性；输出一般为一个标量。包含~$n$~个样例的集合~$\mathcal{D} = \{ \mathbf{x}_i, y_i \}_{i=1}^n$~就是数据集。在实际使用时，数据集通常被划分为训练集、验证集（也叫开发集）和测试集。其中，用训练集来让算法学习参数，用验证集来调整算法的超参数，用测试集来衡量模型的优劣。
 
-给定数据集~$\mathcal{D}$~和模型结构，即~$\mathcal{F}$的形式，优化算法可以得到参数~$\theta$~进而确定模型~$\mathcal{F}(\theta)$. 下面介绍一种简单的前馈神经网络结构：多层感知机（Multi-Layer Perceptron, MLP）。一个单隐层的MLP可以记作~$\mathcal{F}(\mathbf{x} \mid \theta) = \mathbf{W}_2(f(\mathbf{W}_1\mathbf{x} + b_1))+b_2$，其中参数~$\theta = \{ \mathbf{W}_1, b_1, \mathbf{W}_2, b_2 \}$，函数~$f(\cdot)$~为非线性激活函数，如ReLU. 多层感知机的结构如图~\ref{fig:mlp}~所示，为简单起见，图中省略了偏置项~$b_1, b_2$.
+给定数据集~$\mathcal{D}$~和模型结构，即~$\mathcal{F}$的形式，优化算法可以得到参数~$\theta$~进而确定模型~$\mathcal{F}(\theta)$. 下面介绍一种简单的前馈神经网络结构：\emph{多层感知机}（Multi-Layer Perceptron, MLP）。一个单隐层的MLP可以记作~$\mathcal{F}(\mathbf{x}; \theta) = \mathbf{w}_2(f(\mathbf{w}_1\mathbf{x} + b_1))+b_2$，其中参数~$\theta = \{ \mathbf{w}_1, b_1, \mathbf{w}_2, b_2 \}$，函数~$f(\cdot)$~为非线性激活函数，如ReLU. 多层感知机的结构如图~\ref{fig:mlp}~所示，为简单起见，图中省略了偏置项~$b_1, b_2$.
 
 \begin{figure}[htb]
 	\def\layersep{2.5cm}
@@ -81,15 +81,15 @@
 	\label{fig:mlp}
 \end{figure}
 
-随着深度学习的发展，神经网络的结构也变得日益多样和复杂。上面的多层感知机属于全连接前馈网络，而前馈网络的另一典型代表就是在计算机视觉中被广泛使用的\emph{卷积神经网络}（Convolutional Neural Network, CNN），它与全连接网络的区别在于权重共享和局部连接。除前馈网络外，还有一类网络称为反馈网络，因为反馈网络的神经元可以接收来自本身的反馈信号，从而具备一定的记忆能力，因此也被称为记忆网络。反馈网络的一种典型代表就是\emph{循环神经网络}（Recurrent Neural Network, RNN），它在自然语言处理中得到了广泛应用。另外，近年来\emph{图神经网络}（Graph Neural Network, GNN）因其在处理图结构数据上的优势也得到了迅速发展。
+随着深度学习的发展，神经网络的结构也变得日益多样和复杂。上面的多层感知机属于全连接前馈网络，而前馈网络的另一典型代表就是在计算机视觉中被广泛使用的\emph{卷积神经网络}（Convolutional Neural Network, CNN），它与全连接网络的区别在于权重共享和局部连接。除前馈网络外，还有一类网络称为反馈网络，因为反馈网络的神经元可以接收来自本身的反馈信号，从而具备一定的记忆能力，因此也被称为记忆网络。反馈网络的一种典型代表就是\emph{循环神经网络}（Recurrent Neural Network, RNN），它在自然语言处理中得到了广泛应用。另外，近年来\emph{图神经网络}（Graph Neural Network, GNN）因其在处理图结构数据上的优势也得到了迅速发展，并被应用到了文本、图像等非结构化数据上。
 
-深度学习能够成功的重要原因在于其强大的特征表示能力。在传统的机器学习中，通常需要人为地构造数据特征，再训练一个学习算法来总结这些构造出来的特征输入与输出之间的关系。例如，在文本分类任务中，传统机器学习的做法一般是利用词袋模型或TF-IDF来构造文本特征，再将其作为支持向量机等分类器的输入来进行分类。而在深层神经网络中，算法自动学习原始数据的特征表示，数据从输入到输出的过程~$\mathbf{x}\to \mathcal{F} \to y$~可以人为地划分为两个阶段：\emph{表示学习}和\emph{预测}。所谓表示，就是神经网络中间隐层的状态，上文中MLP的中间隐层就可以当作某种浅层表示；而预测，比如分类或回归，一般是在上一层得到的特征表示的基础上进行简单变换得到易于预测的任务特定表示。因此，深度学习又可以看作是一种表示学习，而深度学习的成功也证明了学到好的特征表示的重要意义。
+深度学习能够成功的重要原因在于其强大的特征表示能力。在传统的机器学习中，通常需要人为地构造数据特征，再训练一个学习算法来总结这些构造出来的特征输入与输出之间的关系。例如，在文本分类任务中，传统机器学习的做法一般是利用词袋模型或TF-IDF来构造文本特征，再将其作为支持向量机等分类器的输入来进行分类。而在深层神经网络中，算法自动学习原始数据的特征表示，数据从输入到输出的过程~$\mathbf{x}\to \mathcal{F} \to y$~可以人为地划分为两个阶段：\emph{表示}和\emph{预测}\footnote{有时也被称为编码和解码}。所谓表示，就是神经网络中间隐层的状态，上文中MLP的中间隐层就可以当作某种浅层表示；而预测，比如分类或回归，一般是在上一层得到的特征表示的基础上进行简单变换得到易于预测的任务特定表示。因此，深度学习又可以看作是一种表示学习，而深度学习的成功也证明了学到好的特征表示的重要意义。
 
 \section{多任务学习}
 \label{sec:mtl}
 在机器学习中，我们通常关心模型在某个任务上的某个指标，并通过在某个数据集上训练单个模型或一组集成模型来达成此目标。事实上，有时我们可以同时利用其他数据集甚至其他任务来联合训练模型，从而进一步提升性能，这种方法就是\emph{多任务学习}（Multi-Task Learning, MTL）。
 
-从定义上来说，多任务学习就是一种归纳转移（Inductive Transfer）方法，通过利用包含在相关任务训练信号中的领域特定信息来提升模型的泛化能力\cite{Caruana1997}。在机器学习中，给定训练集，存在多个假设能够解释训练数据，这些假设构成的空间被称为假设空间，里面的一个假设就对应了一个模型。不同的机器学习算法倾向于选择不同的假设，这种选择偏好被称为\emph{归纳偏置}（Inductive Bias）。直观上，多任务学习使得算法倾向于选择一种能够同时解释多个任务的假设，也即引入了多个任务的归纳偏置。从表示学习的角度看，这样能够同时适用于多个任务的表示就是泛化的表示。图~\ref{fig:mtl_int}~较为直观地给出了多任务学习的一种解释。
+从定义上来说，多任务学习就是一种归纳转移（Inductive Transfer）方法，通过利用包含在相关任务训练信号中的领域特定信息来提升模型的泛化能力\cite{Caruana1997}。在机器学习中，给定训练集，存在多个假设能够解释训练数据，这些假设构成的空间被称为假设空间，假设空间中的一个假设就对应了一个模型。不同的机器学习算法倾向于选择不同的假设，这种选择偏好被称为\emph{归纳偏置}（Inductive Bias）。直观上，多任务学习使得算法倾向于选择一种能够同时解释多个任务的假设，也即引入了多个任务的归纳偏置。从表示学习的角度看，这样能够同时适用于多个任务的表示就是泛化的表示。图~\ref{fig:mtl_int}~较为直观地给出了多任务学习的一种解释。
 
 \begin{figure}[htb]
 	\centering
@@ -113,12 +113,12 @@
 然而，无论是在传统机器学习算法上还是在深层神经网络上，多任务学习的核心观点都在于知识共享。如何为特定任务和学习算法设计合适的共享模式一直是多任务学习的重要问题。从多任务学习的应用方式来看，可以大概分为下面四种共享模式\cite{book:nndl}：
 
 \begin{itemize}
-	\item \textbf{硬共享模式}：让不同任务的模型共享一些公用模块（比如神经网络的低层）来提取一些通用特征表示，然后再针对每个不同的任务设置一些私有模块（比如神经网络的高层）来提取任务特定的特征表示。
-	\item \textbf{软共享模式}：不显式地设置共享模块，但每个任务都可以“窃取”其他任务的模型学习到的特征表示。窃取的方式多种多样，比如可以直接使用其它任务的隐状态，也可以使用注意力机制或门控机制来选取有用的特征。
-	\item \textbf{分层共享模式}：一般神经网络中不同层抽取的特征类型不同。底层一般抽取一些低级的局部特征，高层抽取一些高级的抽象语义特征。因此如果多任务学习中不同任务也有级别高低之分，那么一个合理的共享模式是让低级任务在底层输出，高级任务在高层输出。
-	\item \textbf{共享-私有模式}：一个更加分工明确的方式是将共享模块和任务特定（私有）模块的职责分开。共享模块捕捉一些跨任务的共享特征，而私有模块只捕捉和特定任务相关的特征。最终的表示由共享特征和私有特征共同构成。
+	\item \textbf{硬共享模式}：为多个任务联合训练单个模型，让不同任务共享相同的神经网络层来提取任务无关的通用特征表示，每个任务通过自己的任务特定层在通用表示基础上进行加工得到任务特定表示。
+	\item \textbf{软共享模式}：为每个任务训练自己的模型，但每个任务都可以窃听其他任务的模型学习到的特征表示。窃听的方式可以是注意力机制、门控机制，也可以是简单的线性加权。
+	\item \textbf{分层共享模式}：为多个任务联合训练单个模型，但简单任务在神经网络低层施加监督信号，困难任务在神经网络的高层施加监督信号。
+	\item \textbf{共享-私有模式}：为每个任务训练单个模型，同时使用多个任务训练一个共享模型。每个任务的模型在提取自己任务特定表示的时候也可以从共享模型中提取任务无关的通用特征。
 \end{itemize}
-四种共享模式如图~\ref{fig:mtl_archs}~所示，图中阴影部分为共享层。事实上，硬共享模式和软共享模式是目前深度学习中MTL的两种最常见的模式，某种程度上，分层共享模式可以归入硬共享模式，共享-私有模式可以归入软共享模式。
+四种共享模式如图~\ref{fig:mtl_archs}~所示，图中灰色模块为共享层。关于基于神经网络的多任务学习共享模式的类型，有的文献\cite{ruder2017overview}\cite{DBLP:conf/iclr/MeyersonM18}有不同的分类方式，但硬共享和软共享是两种公认的模式。
 
 \begin{figure}[htb]
 	\centering
@@ -290,42 +290,42 @@
 \begin{equation}
 	\hat{y}_n^{(t)} = \mathcal{G}^{(t)}(\mathcal{F}(\mathbf{x}_n^{(t)}; \theta_\mathcal{F}) ; \theta_{\mathcal{G}^{(t)}}),
 \end{equation}
-其中~$\mathcal{F}$~为神经网络共享层，$\mathcal{G}^{(t)}$~为任务特定层。模型总参数包含共享层的参数以及任务特定层的参数，即~$\theta = (\theta_\mathcal{F}, \{ \theta_{\mathcal{G}^{(t)}}\}_{t=1}^T)$. 多任务联合学习的损失函数为
+其中~$\mathcal{F}$~为神经网络共享层，$\mathcal{G}^{(t)}$~为任务~$t$~的特定层。模型总参数包含共享层的参数以及任务特定层的参数，即~$\theta = [\theta_\mathcal{F}, \{ \theta_{\mathcal{G}^{(t)}}\}_{t=1}^T]$. 多任务联合学习的损失函数为
 \begin{equation}
 	\mathcal{L}(\theta) = \sum_{t=1}^T\lambda_t\sum_{n=1}^{N_t}\mathcal{L}_t(\hat{y}_n^{(t)}, y_n^{(t)}),
-\end{equation}
-其中，$\mathcal{L}_t(\cdot)$~为第~$t$~个任务的损失函数，$\lambda_t$~为控制第~$t$~个任务损失函数的权重。$\lambda_t$~通常被看作是超参数，根据任务~$t$~的重要程度或困难程度来确定，也可以作为可学习参数根据任务的不确定性来自主学习\cite{DBLP:conf/cvpr/KendallGC18}。
+s\end{equation}
+其中，$\mathcal{L}_t(\cdot)$~为第~$t$~个任务的损失函数，$\lambda_t$~为第~$t$~个任务损失函数的权重。$\lambda_t$~通常被看作是超参数，根据任务~$t$~的重要程度或困难程度来确定，也可以作为可学习参数根据任务的不确定性来自主学习\cite{DBLP:conf/cvpr/KendallGC18}。
 
-最后，使用梯度下降算法，我们可以得到模型参数
+最后，通过优化如下目标来得到模型参数
 \begin{equation}
 	\theta ^* = \mathop{\arg\min}\limits_{\theta} \mathcal{L}(\theta).
 \end{equation}
-
+多任务学习使用的优化算法与常见单任务学习的优化算法没有什么不同，可以采用随机梯度下降等方法。
 \section{自然语言处理}
 \label{sec:nlp}
 
-自然语言处理（Natural Language Processing, NLP）有时也被称为计算语言学（Computer Linguistics, CL），是一门计算机科学与语言学的交叉学科，也是人工智能的重要子领域，旨在使得计算机具备处理、理解和生成自然语言的能力。
+\emph{自然语言处理}（Natural Language Processing, NLP）有时也被称为\emph{计算语言学}（Computer Linguistics, CL），是一门计算机科学与语言学的交叉学科，也是人工智能的重要子领域，旨在使得计算机具备处理、理解和生成自然语言的能力。同时，自然语言处理也是一个包括词性标注、句法分析、语义角色分析、机器翻译、阅读理解、问答系统、对话系统等在内的庞大的研究领域。从定义上，任何与处理文本数据相关的问题都可以归为自然语言处理的问题。
 
-同时，自然语言处理也是一个包括词性标注、句法分析、语义角色分析、机器翻译、阅读理解、问答系统、对话系统等在内的庞大的研究领域。理论上，任何与处理文本数据相关的问题都是自然语言处理的问题。目前被广泛应用的搜索引擎、推荐系统、手机语音助手Siri等产品背后都有NLP技术的身影。
+事实上，人们对NLP的研究早在人工智能被提出之前就开始了。上世纪上半叶，Claude Shannon使用概率模型来描述人类语言，提出用熵来表示语言的不确定性。1956年，Noam Chomsky提出生成语法理论，给出了语言句法结构的符号规则，此后，基于规则的符号系统开始在NLP领域流行，研究人员根据研究工具的不同分为统计和规则两个流派。到上世纪末，随着隐马尔科夫模型、核方法等方法的出现，统计自然语言处理开始因其灵活性和通用性渐渐成为主流。随着深度学习的兴起，这一趋势被再次加强，基于神经网络的方法开始在各大NLP任务上取得~\sArt~结果。
 
-事实上，人们对NLP的研究早在人工智能被提出之前就开始了。上世纪上半叶，Claude Shannon使用概率模型来描述人类语言，提出用熵来表示语言的不确定性。1956年，Noam Chomsky提出生成语法理论，给出了语言句法结构的符号规则，此后，基于规则的符号系统开始在NLP领域流行，研究人员根据研究工具的不同分为统计和规则两个流派。到上世纪末，随着数据量的增大和隐马尔科夫模型、核方法等工具的出现，统计自然语言处理开始因其灵活性和通用性渐渐成为主流。随着深度学习的兴起，这一趋势被再次加强，基于神经网络的方法开始在各大NLP任务上取得~\sArt~结果。
+在深度学习背景下，一个使得NLP取得重大进展的关键概念是\emph{分布式表示}（Distributed Representation）\cite{Hinton:1986:DR:104279.104287}。在传统机器学习方法中，普遍采用one-hot方法表示文本特征，即在一向量中用1来表示出现的单词，用0来表示未出现的单词。然而这种表示方法下向量维度与词表大小一致，不便于扩展，且任意两单词之间正交，无法计算语义相似度。而分布式表示则将文本语义分布到向量的各个维度，或者说分布到多个神经元上进行处理。在分布式表示下，文本用低维稠密向量表示，使得语义组合和语义相似度的计算都非常灵活。分布式表示的概念是整个深度学习技术的核心，如何学到一个好的分布式表示是决定各个深度学习算法性能的关键。
 
-在深度学习背景下，一个使得NLP取得重大进展的关键概念是\emph{分布式表示}（Distributed Representation）\cite{Hinton:1986:DR:104279.104287}。在传统机器学习方法中，普遍采用one-hot方法表示文本特征，即在一向量中用1来表示出现的单词，用0来表示未出现的单词。然而这种表示方法使得向量维度与词表大小一致，扩展不便，且任意两单词之间正交，无法计算语义相似度。而分布式表示则将文本语义分布到向量的各个维度，或者说分布到多个神经元上进行处理。在分布式表示下，文本用低维稠密向量表示，使得语义组合和语义相似度的计算都非常灵活。分布式表示的概念整个深度学习技术的核心，如何学到一个好的分布式表示是决定各个深度学习算法性能的关键。
+在NLP中，文本的分布式表示方法一直是研究重点。分布式表示的应用引出了\emph{词向量}（也被称作\emph{词嵌入}）的概念，在词嵌入矩阵中，每个单词用一个低维稠密词向量来表示。最初，Bengio等人\cite{DBLP:conf/nips/BengioDV00}将分布式表示引入语言建模，让神经网络在反向传播时同时更新网络参数和词向量。这里的词向量作为模型的参数，训练前采用随机初始化。2013年，Mikolov等人\cite{DBLP:conf/nips/MikolovSCCD13}提出了word2vec方法，可以在大规模无标注文本上预训练一组词向量，使用预训练的词向量初始化神经网络的词嵌入层可以显著提升模型效果。2014年，Pennington等人\cite{DBLP:conf/emnlp/PenningtonSM14}使用类似的思路发明了GloVe，这种词向量具备更好的线性性质。从此，在绝大多数NLP任务中，人们通常使用预训练好的词向量来作为模型输入，而不再是随机初始化。然而，这些文本表示方法将单词映射为固定的词向量，难以处理一词多义的问题，因此是\emph{未语境化}（non-contextualized）的。在现实场景中，一个词的意思常常要通过其所在的语境来确定，例如“苹果”在某些语境中表示一种水果，而在某些语境中可能表示一家公司。为处理这一问题，人们提出了\emph{语境化}（contextual）的文本表示方法，如ELMo\cite{DBLP:conf/naacl/PetersNIGCLZ18}，GPT\cite{radford2018improving}，BERT\cite{devlin2018bert}等，这些上下文敏感的文本表示方法使得神经网络模型在各大NLP任务上取得了巨大的提升。
 
-在NLP中，文本的分布式表示方法一直是研究重点。分布式表示的应用引出了\emph{词向量}（也被称作\emph{词嵌入}）的概念，在词嵌入矩阵中，每个单词用一个低维稠密词向量来表示。最初，Collobert等人\cite{DBLP:conf/icml/CollobertW08}随机初始化词向量，让神经网络在反向传播更新网络参数的同时也更新词向量。2013年，Mikolov等人\cite{DBLP:conf/nips/MikolovSCCD13}提出了word2vec方法，可以在大规模无标注文本上预训练一组词向量，使用预训练的词向量初始化神经网络的词嵌入层可以显著提升模型效果。2014年，Pennington等人\cite{DBLP:conf/emnlp/PenningtonSM14}使用类似的思路发明了GloVe，这种词向量具备更精确的线性性质。然而，这些文本表示方法将单词映射为固定的词向量，难以处理一词多义的问题，因此是\emph{未语境化}（non-contextualized）的。在现实场景中，一个词的意思常常要通过其所在的语境来确定，例如“苹果”在某些语境中表示一种水果，而在某些语境中可能表示一家公司。为处理这一问题，人们提出了\emph{语境化}（contextual）的文本表示方法，如ELMo\cite{DBLP:conf/naacl/PetersNIGCLZ18}，GPT\cite{radford2018improving}，BERT\cite{devlin2018bert}等，这些上下文敏感的文本表示方法使得神经网络模型在各大NLP任务上取得了巨大的提升。
-
-文本的分布式表示一般被认为是神经网络的输入，即第一层（词嵌入层）。为执行特定的任务，通常需要在文本表示的基础上再进行加工得到易于预测的任务特定表示。这种加工可以采用不同的神经网络来实现。在NLP中，目前普遍使用的伸进网络有卷积网络\cite{DBLP:conf/icml/GehringAGYD17}\cite{DBLP:conf/emnlp/Kim14}和循环网络\cite{DBLP:conf/acl/MaH16}\cite{DBLP:conf/emnlp/WenGMSVY15}。然而，这二者还都存在难以解决的缺陷：1）卷积网络一般只能建模局部位置信息，难以捕捉长距离句子依赖；2）循环网络每一时间步的计算都依赖上一时间步的状态，导致其运算速度缓慢，难以并行，无法在大规模工业场景中使用。
+文本的分布式表示一般被认为是神经网络的输入，即第一层（词嵌入层）。为执行特定的任务，通常需要在文本表示的基础上再进行加工得到易于预测的任务特定表示。这种加工可以采用不同的神经网络来实现。在NLP中，目前普遍使用的神经网络为卷积网络\cite{DBLP:conf/icml/CollobertW08}\cite{DBLP:conf/emnlp/Kim14}\cite{DBLP:conf/icml/GehringAGYD17}和循环网络\cite{DBLP:conf/interspeech/MikolovKBCK10}\cite{DBLP:conf/emnlp/WenGMSVY15}\cite{DBLP:conf/acl/MaH16}。然而，这二者还都存在难以解决的缺陷：卷积网络一般只能建模局部位置信息，难以捕捉长距离句子依赖；而循环网络每一时间步的计算都依赖上一时间步的状态，导致其运算速度缓慢，难以并行，无法在大规模工业场景中使用。
 
 人们在对自然语言处理、计算机视觉等问题的研究过程中也提出了一些模型无关的机制，其中的一个典型代表就是\emph{注意力机制}。在NLP中，注意力机制最初出现在机器翻译中，显著提升了翻译质量\cite{DBLP:journals/corr/BahdanauCB14}。随后，注意力机制开始在NLP的各个子问题中被广泛使用，基于双向LSTM和注意力机制的神经网络模型一度成为处理包括阅读理解、自然语言推理等在内的各个NLP任务的标配。甚至在2017年，Google提出了完全基于自注意力的神经网络：Transformer\cite{DBLP:conf/nips/VaswaniSPUJGKP17}，在机器翻译任务上取得了新的~\sArt~结果。
 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[scale=0.6]{nlp_ppl.png}
-	\caption{基于神经网络处理自然语言的一般模式}
-	\label{fig:nlp_ppl}
-\end{figure}
+%\begin{figure}[htb]
+%	\centering
+%	\includegraphics[scale=0.6]{nlp_ppl.png}
+%	\caption{基于神经网络处理自然语言的一般模式}
+%	\label{fig:nlp_ppl}
+%\end{figure}
 
-Transformer在语义信息提取和长距离依赖任务上都取得了富有竞争力的结果\cite{DBLP:conf/emnlp/TangMRS18}，并且因其可以并行计算的优点在NLP领域迅速流行。近期，随着基于Transformer的预训练模型BERT\cite{devlin2018bert}取得的巨大成功，Transformer开始受到越来越多的研究者关注，出现了Gaussian Transformer\cite{guo2019gaussian}、Star-Transformer\cite{guo2019star}等变种。图~\ref{fig:nlp_ppl}~比较简略地给出了文本从输入神经网络到输出的一般模式。
+Transformer在语义信息提取和长距离依赖任务上都取得了富有竞争力的结果\cite{DBLP:conf/emnlp/TangMRS18}，并且因其可以并行计算的优点在NLP领域迅速流行。近期，随着基于Transformer的预训练模型BERT\cite{devlin2018bert}取得的巨大成功，Transformer开始受到越来越多的研究者关注，出现了Universal Transformer\cite{dehghani2018universal}、Gaussian Transformer\cite{guo2019gaussian}、Star-Transformer\cite{guo2019star}等变种。
+
+%图~\ref{fig:nlp_ppl}~比较简略地给出了文本从输入神经网络到输出的一般模式。
 
 \section{神经多任务自然语言处理}
 \label{sec:mtl4nlp}
@@ -335,12 +335,10 @@ Transformer在语义信息提取和长距离依赖任务上都取得了富有竞
 
 随着循环神经网络（Recurrent Neural Network, RNN）在NLP上的广泛应用，研究者开始基于RNN构造多任务学习框架，在机器翻译\cite{DBLP:conf/acl/DongWHYW15}、文本分类\cite{DBLP:conf/ijcai/LiuQH16}\cite{DBLP:conf/acl/LiuQH17}、序列标注\cite{DBLP:conf/acl/SogaardG16}等常见NLP任务上均取得了成功。
 
-从共享架构上看，基于神经网络的多任务学习架构涵盖了前文提到的各种共享模式。首先，最简单的硬共享模式率先得到了应用\cite{DBLP:conf/icml/CollobertW08}，并且直到今天还在被广泛的使用\cite{liu2019multi}；随后，软共享模式因其灵活性也被广泛地应用在NLP任务中，并取得了出色的表现\cite{1705.08142}；由于NLP任务对文本表示的要求不同（例如比较简单的NLP任务仅需要简单的语法知识而难度较大的任务需要复杂的语义信息），分层共享在RNN中得到了应用\cite{DBLP:conf/acl/SogaardG16}，取得了优于硬共享架构的效果；最后，Liu等人在RNN中使用共享-私有模式\cite{DBLP:conf/ijcai/LiuQH16}，在文本分类任务上取得了较大提升。
+从共享架构上看，基于神经网络的多任务学习架构涵盖了前文提到的各种共享模式。首先，最简单的硬共享模式率先得到了应用\cite{DBLP:conf/icml/CollobertW08}，并且直到今天还在被广泛的使用\cite{liu2019multi}；随后，软共享模式因其灵活性也被广泛地应用在NLP任务中，并取得了出色的表现\cite{1705.08142}；由于NLP任务对文本表示的要求不同（例如比较简单的NLP任务仅需要简单的语法知识而难度较大的任务需要复杂的语义信息），分层共享在RNN中得到了应用\cite{DBLP:conf/acl/SogaardG16}，取得了优于硬共享架构的效果；最后，Liu等人\cite{DBLP:conf/ijcai/LiuQH16}在RNN中使用共享-私有模式，在文本分类任务上取得了较大提升。
 
 近期，随着迁移学习在NLP领域取得了巨大成功\cite{DBLP:conf/naacl/PetersNIGCLZ18}\cite{radford2018improving}\cite{devlin2018bert}，人们发现学习一个通用的任务无关的表示能够给特定任务带来的收益远远大于根据任务特点对模型结构的改进。为了评测模型的通用表示能力，研究者们开始使用多个任务的性能来测试单一模型，开发了通用表示能力评测工具（SentEval\cite{DBLP:conf/lrec/ConneauK18}）以及一些多任务基准平台（DecaNLP\cite{mccann2018natural}、GLUE\cite{DBLP:conf/emnlp/WangSMHLB18}）。
 
-2018年10月，BERT，一个预训练的Transformer模型，在GLUE的多个任务上的表现都大幅度超越了之前的模型\cite{devlin2018bert}。最近，人们发现在BERT的基础上使用多任务学习对模型进行微调能够取得进一步提升\cite{liu2019multi}\cite{anonymous2018bam!}。
+2018年10月，BERT\cite{devlin2018bert}，一个预训练的Transformer模型，在GLUE的多个任务上的表现都大幅度超越了之前的模型。最近，人们发现在BERT的基础上使用多任务学习对模型进行微调能够取得进一步提升\cite{liu2019multi}\cite{anonymous2018bam!}。
 
 然而，目前还很少有工作在Transformer上探索多任务学习的使用。随着Transformer在机器翻译\cite{DBLP:conf/nips/VaswaniSPUJGKP17}、迁移学习\cite{radford2018improving}\cite{devlin2018bert}中取得了巨大成功，如何使其通过多任务学习取得额外的收益，以及如何对其设计新的共享模式都是值得探索的问题。
-
-在这一背景下，本文试图探索多任务学习在Transformer上的应用模式，并较为系统地给出多种共享架构的实验对比结果和分析，以期在一定程度上填补多任务Transformer的空缺。

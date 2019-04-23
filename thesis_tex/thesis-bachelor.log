@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  16 APR 2019 20:35
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  23 APR 2019 19:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2097,21 +2097,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.38731pt
 (hyperref)                removed on input line 1.
 
-[7] [8]
+[7]
+Underfull \vbox (badness 1248) has occurred while \output is active []
+
+ [8]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- [9]
+
+[9]
 File: mtl_int.png Graphic file (type QTm)
- <use  "mtl_int.png" > [10] [11] [12]
-Underfull \vbox (badness 1210) has occurred while \output is active []
-
- [13]
-[14]
-File: nlp_ppl.png Graphic file (type QTm)
- <use  "nlp_ppl.png" > [15]) (./ch03-model.tex [16] [17] [18
-
-]
+ <use  "mtl_int.png" > [10] [11] [12] [13] [14] [15]) (./ch03-model.tex
+[16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 1.
@@ -2122,14 +2119,45 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removed on input line 1.
 
 File: tf.png Graphic file (type QTm)
-<use  "tf.png" > [19] [20] [21] [22] [23] [24]
+<use  "tf.png" > [17
+
+]
+Underfull \vbox (badness 1221) has occurred while \output is active []
+
+ [18]
+[19]
+File: tf_s.png Graphic file (type QTm)
+ <use  "tf_s.png" > [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+Underfull \vbox (badness 1533) has occurred while \output is active []
+
+ [22]
+[23] [24]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 723.
+put line 738.
+ [25]) (./ch04-exp.tex [26]
 
-Underfull \vbox (badness 5817) has occurred while \output is active []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\xiaosi' on input line 1.
 
- [25]
-[26]) (./ch04-exp.tex [27] [28
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 5.38731pt
+(hyperref)                removed on input line 1.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27
+
+]
+Overfull \hbox (9.17197pt too wide) in paragraph at lines 20--43
+ [][] 
+ []
+
+[28]) (./ch05-conclusions.tex [29] [30
 
 ]
 
@@ -2141,24 +2169,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.38731pt
 (hyperref)                removed on input line 1.
 
-
-Overfull \hbox (9.17197pt too wide) in paragraph at lines 14--37
- [][] 
- []
-
-[29]) (./ch05-conclusions.tex [30]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\xiaosi' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 5.38731pt
-(hyperref)                removed on input line 1.
-
-) [31
-
-] [32
+) [31] [32
 
 ] (./acknowledgments.tex
 
@@ -2215,66 +2226,91 @@ Overfull \hbox (136.57788pt too wide) in paragraph at lines 109--117
  []
 
 
-Underfull \hbox (badness 1748) in paragraph at lines 124--129
+Underfull \hbox (badness 1205) in paragraph at lines 119--128
+[]\TU/TimesNewRoman(0)/m/n/10.53937 DENG J, DONG W, SOCHER R, et al. ImageNet: 
+A large-scale hierarchical image
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 135--140
 []\TU/TimesNewRoman(0)/m/n/10.53937 RADFORD A, NARASIMHAN K, SALIMANS T, et al.
  Improving language under-
  []
 
 [36]
-Overfull \hbox (295.66847pt too wide) in paragraph at lines 149--159
+Overfull \hbox (295.66847pt too wide) in paragraph at lines 160--170
 [][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937 . 
  []
 
-
-Underfull \hbox (badness 1248) in paragraph at lines 208--215
+[37]
+Underfull \hbox (badness 1248) in paragraph at lines 219--226
 []\TU/TimesNewRoman(0)/m/n/10.53937 CARUANA R. Multitask Learning: A Knowledge-
 Based Source of Inductive Bias[C]
  []
 
-[37]
-Overfull \hbox (136.07788pt too wide) in paragraph at lines 262--270
+
+Overfull \hbox (136.07788pt too wide) in paragraph at lines 273--281
 [][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937 . 
  []
 
 [38]
-Underfull \hbox (badness 7451) in paragraph at lines 322--331
+Underfull \hbox (badness 7451) in paragraph at lines 334--343
 []\TU/TimesNewRoman(0)/m/n/10.53937 ARGYRIOU A, EVGENIOU T, PONTIL M. Multi-Tas
 k Feature Learning[C/OL]
  []
 
 [39]
-Overfull \hbox (136.57788pt too wide) in paragraph at lines 348--358
+Overfull \hbox (136.57788pt too wide) in paragraph at lines 360--370
 [][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937 .
  
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 387--396
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 414--423
 [][]$[][][][] [] [] [] [][][][][][][][][][] [] [][][][][][] [] [][][] [] [][][]
 [][][][] [] [][][][] [] [][][][] [] [][][][] [] [][][][][][][] []
  []
 
-[40]
-Underfull \hbox (badness 1824) in paragraph at lines 431--439
+
+Overfull \hbox (53.37077pt too wide) in paragraph at lines 435--444
+[][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937 . 
+ []
+
+[41]
+Underfull \hbox (badness 1057) in paragraph at lines 469--478
+\TU/TimesNewRoman(0)/m/n/10.53937 Annual Conference of the International Speech
+ Communication Association, Makuhari,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--478
+[][]$[][][][] [] [] [] [][][] [] [][][][][][][][][][][][] [] [][][] [] [][][][]
+[][][] [] [][][][][][][][][][][] [] [][][][] [] [][][] [] [][][][] []
+ []
+
+
+Underfull \hbox (badness 1824) in paragraph at lines 492--500
 []\TU/TimesNewRoman(0)/m/n/10.53937 MA X, HOVY E H. End-to-end Sequence Labelin
 g via Bi-directional LSTM-CNNs-
  []
 
-[41]
-Underfull \hbox (badness 7203) in paragraph at lines 513--516
+[42]
+Underfull \hbox (badness 7203) in paragraph at lines 567--570
 []\TU/TimesNewRoman(0)/m/n/10.53937 LEI BA J, KIROS J R, HINTON G E. Layer norm
 alization[J]. arXiv preprint
  []
 
-[42]
-Overfull \hbox (142.9015pt too wide) in paragraph at lines 536--541
+[43]
+Overfull \hbox (142.9015pt too wide) in paragraph at lines 624--629
 [][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][] [] [][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937
@@ -2282,12 +2318,15 @@ Overfull \hbox (142.9015pt too wide) in paragraph at lines 536--541
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 566--571
+Underfull \vbox (badness 2735) has occurred while \output is active []
+
+ [44]
+Underfull \hbox (badness 10000) in paragraph at lines 654--659
 [][]$[][][][] [] [] [] [][][][][][][][][][] [] [][][][] [] [][][] [] [][][] [] 
 [][][][][][][][][][][][][][][] [] [][][] [] [][][][][][][][] []
  []
 
-) [43]
+) [45]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
  (./thesis-bachelor.aux)
@@ -2305,12 +2344,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 80.
 ### semi simple group (level 1) entered at line 47 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 39866 strings out of 493005
- 774362 string characters out of 6137955
- 889453 words of memory out of 5000000
- 43232 multiletter control sequences out of 15000+600000
- 16650 words of font info for 135 fonts, out of 8000000 for 9000
+ 39900 strings out of 493005
+ 775769 string characters out of 6137955
+ 852602 words of memory out of 5000000
+ 43268 multiletter control sequences out of 15000+600000
+ 16634 words of font info for 133 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  62i,11n,78p,10446b,1230s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis-bachelor.pdf (51 pages).
+Output written on thesis-bachelor.pdf (53 pages).
