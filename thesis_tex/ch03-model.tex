@@ -771,7 +771,7 @@ L-I结构的输入为~$x=(task, x_1, x_2, ..., x_n)$，因此模型的输入层�
 在多任务联合训练时，也存在一部分较为复杂的训练策略。例如，除了通过均匀采样的方式挑选任务外，还可以按数据集比例为不同任务分配被选中的概率\cite{sanh2018hierarchical}；也可以预先定义任务采样策略\cite{DBLP:journals/tacl/KiperwasserB18}；还可以采用不确定性来为不同任务的损失函数分配权重\cite{DBLP:conf/cvpr/KendallGC18}。
 
 \subsection{超参数设定}
-实验中使用的均为4层Transformer，模型维度为300，包含6个头，每个头为50维，前馈网络隐层维度为512维。使用Adam算法\cite{kingma2015adam}进行参数学习，初始学习率为5e-4，最多训练30个轮次。我们使用的小批量（mini-batch）大小为50. 
+实验中使用的均为4层Transformer，模型维度为300，包含6个头，每个头为50维，前馈网络隐层维度为512维。Transformer中的位置编码作为模型参数自动学习。使用Adam算法\cite{kingma2015adam}进行参数学习，初始学习率为5e-4，最多训练30个轮次。我们使用的小批量（mini-batch）大小为50. 
 
 实验中采用的词向量为在840B词汇量的Common Crawl预料集上预训练的300维GloVe\cite{DBLP:conf/emnlp/PenningtonSM14}。为避免学习算法对GloVe进行过多的修改，我们为词嵌入层设置了更小的学习率：5e-5.
 
