@@ -620,6 +620,13 @@
   }\bibpages{115\thinspace{}\textnormal{--}\thinspace{}124}\@.
   \newline\url{http://aclweb.org/anthology/P/P05/P05-1015.pdf}\@.
 
+\bibitem{47786}
+\bibauthor{TENNEY I\@, XIA P\@, CHEN B, et~al}\@. \bibtitle{What do you learn
+  from context? Probing for sentence structure in contextualized word
+  representations}\bibmark{[C/OL]} //\thinspace{}\bibbooktitle{International
+  Conference on Learning Representations}\@. \bibyear{2019}\@.
+  \newline\url{https://openreview.net/forum?id=SJzSgnRcKX}\@.
+
 \bibitem{DBLP:conf/nips/2014}
 \bibeditor{GHAHRAMANI Z\@, WELLING M\@, CORTES C, et~al}\@.
   \bibbooktitle{Advances in Neural Information Processing Systems 27: Annual
