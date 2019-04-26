@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  25 APR 2019 22:23
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  26 APR 2019 14:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2172,8 +2172,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Underfull \vbox (badness 4328) has occurred while \output is active []
 
- [31])
-[32] (./acknowledgments.tex
+ [31]
+
+Package natbib Warning: Citation `47786' on page 32 undefined on input line 17.
+
+
+) [32] (./acknowledgments.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 2.
@@ -2188,145 +2192,63 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 1.
 
-LaTeX Font Info:    Calculating math sizes for size <10.53937> on input line 36
-.
 
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 36.
+Underfull \hbox (badness 2443) in paragraph at lines 77--85
+[]\TU/TimesNewRoman(0)/m/n/10.53937 Bordes A, Chopra S, Weston J. Question Answ
+ering with Subgraph Embeddings[C]
+ []
 
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 36.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.53937> not available
-(Font)              size <10.95> substituted on input line 36.
-
-
-Overfull \hbox (386.6992pt too wide) in paragraph at lines 66--75
-[][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][][][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m
-/n/10.53937 . 
+[35] [36]
+Underfull \hbox (badness 2426) in paragraph at lines 227--235
+[]\TU/TimesNewRoman(0)/m/n/10.53937 Liu P, Qiu X, Huang X. Adversarial Multi-ta
+sk Learning for Text Classification[C]
  []
 
 
-Underfull \hbox (badness 2027) in paragraph at lines 85--94
-[]\TU/TimesNewRoman(0)/m/n/10.53937 BORDES A, CHOPRA S, WESTON J. Question Answ
-ering with Subgraph Embed-
- []
+Underfull \vbox (badness 1418) has occurred while \output is active []
 
-
-Underfull \vbox (badness 1189) has occurred while \output is active []
-
- [35]
-Overfull \hbox (136.57788pt too wide) in paragraph at lines 109--117
-[][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937 .
- 
- []
-
-
-Underfull \hbox (badness 1205) in paragraph at lines 119--128
-[]\TU/TimesNewRoman(0)/m/n/10.53937 DENG J, DONG W, SOCHER R, et al. ImageNet: 
-A large-scale hierarchical image
- []
-
-
-Underfull \hbox (badness 1748) in paragraph at lines 135--140
-[]\TU/TimesNewRoman(0)/m/n/10.53937 RADFORD A, NARASIMHAN K, SALIMANS T, et al.
- Improving language under-
- []
-
-[36]
-Overfull \hbox (295.66847pt too wide) in paragraph at lines 160--170
-[][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937 . 
- []
-
-[37]
-Underfull \hbox (badness 1248) in paragraph at lines 219--226
-[]\TU/TimesNewRoman(0)/m/n/10.53937 CARUANA R. Multitask Learning: A Knowledge-
-Based Source of Inductive Bias[C]
- []
-
-
-Overfull \hbox (136.07788pt too wide) in paragraph at lines 273--281
-[][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937 . 
- []
-
-[38]
-Underfull \hbox (badness 7451) in paragraph at lines 334--343
-[]\TU/TimesNewRoman(0)/m/n/10.53937 ARGYRIOU A, EVGENIOU T, PONTIL M. Multi-Tas
-k Feature Learning[C/OL]
- []
-
-[39]
-Overfull \hbox (136.57788pt too wide) in paragraph at lines 360--370
-[][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937 .
- 
- []
-
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 414--423
-[][]$[][][][] [] [] [] [][][][][][][][][][] [] [][][][][][] [] [][][] [] [][][]
-[][][][] [] [][][][] [] [][][][] [] [][][][] [] [][][][][][][] []
- []
-
-
-Overfull \hbox (53.37077pt too wide) in paragraph at lines 435--444
-[][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][][] [] [][][]
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937 . 
+ [37]
+[38] [39] [40]
+Underfull \hbox (badness 3271) in paragraph at lines 468--471
+[]\TU/TimesNewRoman(0)/m/n/10.53937 Dehghani M, Gouws S, Vinyals O, et al. Univ
+ersal transformers[J]. arXiv preprint
  []
 
 [41]
-Underfull \hbox (badness 1057) in paragraph at lines 469--478
-\TU/TimesNewRoman(0)/m/n/10.53937 Annual Conference of the International Speech
- Communication Association, Makuhari,
- []
+LaTeX Font Info:    Calculating math sizes for size <10.53937> on input line 55
+4.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 469--478
-[][]$[][][][] [] [] [] [][][] [] [][][][][][][][][][][][] [] [][][] [] [][][][]
-[][][] [] [][][][][][][][][][][] [] [][][][] [] [][][] [] [][][][] []
- []
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 554.
 
 
-Underfull \hbox (badness 1824) in paragraph at lines 492--500
-[]\TU/TimesNewRoman(0)/m/n/10.53937 MA X, HOVY E H. End-to-end Sequence Labelin
-g via Bi-directional LSTM-CNNs-
- []
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 554.
 
-[42]
-Underfull \hbox (badness 7203) in paragraph at lines 567--570
-[]\TU/TimesNewRoman(0)/m/n/10.53937 LEI BA J, KIROS J R, HINTON G E. Layer norm
-alization[J]. arXiv preprint
- []
 
-[43]
-Overfull \hbox (142.9015pt too wide) in paragraph at lines 631--636
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <10.53937> not available
+(Font)              size <10.95> substituted on input line 554.
+
+
+Overfull \hbox (142.9015pt too wide) in paragraph at lines 553--555
 [][]$[][][][] [] [] [] [][][][][][] [] [][][][] [] [][] [] [][][][] [] [][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][]$[][]\TU/TimesNewRoman(0)/m/n/10.53937
  . 
  []
 
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 661--666
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--583
 [][]$[][][][] [] [] [] [][][][][][][][][][] [] [][][][] [] [][][] [] [][][] [] 
 [][][][][][][][][][][][][][][] [] [][][] [] [][][][][][][][] []
  []
 
-) [45]
+)
+
+Package natbib Warning: There were undefined citations.
+
+[42]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
  (./thesis-bachelor.aux)
@@ -2344,12 +2266,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 80.
 ### semi simple group (level 1) entered at line 47 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 39928 strings out of 493005
- 777367 string characters out of 6137955
- 852627 words of memory out of 5000000
- 43296 multiletter control sequences out of 15000+600000
+ 39923 strings out of 493005
+ 777284 string characters out of 6137955
+ 852595 words of memory out of 5000000
+ 43291 multiletter control sequences out of 15000+600000
  16634 words of font info for 133 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  62i,11n,78p,10446b,1230s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis-bachelor.pdf (53 pages).
+Output written on thesis-bachelor.pdf (50 pages).

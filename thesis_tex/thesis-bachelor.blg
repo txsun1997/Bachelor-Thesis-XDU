@@ -6,30 +6,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: refs.bib
-Repeated entry---line 888 of file refs.bib
- : @inproceedings{DBLP:conf/nips/McCannBXS17
- :                                          ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 931 of file refs.bib
- : @proceedings{DBLP:conf/cvpr/2016
- :                                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1171 of file refs.bib
- : @inproceedings{DBLP:conf/cvpr/KendallGC18
- :                                          ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1189 of file refs.bib
- : @proceedings{DBLP:conf/cvpr/2018
- :                                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1230 of file refs.bib
- : @proceedings{DBLP:conf/emnlp/2014
- :                                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 1621 of file refs.bib
- : @article{liu2019linguistic
- :                           ,
-I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "47786"
 Warning--Require address: DBLP:conf/asru/MikolovDPBC11
 Warning--Require citedate: DBLP:conf/asru/MikolovDPBC11
 Warning--Require address: DBLP:conf/apsipa/LiHYW13
@@ -82,7 +59,6 @@ Warning--Require citedate: DBLP:conf/nips/JacobBV08
 Warning--Require address: DBLP:conf/icassp/DengHK13
 Warning--Require citedate: DBLP:conf/icassp/DengHK13
 Warning--Require citedate: DBLP:journals/corr/RamsundarKRWKP15
-Warning--Require citedate: book:nndl
 Warning--Require address: DBLP:conf/iclr/MeyersonM18
 Warning--Require citedate: DBLP:conf/iclr/MeyersonM18
 Warning--Require address: DBLP:conf/cvpr/KendallGC18
@@ -117,57 +93,53 @@ Warning--Require address: DBLP:conf/acl/MaasDPHNP11
 Warning--Require citedate: DBLP:conf/acl/MaasDPHNP11
 Warning--Require address: DBLP:conf/acl/PangL05
 Warning--Require citedate: DBLP:conf/acl/PangL05
-Warning--Require citedate: 47786
 Warning--Require citedate: DBLP:conf/nips/2014
 Warning--Require address: DBLP:conf/emnlp/2014
-Warning--Require editor: DBLP:conf/acl/2015-1
 Warning--Require address: DBLP:conf/acl/2015-1
 Warning--Require citedate: DBLP:conf/acl/2015-1
-Warning--Require editor: DBLP:conf/cvpr/2016
 Warning--Require address: DBLP:conf/cvpr/2016
 Warning--Require citedate: DBLP:conf/cvpr/2016
-Warning--Require editor: DBLP:conf/iclr/2018
 Warning--Require address: DBLP:conf/iclr/2018
 Warning--Require citedate: DBLP:conf/iclr/2018
-You've used 73 entries,
-            3107 wiz_defined-function locations,
-            1281 strings with 32412 characters,
-and the built_in function-call counts, 182970 in all, are:
-= -- 21109
-> -- 342
-< -- 841
-+ -- 17693
-- -- 1196
-* -- 4312
-:= -- 21878
+You've used 71 entries,
+            3079 wiz_defined-function locations,
+            1272 strings with 32059 characters,
+and the built_in function-call counts, 125343 in all, are:
+= -- 14030
+> -- 248
+< -- 549
++ -- 11418
+- -- 828
+* -- 3423
+:= -- 14363
 add.period$ -- 0
-call.type$ -- 73
-change.case$ -- 538
+call.type$ -- 71
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 172
-duplicate$ -- 25736
-empty$ -- 5607
-format.name$ -- 1076
-if$ -- 49197
+cite$ -- 165
+duplicate$ -- 17667
+empty$ -- 4443
+format.name$ -- 708
+if$ -- 33528
 int.to.chr$ -- 0
-int.to.str$ -- 73
+int.to.str$ -- 71
 missing$ -- 0
-newline$ -- 246
-num.names$ -- 101
-pop$ -- 2192
+newline$ -- 240
+num.names$ -- 65
+pop$ -- 1691
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1316
+skip$ -- 931
 stack$ -- 0
-substring$ -- 22106
-swap$ -- 3683
+substring$ -- 14992
+swap$ -- 3210
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 99
-while$ -- 2155
-width$ -- 75
-write$ -- 1153
-(There were 6 error messages)
+warning$ -- 94
+while$ -- 1567
+width$ -- 73
+write$ -- 967
+(There were 95 warnings)

@@ -517,7 +517,7 @@ FUNCTION {is.online} {                            % int Entry::is_online() {
 FUNCTION {set.mark} {                             % void Entry::set_mark(String mark) {
   'mark :=                                        %   this.mark = mark;
   is.online {                                     %   if (is_online()) {
-    mark "/OL" * 'mark :=                         %     this.mark = this.mark + "/OL";
+%    mark "/OL" * 'mark :=                         %     this.mark = this.mark + "/OL";
   } {                                             %   } else {
     media empty$ not {                            %     if (! empty(this.media)) {
       mark "/" * media * 'mark :=                 %       this.mark = this.mark + "/" + this.media;
@@ -623,9 +623,9 @@ FUNCTION {format.names} {                         % String Entry::format_names(S
     remove.dots 'jrname :=                        %     jrname = remove_dots(tmp);
     namelist nameindex "{f}" format.name$         %     tmp = format_name(namelist, nameindex, "{f}");
     remove.dots                                   %     tmp = remove_dots(tmp);
-    "u" change.case$ 'firstname :=                %     firstname = change_case(tmp, "u");
+    'firstname :=                %     firstname = change_case(tmp, "u");
     namelist nameindex "{ll}" format.name$        %     tmp = format_name(namelist, nameindex, "{ll}");
-    "u" change.case$ 'lastname :=                 %     lastname = change_case(tmp, "u");
+    'lastname :=                 %     lastname = change_case(tmp, "u");
     jrname empty$ not {                           %     if (! empty(jrname)) {
       jrname * " " *                              %       result = result + jrname + " "
     } 'skip$ if$                                  %     }
@@ -910,8 +910,8 @@ FUNCTION {output.author.or.editor} {              % void Entry::output_author_or
     cap.period write$                             %     write(cap_period);
   } {                                             %   } else {
     editor empty$ not {                           %     if (! empty(this.editor)) {
-      editor format.editor write$                 %       write(format_editor(this.editor));
-      cap.period write$                           %       write(cap_period);
+%      editor format.editor write$                 %       write(format_editor(this.editor));
+%      cap.period write$                           %       write(cap_period);
     } {                                           %     } else {
       required {                                  %       if (required == 1) {
         "Require author/editor: " cite$ * warning$%         warning("Require author/editor: " + this.cite);
@@ -943,8 +943,8 @@ FUNCTION {output.author} {                        % void Entry::output_author(in
 FUNCTION {output.editor} {                        % void Entry::output_editor(int required) {
   'required :=                                    %   this.required = required;
   editor empty$ not {                             %   if (! empty(this.editor)) {
-    editor format.editor write$                   %     write(format_editor(this.editor));
-    cap.period write$                             %     write(cap_period);
+%    editor format.editor write$                   %     write(format_editor(this.editor));
+%    cap.period write$                             %     write(cap_period);
   } {                                             %   } else {
     required {                                    %     if (required == 1) {
       "Require editor: " cite$ * warning$         %       warning("Require editor: " + this.cite);
@@ -1440,7 +1440,7 @@ FUNCTION {collection} {                           % void Entry::collection() {
 FUNCTION {proceedings} {                          % void Entry::proceedings() {
   "C" set.mark                                    %   set_mark("C");
   start.bibitem                                   %   start_bibitem();
-  true output.editor                              %   output_editor(true);
+%  true output.editor                              %   output_editor(true);
   true output.series.volume.title                 %   output_series_volume_title(true);
   true output.mark                                %   output_mark(true);
   false output.translator                         %   output_translator(false);
@@ -1746,7 +1746,7 @@ FUNCTION {inbook.impl} {                          % void Entry::inbook_impl() {
   true output.mark                                %   output_mark(true);
   false output.translator                         %   output_translator(false);
   cap.double.slash write$                         %   write(cap_double_slash);
-  false output.editor                             %   output_editor(false);
+%  false output.editor                             %   output_editor(false);
   true output.series.volume.booktitle             %   output_series_volume_booktitle(true);
   false output.edition                            %   output_edition(false);
   publisher empty$ not {                          %   if (! empty(this.publisher)) {
@@ -1759,7 +1759,7 @@ FUNCTION {inbook.impl} {                          % void Entry::inbook_impl() {
   true output.year                                %   output_year(true);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+%  false output.url.or.doi                         %   output_url_or_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
@@ -1799,7 +1799,7 @@ FUNCTION {article} {                              % void Entry::article() {
   false output.number                             %   output_number(false);
   false output.pages                              %   output_pages(false);
   false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+%  false output.url.or.doi                         %   output_url_or_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %

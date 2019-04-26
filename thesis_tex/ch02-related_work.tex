@@ -110,7 +110,7 @@
 
 随着深度学习的发展，多任务学习开始应用在深层神经网络中，并在自然语言处理\cite{DBLP:conf/icml/CollobertW08}、计算机视觉\cite{DBLP:conf/cvpr/MisraSGH16}、语音识别\cite{DBLP:conf/icassp/DengHK13}、药物设计\cite{DBLP:journals/corr/RamsundarKRWKP15}等众多应用场景中取得了成功。同时，多任务学习作为一种模型无关的方法，在卷积神经网络\cite{DBLP:conf/icml/CollobertW08}\cite{DBLP:conf/cvpr/MisraSGH16}、循环神经网络\cite{DBLP:conf/ijcai/LiuQH16}、图网络\cite{liu2018multi}上都可以应用。
 
-然而，无论是在传统机器学习算法上还是在深层神经网络上，多任务学习的核心观点都在于知识共享。如何为特定任务和学习算法设计合适的共享模式一直是多任务学习的重要问题。从多任务学习的应用方式来看，可以大概分为下面四种共享模式\cite{book:nndl}：
+然而，无论是在传统机器学习算法上还是在深层神经网络上，多任务学习的核心观点都在于知识共享。如何为特定任务和学习算法设计合适的共享模式一直是多任务学习的重要问题。从多任务学习的应用方式来看，可以大概分为下面四种共享模式：
 
 \begin{itemize}
 	\item \textbf{硬共享模式}：为多个任务联合训练单个模型，让不同任务共享相同的神经网络层来提取任务无关的通用特征表示，每个任务通过自己的任务特定层在通用表示基础上进行加工得到任务特定表示。
