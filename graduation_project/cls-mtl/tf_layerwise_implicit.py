@@ -220,9 +220,9 @@ class Transformer(nn.Module):
         self.encoder = Encoder(c(layer), N)
         self.dropout = nn.Dropout(p=0.5)
 
-        # ts = TS(d_model, args.n_class)
+        ts = TS(d_model, args.n_class)
         # self.out = MLP(d_model, d_ff, args.n_class)
-        self.out = TS(d_model, args.n_class)
+        self.out = clones(ts, 16)
 
         for name, p in self.named_parameters():
             if p.dim() > 1 and name != 'embed.word_embeddings.weight':
@@ -245,7 +245,7 @@ class Transformer(nn.Module):
         x = self.encoder(x, mask.unsqueeze(-2))
         # x: bsz x seq_len x d_model
         x = x[:, 0, :]
-        logit = self.out(x)
+        logit = self.out[task_id[0]](x)
         # logit: bsz x n_class
         loss = self.criterion(logit, y)
         pred = torch.argmax(logit, dim=1)
