@@ -29,8 +29,7 @@
   training large scale neural network language models}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{2011 {IEEE} Workshop on Automatic Speech
   Recognition {\&} Understanding, {ASRU} 2011, Waikoloa, HI, USA, December
-  11-15, 2011}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{{IEEE}}\@, \bibyear{2011}\thinspace{}\textnormal{:
+  11-15, 2011}\@. \bibyear{2011}\thinspace{}\textnormal{:
   }\bibpages{196\thinspace{}\textnormal{--}\thinspace{}201}\@.
 
 \bibitem{DBLP:conf/apsipa/LiHYW13}
@@ -39,7 +38,6 @@
   recognition}\bibmark{[C]} //\thinspace{}\bibbooktitle{Asia-Pacific Signal and
   Information Processing Association Annual Summit and Conference, {APSIPA}
   2013, Kaohsiung, Taiwan, October 29 - November 1, 2013}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{IEEE}}\@,
   \bibyear{2013}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}4}\@.
 
@@ -79,7 +77,6 @@
   //\thinspace{}\bibbooktitle{Proceedings of the 2014 Conference on Empirical
   Methods in Natural Language Processing, {EMNLP} 2014, October 25-29, 2014,
   Doha, Qatar, {A} meeting of SIGDAT, a Special Interest Group of the {ACL}}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{ACL}}\@,
   \bibyear{2014}\thinspace{}\textnormal{:
   }\bibpages{615\thinspace{}\textnormal{--}\thinspace{}620}\@.
 
@@ -90,9 +87,7 @@
   Association for Computational Linguistics and the 7th International Joint
   Conference on Natural Language Processing of the Asian Federation of Natural
   Language Processing, {ACL} 2015, July 26-31, 2015, Beijing, China, Volume 1:
-  Long Papers}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{The Association for Computer Linguistics}\@,
-  \bibyear{2015}\thinspace{}\textnormal{:
+  Long Papers}\@. \bibyear{2015}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}10}\@.
 
 \bibitem{DBLP:conf/nips/SutskeverVL14}
@@ -109,9 +104,7 @@
   large-scale hierarchical image database}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{2009 {IEEE} Computer Society Conference on
   Computer Vision and Pattern Recognition {(CVPR} 2009), 20-25 June 2009,
-  Miami, Florida, {USA}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{{IEEE} Computer Society}\@,
-  \bibyear{2009}\thinspace{}\textnormal{:
+  Miami, Florida, {USA}}\@. \bibyear{2009}\thinspace{}\textnormal{:
   }\bibpages{248\thinspace{}\textnormal{--}\thinspace{}255}\@.
 
 \bibitem{mccann2018natural}
@@ -138,8 +131,7 @@
   Understanding}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the
   Workshop: Analyzing and Interpreting Neural Networks for NLP,
   BlackboxNLP@EMNLP 2018, Brussels, Belgium, November 1, 2018}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Association for
-  Computational Linguistics}\@, \bibyear{2018}\thinspace{}\textnormal{:
+  \bibyear{2018}\thinspace{}\textnormal{:
   }\bibpages{353\thinspace{}\textnormal{--}\thinspace{}355}\@.
 
 \bibitem{DBLP:conf/nips/MikolovSCCD13}
@@ -157,7 +149,6 @@
   //\thinspace{}\bibbooktitle{Proceedings of the 2014 Conference on Empirical
   Methods in Natural Language Processing, {EMNLP} 2014, October 25-29, 2014,
   Doha, Qatar, {A} meeting of SIGDAT, a Special Interest Group of the {ACL}}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{ACL}}\@,
   \bibyear{2014}\thinspace{}\textnormal{:
   }\bibpages{1532\thinspace{}\textnormal{--}\thinspace{}1543}\@.
 
@@ -177,20 +168,15 @@
   //\thinspace{}\bibbooktitle{Proceedings of the 2018 Conference of the North
   American Chapter of the Association for Computational Linguistics: Human
   Language Technologies, {NAACL-HLT} 2018, New Orleans, Louisiana, USA, June
-  1-6, 2018, Volume 1 (Long Papers)}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Association for
-  Computational Linguistics}\@, \bibyear{2018}\thinspace{}\textnormal{:
+  1-6, 2018, Volume 1 (Long Papers)}\@. \bibyear{2018}\thinspace{}\textnormal{:
   }\bibpages{2227\thinspace{}\textnormal{--}\thinspace{}2237}\@.
 
 \bibitem{DBLP:conf/icml/CollobertW08}
 \bibauthor{Collobert R\@, Weston J}\@. \bibtitle{A unified architecture for
   natural language processing: deep neural networks with multitask
-  learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{{ACM} International
-  Conference Proceeding Series\@, Vol~307\thinspace{}\textnormal{: }Machine
-  Learning, Proceedings of the Twenty-Fifth International Conference {(ICML}
-  2008), Helsinki, Finland, June 5-9, 2008}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{ACM}}\@,
-  \bibyear{2008}\thinspace{}\textnormal{:
+  learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{Machine Learning,
+  Proceedings of the Twenty-Fifth International Conference {(ICML} 2008),
+  Helsinki, Finland, June 5-9, 2008}\@. \bibyear{2008}\thinspace{}\textnormal{:
   }\bibpages{160\thinspace{}\textnormal{--}\thinspace{}167}\@.
 
 \bibitem{DBLP:conf/icml/Caruana93}
@@ -198,8 +184,7 @@
   Source of Inductive Bias}\bibmark{[C]} //\thinspace{}\bibbooktitle{Machine
   Learning, Proceedings of the Tenth International Conference, University of
   Massachusetts, Amherst, MA, USA, June 27-29, 1993}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Morgan
-  Kaufmann}\@, \bibyear{1993}\thinspace{}\textnormal{:
+  \bibyear{1993}\thinspace{}\textnormal{:
   }\bibpages{41\thinspace{}\textnormal{--}\thinspace{}48}\@.
 
 \bibitem{DBLP:conf/acl/DongWHYW15}
@@ -209,9 +194,7 @@
   Association for Computational Linguistics and the 7th International Joint
   Conference on Natural Language Processing of the Asian Federation of Natural
   Language Processing, {ACL} 2015, July 26-31, 2015, Beijing, China, Volume 1:
-  Long Papers}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{The Association for Computer Linguistics}\@,
-  \bibyear{2015}\thinspace{}\textnormal{:
+  Long Papers}\@. \bibyear{2015}\thinspace{}\textnormal{:
   }\bibpages{1723\thinspace{}\textnormal{--}\thinspace{}1732}\@.
 
 \bibitem{DBLP:conf/ijcai/LiuQH16}
@@ -219,8 +202,7 @@
   Text Classification with Multi-Task Learning}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{Proceedings of the Twenty-Fifth International
   Joint Conference on Artificial Intelligence, {IJCAI} 2016, New York, NY, USA,
-  9-15 July 2016}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{{IJCAI/AAAI} Press}\@, \bibyear{2016}\thinspace{}\textnormal{:
+  9-15 July 2016}\@. \bibyear{2016}\thinspace{}\textnormal{:
   }\bibpages{2873\thinspace{}\textnormal{--}\thinspace{}2879}\@.
 
 \bibitem{DBLP:conf/acl/LiuQH17}
@@ -229,8 +211,7 @@
   //\thinspace{}\bibbooktitle{Proceedings of the 55th Annual Meeting of the
   Association for Computational Linguistics, {ACL} 2017, Vancouver, Canada,
   July 30 - August 4, Volume 1: Long Papers}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Association for
-  Computational Linguistics}\@, \bibyear{2017}\thinspace{}\textnormal{:
+  \bibyear{2017}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}10}\@.
 
 \bibitem{DBLP:conf/acl/SogaardG16}
@@ -238,9 +219,7 @@
   with low level tasks supervised at lower layers}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{Proceedings of the 54th Annual Meeting of the
   Association for Computational Linguistics, {ACL} 2016, August 7-12, 2016,
-  Berlin, Germany, Volume 2: Short Papers}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{The Association
-  for Computer Linguistics}\@, \bibyear{2016}\@.
+  Berlin, Germany, Volume 2: Short Papers}\@. \bibyear{2016}\@.
 
 \bibitem{DBLP:conf/nips/McCannBXS17}
 \bibauthor{McCann B\@, Bradbury J\@, Xiong C, et~al}\@. \bibtitle{Learned in
@@ -257,8 +236,7 @@
   Large Scale Multi-task Learning}\bibmark{[C]} //\thinspace{}\bibbooktitle{6th
   International Conference on Learning Representations, {ICLR} 2018, Vancouver,
   BC, Canada, April 30 - May 3, 2018, Conference Track Proceedings}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{OpenReview.net}\@, \bibyear{2018}\@.
+  \bibyear{2018}\@.
 
 \bibitem{liu2019multi}
 \bibauthor{Liu X\@, He P\@, Chen W, et~al}\@. \bibtitle{Multi-Task Deep Neural
@@ -275,7 +253,6 @@
   Multiple Tasks}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the
   Twenty-Seventh International Joint Conference on Artificial Intelligence,
   {IJCAI} 2018, July 13-19, 2018, Stockholm, Sweden.}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{ijcai.org}\@,
   \bibyear{2018}\thinspace{}\textnormal{:
   }\bibpages{4616\thinspace{}\textnormal{--}\thinspace{}4622}\@.
 
@@ -284,8 +261,7 @@
   \bibtitle{Cross-Stitch Networks for Multi-task Learning}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{2016 {IEEE} Conference on Computer Vision and
   Pattern Recognition, {CVPR} 2016, Las Vegas, NV, USA, June 27-30, 2016}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{IEEE} Computer
-  Society}\@, \bibyear{2016}\thinspace{}\textnormal{:
+  \bibyear{2016}\thinspace{}\textnormal{:
   }\bibpages{3994\thinspace{}\textnormal{--}\thinspace{}4003}\@.
 
 \bibitem{1705.08142}
@@ -304,7 +280,6 @@
   Information Processing Systems 19, Proceedings of the Twentieth Annual
   Conference on Neural Information Processing Systems, Vancouver, British
   Columbia, Canada, December 4-7, 2006}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{MIT} Press}\@,
   \bibyear{2006}\thinspace{}\textnormal{:
   }\bibpages{41\thinspace{}\textnormal{--}\thinspace{}48}\@.
 
@@ -327,8 +302,7 @@
   //\thinspace{}\bibbooktitle{Advances in Neural Information Processing Systems
   21, Proceedings of the Twenty-Second Annual Conference on Neural Information
   Processing Systems, Vancouver, British Columbia, Canada, December 8-11,
-  2008}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Curran
-  Associates, Inc.}\@, \bibyear{2008}\thinspace{}\textnormal{:
+  2008}\@. \bibyear{2008}\thinspace{}\textnormal{:
   }\bibpages{745\thinspace{}\textnormal{--}\thinspace{}752}\@.
 
 \bibitem{DBLP:conf/icassp/DengHK13}
@@ -337,7 +311,6 @@
   overview}\bibmark{[C]} //\thinspace{}\bibbooktitle{{IEEE} International
   Conference on Acoustics, Speech and Signal Processing, {ICASSP} 2013,
   Vancouver, BC, Canada, May 26-31, 2013}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{IEEE}}\@,
   \bibyear{2013}\thinspace{}\textnormal{:
   }\bibpages{8599\thinspace{}\textnormal{--}\thinspace{}8603}\@.
 
@@ -361,18 +334,14 @@
   Hierarchies: Deep Multitask Learning through Soft Layer
   Ordering}\bibmark{[C]} //\thinspace{}\bibbooktitle{6th International
   Conference on Learning Representations, {ICLR} 2018, Vancouver, BC, Canada,
-  April 30 - May 3, 2018, Conference Track Proceedings}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{OpenReview.net}\@, \bibyear{2018}\@.
+  April 30 - May 3, 2018, Conference Track Proceedings}\@. \bibyear{2018}\@.
 
 \bibitem{DBLP:conf/cvpr/KendallGC18}
 \bibauthor{Kendall A\@, Gal Y\@, Cipolla R}\@. \bibtitle{Multi-Task Learning
   Using Uncertainty to Weigh Losses for Scene Geometry and
   Semantics}\bibmark{[C]} //\thinspace{}\bibbooktitle{2018 {IEEE} Conference on
   Computer Vision and Pattern Recognition, {CVPR} 2018, Salt Lake City, UT,
-  USA, June 18-22, 2018}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{{IEEE} Computer Society}\@,
-  \bibyear{2018}\thinspace{}\textnormal{:
+  USA, June 18-22, 2018}\@. \bibyear{2018}\thinspace{}\textnormal{:
   }\bibpages{7482\thinspace{}\textnormal{--}\thinspace{}7491}\@.
 
 \bibitem{Hinton:1986:DR:104279.104287}
@@ -388,8 +357,7 @@
   Probabilistic Language Model}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{Advances in Neural Information Processing Systems
   13, Papers from Neural Information Processing Systems {(NIPS)} 2000, Denver,
-  CO, {USA}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{{MIT} Press}\@, \bibyear{2000}\thinspace{}\textnormal{:
+  CO, {USA}}\@. \bibyear{2000}\thinspace{}\textnormal{:
   }\bibpages{932\thinspace{}\textnormal{--}\thinspace{}938}\@.
 
 \bibitem{DBLP:conf/emnlp/Kim14}
@@ -397,18 +365,15 @@
   Classification}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the
   2014 Conference on Empirical Methods in Natural Language Processing, {EMNLP}
   2014, October 25-29, 2014, Doha, Qatar, {A} meeting of SIGDAT, a Special
-  Interest Group of the {ACL}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{{ACL}}\@, \bibyear{2014}\thinspace{}\textnormal{:
+  Interest Group of the {ACL}}\@. \bibyear{2014}\thinspace{}\textnormal{:
   }\bibpages{1746\thinspace{}\textnormal{--}\thinspace{}1751}\@.
 
 \bibitem{DBLP:conf/icml/GehringAGYD17}
 \bibauthor{Gehring J\@, Auli M\@, Grangier D, et~al}\@. \bibtitle{Convolutional
   Sequence to Sequence Learning}\bibmark{[C]}
-  //\thinspace{}\bibbooktitle{Proceedings of Machine Learning Research\@,
-  Vol~70\thinspace{}\textnormal{: }Proceedings of the 34th International
-  Conference on Machine Learning, {ICML} 2017, Sydney, NSW, Australia, 6-11
-  August 2017}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{{PMLR}}\@, \bibyear{2017}\thinspace{}\textnormal{:
+  //\thinspace{}\bibbooktitle{Proceedings of the 34th International Conference
+  on Machine Learning, {ICML} 2017, Sydney, NSW, Australia, 6-11 August
+  2017}\@. \bibyear{2017}\thinspace{}\textnormal{:
   }\bibpages{1243\thinspace{}\textnormal{--}\thinspace{}1252}\@.
 
 \bibitem{DBLP:conf/interspeech/MikolovKBCK10}
@@ -416,8 +381,7 @@
   \bibtitle{Recurrent neural network based language model}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{{INTERSPEECH} 2010, 11th Annual Conference of the
   International Speech Communication Association, Makuhari, Chiba, Japan,
-  September 26-30, 2010}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{{ISCA}}\@, \bibyear{2010}\thinspace{}\textnormal{:
+  September 26-30, 2010}\@. \bibyear{2010}\thinspace{}\textnormal{:
   }\bibpages{1045\thinspace{}\textnormal{--}\thinspace{}1048}\@.
 
 \bibitem{DBLP:conf/emnlp/WenGMSVY15}
@@ -426,8 +390,7 @@
   Systems}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 2015
   Conference on Empirical Methods in Natural Language Processing, {EMNLP} 2015,
   Lisbon, Portugal, September 17-21, 2015}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{The Association
-  for Computational Linguistics}\@, \bibyear{2015}\thinspace{}\textnormal{:
+  \bibyear{2015}\thinspace{}\textnormal{:
   }\bibpages{1711\thinspace{}\textnormal{--}\thinspace{}1721}\@.
 
 \bibitem{DBLP:conf/acl/MaH16}
@@ -435,9 +398,7 @@
   Bi-directional LSTM-CNNs-CRF}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{Proceedings of the 54th Annual Meeting of the
   Association for Computational Linguistics, {ACL} 2016, August 7-12, 2016,
-  Berlin, Germany, Volume 1: Long Papers}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{The Association
-  for Computer Linguistics}\@, \bibyear{2016}\@.
+  Berlin, Germany, Volume 1: Long Papers}\@. \bibyear{2016}\@.
 
 \bibitem{DBLP:journals/corr/BahdanauCB14}
 \bibauthor{Bahdanau D\@, Cho K\@, Bengio Y}\@. \bibtitle{Neural Machine
@@ -460,8 +421,7 @@
   Architectures}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the
   2018 Conference on Empirical Methods in Natural Language Processing,
   Brussels, Belgium, October 31 - November 4, 2018}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Association for
-  Computational Linguistics}\@, \bibyear{2018}\thinspace{}\textnormal{:
+  \bibyear{2018}\thinspace{}\textnormal{:
   }\bibpages{4263\thinspace{}\textnormal{--}\thinspace{}4272}\@.
 
 \bibitem{dehghani2018universal}
@@ -484,17 +444,13 @@
   for Universal Sentence Representations}\bibmark{[C]}
   //\thinspace{}\bibbooktitle{Proceedings of the Eleventh International
   Conference on Language Resources and Evaluation, {LREC} 2018, Miyazaki,
-  Japan, May 7-12, 2018.}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{European Language Resources Association {(ELRA)}}\@,
-  \bibyear{2018}\@.
+  Japan, May 7-12, 2018.}\@. \bibyear{2018}\@.
 
 \bibitem{DBLP:conf/cvpr/HeZRS16}
 \bibauthor{He K\@, Zhang X\@, Ren S, et~al}\@. \bibtitle{Deep Residual Learning
   for Image Recognition}\bibmark{[C]} //\thinspace{}\bibbooktitle{2016 {IEEE}
   Conference on Computer Vision and Pattern Recognition, {CVPR} 2016, Las
-  Vegas, NV, USA, June 27-30, 2016}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{IEEE} Computer
-  Society}\@, \bibyear{2016}\thinspace{}\textnormal{:
+  Vegas, NV, USA, June 27-30, 2016}\@. \bibyear{2016}\thinspace{}\textnormal{:
   }\bibpages{770\thinspace{}\textnormal{--}\thinspace{}778}\@.
 
 \bibitem{lei2016layer}
@@ -523,18 +479,14 @@
   Bollywood, Boom-boxes and Blenders: Domain Adaptation for Sentiment
   Classification}\bibmark{[C]} //\thinspace{}\bibbooktitle{{ACL} 2007,
   Proceedings of the 45th Annual Meeting of the Association for Computational
-  Linguistics, June 23-30, 2007, Prague, Czech Republic}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{The Association
-  for Computational Linguistics}\@, \bibyear{2007}\@.
+  Linguistics, June 23-30, 2007, Prague, Czech Republic}\@. \bibyear{2007}\@.
 
 \bibitem{DBLP:conf/acl/MaasDPHNP11}
 \bibauthor{Maas A~L\@, Daly R~E\@, Pham P~T, et~al}\@. \bibtitle{Learning Word
   Vectors for Sentiment Analysis}\bibmark{[C]} //\thinspace{}\bibbooktitle{The
   49th Annual Meeting of the Association for Computational Linguistics: Human
   Language Technologies, Proceedings of the Conference, 19-24 June, 2011,
-  Portland, Oregon, {USA}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{The Association for Computer Linguistics}\@,
-  \bibyear{2011}\thinspace{}\textnormal{:
+  Portland, Oregon, {USA}}\@. \bibyear{2011}\thinspace{}\textnormal{:
   }\bibpages{142\thinspace{}\textnormal{--}\thinspace{}150}\@.
 
 \bibitem{DBLP:conf/acl/PangL05}
@@ -543,49 +495,7 @@
   Scales}\bibmark{[C]} //\thinspace{}\bibbooktitle{{ACL} 2005, 43rd Annual
   Meeting of the Association for Computational Linguistics, Proceedings of the
   Conference, 25-30 June 2005, University of Michigan, {USA}}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{The Association
-  for Computer Linguistics}\@, \bibyear{2005}\thinspace{}\textnormal{:
+  \bibyear{2005}\thinspace{}\textnormal{:
   }\bibpages{115\thinspace{}\textnormal{--}\thinspace{}124}\@.
-
-\bibitem{DBLP:conf/nips/2014}
-\bibbooktitle{Advances in Neural Information Processing Systems 27: Annual
-  Conference on Neural Information Processing Systems 2014, December 8-13 2014,
-  Montreal, Quebec, Canada}\bibmark{[C]}\@. \bibyear{2014}\@.
-  \newline\url{http://papers.nips.cc/book/advances-in-neural-information-processing-systems-27-2014}\@.
-
-\bibitem{DBLP:conf/emnlp/2014}
-\bibbooktitle{Proceedings of the 2014 Conference on Empirical Methods in
-  Natural Language Processing, {EMNLP} 2014, October 25-29, 2014, Doha, Qatar,
-  {A} meeting of SIGDAT, a Special Interest Group of the {ACL}}\bibmark{[C]}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{ACL}}\@,
-  \bibyear{2014}\@.
-
-\bibitem{DBLP:conf/acl/2015-1}
-\bibbooktitle{Proceedings of the 53rd Annual Meeting of the Association for
-  Computational Linguistics and the 7th International Joint Conference on
-  Natural Language Processing of the Asian Federation of Natural Language
-  Processing, {ACL} 2015, July 26-31, 2015, Beijing, China, Volume 1: Long
-  Papers}\bibmark{[C]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{The Association for Computer Linguistics}\@, \bibyear{2015}\@.
-  \newline\url{http://aclweb.org/anthology/P/P15/}\@.
-
-\bibitem{DBLP:conf/nips/2017}
-\bibbooktitle{Advances in Neural Information Processing Systems 30: Annual
-  Conference on Neural Information Processing Systems 2017, 4-9 December 2017,
-  Long Beach, CA, {USA}}\bibmark{[C]}\@. \bibyear{2017}\@.
-
-\bibitem{DBLP:conf/cvpr/2016}
-\bibbooktitle{2016 {IEEE} Conference on Computer Vision and Pattern
-  Recognition, {CVPR} 2016, Las Vegas, NV, USA, June 27-30,
-  2016}\bibmark{[C]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{{IEEE} Computer Society}\@, \bibyear{2016}\@.
-  \newline\url{http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7776647}\@.
-
-\bibitem{DBLP:conf/iclr/2018}
-\bibbooktitle{6th International Conference on Learning Representations, {ICLR}
-  2018, Vancouver, BC, Canada, April 30 - May 3, 2018, Conference Track
-  Proceedings}\bibmark{[C]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{OpenReview.net}\@, \bibyear{2018}\@.
-  \newline\url{https://openreview.net/group?id=ICLR.cc/2018/Conference}\@.
 
 \end{thebibliography}

@@ -1,9 +1,7 @@
 \begin{cabstract}
-	近年来，随着数据量的增加、算力的增强以及算法的成熟，以神经网络为代表的深度学习为自然语言处理领域带来了深刻的变革。在自然语言处理任务中，文本表示对模型性能起着关键作用。
+	文本表示是自然语言处理的必要任务，表示方法的好坏对于模型性能至关重要。为得到泛化能力强的文本表示，近年来多任务学习被广泛应用在各大自然语言处理任务中，通过联合学习多个相关任务来共享任务间的知识，从而提升模型在各个任务上的表现。
 	
-	然而，现实场景中常常因为文本标注难度大、成本高等原因导致训练数据有限，进而导致一般的深度学习算法难以学到泛化的表示。本文试图探索多任务学习在文本表示上的应用，以期与近期取得巨大成功的迁移学习范式互为补充，进一步提升神经网络模型的泛化能力。
-	
-	目前，多任务学习方法已经被广泛地用在了卷积神经网络和循环神经网络两种主流的结构中，在计算机视觉和自然语言处理领域的多个任务上取得了成功。在本文中，我们在一种新的网络结构 -- Transformer -- 上探索了多任务学习的应用。首先，我们验证了两种传统的多任务学习架构在Transformer的应用，然后，我们针对Transformer的特点提出了两种逐层分化的多任务学习架构。在多个文本分类任务上的实验表明，四种多任务模型的准确率较单任务学习模型均取得了提升，其中，我们的逐层分化架构在四种架构中取得了最高的分类准确率。
+	近期，一种新型的神经网络模型Transformer因其在机器翻译和迁移学习等方面取得的巨大成功开始在自然语言处理领域流行。然而，之前的工作大都在卷积网络和循环网络上研究多任务学习的共享结构，目前还很少有工作探究Transformer上的多任务共享架构。本文在Transformer上探索了句子级的多任务文本表示方法：首先设计了两种传统的硬共享结构，接着提出了两种逐层共享结构，能够在每一层根据输入动态地抽取其他任务的特征来形成任务特定表示。我们在16个情感分析任务上进行了实验，对比单任务模型，四种多任务模型的准确率均取得了较大提升，其中，本文提出的两种逐层共享结构均超越了传统共享结构。
 	
 	最后，我们对模型进行了实例分析，总结了现有工作，并展望了未来多任务学习在自然语言处理以及深度学习的发展。
 \end{cabstract}
@@ -17,12 +15,9 @@
 
 
 \begin{eabstract}
-	In recent years, with the increase of data volume, the enhancement of computing power and the maturity of learning algorithms, deep neural networks has brought profound changes to the field of natural language processing. In natural language processing tasks, text representation plays a key role in model performance.
+	Language representation is an essential task for natural language processing(NLP). To learn general representation, multi-task learning(MTL) methods, which allow models to share knowledge in related tasks by joint learning, are applied to many NLP tasks.
 	
-	However, in real scenes, due to the difficulty and high cost of text annotation, training data is often limited, which makes it difficult for deep learning algorithms to learn a well-generalized representation. This paper attempts to explore the application of multi-task learning in text representation, in order to complement the paradigm of transfer learning, which achieved a great success recently, to further improve the generalization ability of deep neural networks.
-	
-	At present, multi-task learning methods have been widely used in the two common networks, convolutional neural networks and recurrent neural networks, in the field of computer vision and natural language processing. However, this paper explores the application of multi-task learning on a new network, Transformer. First, we verify the application of two traditional multi-task learning architectures in Transformer. Then, considering the characteristics of Transformer, we propose two new architectures which are \textit{layerwise differentiated}. Experiments on multiple text classification tasks show that the accuracies of our four multi-task models are consistently higher than single-task learning model. Particularly, our proposed \textit{layerwise differentiated} architecture achieves the highest classification accuracy among the four architectures.
-	
+	Recently, Transformer, a novel neural network based on self-attention mechanism, has become popular in NLP due to its great success in machine translation and transfer learning. Most of previous works focus on designing multi-task sharing scheme for convolutional networks and recurrent networks. However, there is few discussion on multi-task learning in Transformer. In this paper, we propose 4 sentence-level multi-task transformer architectures: two traditional hard sharing architectures and two layerwise sharing architectures, which can dynamically combine features of related tasks and generate task-specific representation based on the input at each layer. We conduct experiments on 16 sentiment analysis tasks. Our 4 multi-task transformers consistently outperform transformers trained with single task. Besides, the proposed layerwise sharing architectures achieve better accuracy than traditional architectures.
 	
 	Finally, we conduct case study for our proposed model, summarize the existing works, and look forward to the future development of multi-task learning in natural language processing and deep learning.
 	

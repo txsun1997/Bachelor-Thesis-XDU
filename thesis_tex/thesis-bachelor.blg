@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/W32TeX)
+This is BibTeX, Version 0.99d (TeX Live 2018/W32TeX)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis-bachelor.aux
 The style file: gbt7714-2005.bst
@@ -7,139 +7,49 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: refs.bib
 Warning--I didn't find a database entry for "47786"
-Warning--Require address: DBLP:conf/asru/MikolovDPBC11
-Warning--Require citedate: DBLP:conf/asru/MikolovDPBC11
-Warning--Require address: DBLP:conf/apsipa/LiHYW13
-Warning--Require citedate: DBLP:conf/apsipa/LiHYW13
-Warning--Require citedate: DBLP:journals/cacm/KrizhevskySH17
-Warning--Require citedate: DBLP:journals/pami/FarabetCNL13
-Warning--Require citedate: DBLP:conf/nips/TompsonJLB14
-Warning--Require citedate: DBLP:journals/jmlr/CollobertWBKKK11
-Warning--Require address: DBLP:conf/emnlp/BordesCW14
-Warning--Require citedate: DBLP:conf/emnlp/BordesCW14
-Warning--Require address: DBLP:conf/acl/JeanCMB15
-Warning--Require citedate: DBLP:conf/acl/JeanCMB15
-Warning--Require citedate: DBLP:conf/nips/SutskeverVL14
-Warning--Require address: DBLP:conf/cvpr/DengDSLL009
-Warning--Require citedate: DBLP:conf/cvpr/DengDSLL009
-Warning--Require address: DBLP:conf/emnlp/WangSMHLB18
-Warning--Require citedate: DBLP:conf/emnlp/WangSMHLB18
-Warning--Require citedate: DBLP:conf/nips/MikolovSCCD13
-Warning--Require address: DBLP:conf/emnlp/PenningtonSM14
-Warning--Require citedate: DBLP:conf/emnlp/PenningtonSM14
 Warning--Require journal: tenney2018you
-Warning--Require address: DBLP:conf/naacl/PetersNIGCLZ18
-Warning--Require citedate: DBLP:conf/naacl/PetersNIGCLZ18
-Warning--Require address: DBLP:conf/icml/CollobertW08
-Warning--Require citedate: DBLP:conf/icml/CollobertW08
-Warning--Require address: DBLP:conf/icml/Caruana93
-Warning--Require address: DBLP:conf/acl/DongWHYW15
-Warning--Require citedate: DBLP:conf/acl/DongWHYW15
-Warning--Require address: DBLP:conf/ijcai/LiuQH16
-Warning--Require citedate: DBLP:conf/ijcai/LiuQH16
-Warning--Require address: DBLP:conf/acl/LiuQH17
-Warning--Require citedate: DBLP:conf/acl/LiuQH17
-Warning--Require address: DBLP:conf/acl/SogaardG16
-Warning--Require citedate: DBLP:conf/acl/SogaardG16
-Warning--Require citedate: DBLP:conf/nips/McCannBXS17
-Warning--Require address: DBLP:conf/iclr/SubramanianTBP18
-Warning--Require citedate: DBLP:conf/iclr/SubramanianTBP18
-Warning--Require address: DBLP:conf/ijcai/ZhengCQ18
-Warning--Require citedate: DBLP:conf/ijcai/ZhengCQ18
-Warning--Require address: DBLP:conf/cvpr/MisraSGH16
-Warning--Require citedate: DBLP:conf/cvpr/MisraSGH16
 Warning--Require journal: 1705.08142
-Warning--Require citedate: Caruana1997
-Warning--Require address: DBLP:conf/nips/ArgyriouEP06
-Warning--Require citedate: DBLP:conf/nips/ArgyriouEP06
-Warning--Require citedate: DBLP:conf/colt/LouniciPTG09
-Warning--Require citedate: DBLP:journals/jmlr/EvgeniouMP05
-Warning--Require address: DBLP:conf/nips/JacobBV08
-Warning--Require citedate: DBLP:conf/nips/JacobBV08
-Warning--Require address: DBLP:conf/icassp/DengHK13
-Warning--Require citedate: DBLP:conf/icassp/DengHK13
-Warning--Require citedate: DBLP:journals/corr/RamsundarKRWKP15
-Warning--Require address: DBLP:conf/iclr/MeyersonM18
-Warning--Require citedate: DBLP:conf/iclr/MeyersonM18
-Warning--Require address: DBLP:conf/cvpr/KendallGC18
-Warning--Require citedate: DBLP:conf/cvpr/KendallGC18
 Warning--Require booktitle: Hinton:1986:DR:104279.104287
-Warning--Require citedate: Hinton:1986:DR:104279.104287
-Warning--Require address: DBLP:conf/nips/BengioDV00
-Warning--Require citedate: DBLP:conf/nips/BengioDV00
-Warning--Require address: DBLP:conf/emnlp/Kim14
-Warning--Require citedate: DBLP:conf/emnlp/Kim14
-Warning--Require address: DBLP:conf/icml/GehringAGYD17
-Warning--Require citedate: DBLP:conf/icml/GehringAGYD17
-Warning--Require address: DBLP:conf/interspeech/MikolovKBCK10
-Warning--Require citedate: DBLP:conf/interspeech/MikolovKBCK10
-Warning--Require address: DBLP:conf/emnlp/WenGMSVY15
-Warning--Require citedate: DBLP:conf/emnlp/WenGMSVY15
-Warning--Require address: DBLP:conf/acl/MaH16
-Warning--Require citedate: DBLP:conf/acl/MaH16
-Warning--Require citedate: DBLP:journals/corr/BahdanauCB14
-Warning--Require citedate: DBLP:conf/nips/VaswaniSPUJGKP17
-Warning--Require address: DBLP:conf/emnlp/TangMRS18
-Warning--Require citedate: DBLP:conf/emnlp/TangMRS18
 Warning--Require journal: guo2019gaussian
-Warning--Require address: DBLP:conf/lrec/ConneauK18
-Warning--Require citedate: DBLP:conf/lrec/ConneauK18
-Warning--Require address: DBLP:conf/cvpr/HeZRS16
-Warning--Require citedate: DBLP:conf/cvpr/HeZRS16
-Warning--Require citedate: DBLP:journals/tacl/KiperwasserB18
-Warning--Require address: DBLP:conf/acl/BlitzerDP07
-Warning--Require citedate: DBLP:conf/acl/BlitzerDP07
-Warning--Require address: DBLP:conf/acl/MaasDPHNP11
-Warning--Require citedate: DBLP:conf/acl/MaasDPHNP11
-Warning--Require address: DBLP:conf/acl/PangL05
-Warning--Require citedate: DBLP:conf/acl/PangL05
-Warning--Require citedate: DBLP:conf/nips/2014
-Warning--Require address: DBLP:conf/emnlp/2014
-Warning--Require address: DBLP:conf/acl/2015-1
-Warning--Require citedate: DBLP:conf/acl/2015-1
-Warning--Require address: DBLP:conf/cvpr/2016
-Warning--Require citedate: DBLP:conf/cvpr/2016
-Warning--Require address: DBLP:conf/iclr/2018
-Warning--Require citedate: DBLP:conf/iclr/2018
-You've used 71 entries,
-            3079 wiz_defined-function locations,
-            1272 strings with 32059 characters,
-and the built_in function-call counts, 125343 in all, are:
+You've used 65 entries,
+            3071 wiz_defined-function locations,
+            1130 strings with 26161 characters,
+and the built_in function-call counts, 122374 in all, are:
 = -- 14030
-> -- 248
+> -- 242
 < -- 549
-+ -- 11418
++ -- 11412
 - -- 828
-* -- 3423
-:= -- 14363
+* -- 2915
+:= -- 14157
 add.period$ -- 0
-call.type$ -- 71
+call.type$ -- 65
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 165
+cite$ -- 69
 duplicate$ -- 17667
-empty$ -- 4443
+empty$ -- 4099
 format.name$ -- 708
-if$ -- 33528
+if$ -- 32642
 int.to.chr$ -- 0
-int.to.str$ -- 71
+int.to.str$ -- 65
 missing$ -- 0
-newline$ -- 240
+newline$ -- 222
 num.names$ -- 65
-pop$ -- 1691
+pop$ -- 1639
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 931
+skip$ -- 868
 stack$ -- 0
 substring$ -- 14992
-swap$ -- 3210
+swap$ -- 2730
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 94
+warning$ -- 4
 while$ -- 1567
-width$ -- 73
-write$ -- 967
-(There were 95 warnings)
+width$ -- 67
+write$ -- 771
+(There were 5 warnings)

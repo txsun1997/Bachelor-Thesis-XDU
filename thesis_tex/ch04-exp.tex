@@ -44,7 +44,7 @@
 
 \section{实验结果}
 \label{sec:results}
-实验结果如表~\ref{tb:results}~所示，我们的四个多任务模型在十六个文本分类任务上均超过了单任务训练的表现，验证了多任务学习在Transformer上的有效性。其中，L-I结构在四种多任务架构中表现最好，S-P结构表现最差。L-I结构和L-E结构取得的较好结果表明，在每一层都形成任务特定表示的做法相比在网络的顶层获取特征更为合理。同时，注意到S-C结构也能达到较好的准确率，这也肯定了之前被广泛使用的硬共享模式的效果，但随着任务之间差异性的增大，我们有理由认为L-I和L-E的共享架构会超越传统架构。
+实验结果如表~\ref{tb:results}~所示，我们的四个多任务模型在十六个文本分类任务上均超过了单任务训练的表现，验证了多任务学习在Transformer上的有效性。其中，L-I结构在四种多任务架构中表现最好，S-P结构表现最差。L-I结构和L-E结构取得的较好结果表明，在每一层都形成任务特定表示的做法相比在网络的顶层获取特征更为合理。同时，注意到S-C结构也能达到较好的准确率，这也肯定了之前被广泛使用的硬共享模式的效果，但随着任务之间差异性的增大，我们有理由认为L-I和L-E的共享架构相比传统架构将表现出更大的优越性。
 
 \begin{table}[htb]
 	\centering
@@ -77,5 +77,59 @@
 	\end{tabular}
 	\label{tb:results}
 \end{table}
+
+在实践中，神经网络的层数通常是一个比较重要的超参数，模型性能有时会由于层数的不同而产生较大差异。之前的实验中使用的模型均为4层Transformer，为探究多任务Transformer结构对网络层数的敏感性，我们实验了四种结构在不同层数下的平均分类准确率，结果如图~\ref{fig:layer_dis}~所示。
+
+可见，在各个层数设定中，逐层共享结构（L-I结构和L-E结构）均优于传统的硬共享结构（S-P结构和S-C结构），且L-I结构在三种设定中都取得了最优准确率，这一实验结果证明了模型的鲁棒性。
+
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+	xlabel={层数},
+	ylabel={准确率},
+	legend style={
+		cells={anchor=east},
+		legend pos=outer north east,
+	}
+]
+
+\addplot coordinates{
+	(2, 0.8547)
+	(4, 0.8594)
+	(6, 0.8523)
+};
+
+\addplot coordinates{
+	(2, 0.8539)
+	(4, 0.8553)
+	(6, 0.8500)
+};
+
+\addplot [mark=x]coordinates {
+	(2, 0.8451)
+	(4, 0.8381)
+	(6, 0.8167)
+};
+
+\addplot coordinates{
+	(2, 0.8484)
+	(4, 0.8511)
+	(6, 0.8478)
+};
+\legend{L-I结构,L-E结构,S-P结构,S-C结构}
+\end{axis}
+\end{tikzpicture}
+\caption{网络层数对测试集准确率的影响}
+\label{fig:layer_dis}
+\end{figure}
+
 \section{实验分析}
 \label{sec:analysis}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.4]{L-E-attn.png}
+\caption{L-E结构注意力可视化}
+\label{fig:l-e-attn}
+\end{figure}
