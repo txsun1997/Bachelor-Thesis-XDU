@@ -1758,7 +1758,7 @@ FUNCTION {inbook.impl} {                          % void Entry::inbook_impl() {
   } if$                                           %   }
   true output.year                                %   output_year(true);
   false output.pages                              %   output_pages(false);
-  false output.citedate                           %   output_citedate(false);
+%  false output.citedate                           %   output_citedate(false);
 %  false output.url.or.doi                         %   output_url_or_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
@@ -1798,7 +1798,7 @@ FUNCTION {article} {                              % void Entry::article() {
   false output.volume                             %   output_volume(false);
   false output.number                             %   output_number(false);
   false output.pages                              %   output_pages(false);
-  false output.citedate                           %   output_citedate(false);
+%  false output.citedate                           %   output_citedate(false);
 %  false output.url.or.doi                         %   output_url_or_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
@@ -1815,8 +1815,8 @@ FUNCTION {news} {                                 % void Entry::news() {
   cap.comma write$                                %   write(cap_comma);
   true output.date                                %   output_date(true);
   false output.number                             %   output_number(false);
-  false output.citedate                           %   output_citedate(false);
-  false output.url.or.doi                         %   output_url_or_doi(false);
+%  false output.citedate                           %   output_citedate(false);
+%  false output.url.or.doi                         %   output_url_or_doi(false);
   end.bibitem                                     %   end_bibitem();
 }                                                 % }
                                                   %
