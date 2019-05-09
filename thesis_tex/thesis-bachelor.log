@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.4.20)  8 MAY 2019 22:12
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018/W32TeX) (preloaded format=xelatex 2019.4.20)  8 MAY 2019 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2277,18 +2277,22 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.38731pt
 (hyperref)                removed on input line 1.
 
-[7]
-Underfull \vbox (badness 1248) has occurred while \output is active []
-
- [8]
+[7] [8]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-[9]
+Underfull \vbox (badness 6300) has occurred while \output is active []
+
+ [9]
 File: mtl_int.png Graphic file (type bmp)
 <mtl_int.png>
- [10] [11] [12] [13] [14] [15]) (./ch03-model.tex [16]
+
+[10] [11] [12] [13] [14]
+Underfull \vbox (badness 1490) has occurred while \output is active []
+
+ [15])
+(./ch03-model.tex [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 1.
@@ -2329,24 +2333,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.38731pt
 (hyperref)                removed on input line 1.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [27
+[27
 
 ]
 Overfull \hbox (9.17197pt too wide) in paragraph at lines 20--43
  [][] 
  []
 
-[28]
+[28] [29]
 File: L-E-attn.png Graphic file (type bmp)
 <L-E-attn.png>
-
-Underfull \vbox (badness 3769) has occurred while \output is active []
-
- [29])
-(./ch05-conclusions.tex [30]
+) (./ch05-conclusions.tex [30]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 1.
@@ -2410,7 +2407,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 81.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
 Package rerunfilecheck Info: File `thesis-bachelor.out' has not changed.
-(rerunfilecheck)             Checksum: E739486D508AC0ABB93F554DA66A15CD.
+(rerunfilecheck)             Checksum: D80FA429701A01B33FA6A919C0B16550.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2423,10 +2420,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 81.
 ### semi simple group (level 1) entered at line 48 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 51259 strings out of 492970
- 1155697 string characters out of 6137298
- 1326662 words of memory out of 5000000
- 54522 multiletter control sequences out of 15000+600000
+ 51260 strings out of 492970
+ 1155710 string characters out of 6137298
+ 1325705 words of memory out of 5000000
+ 54523 multiletter control sequences out of 15000+600000
  541311 words of font info for 128 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  62i,17n,103p,10444b,2521s stack positions out of 5000i,500n,10000p,200000b,80000s
