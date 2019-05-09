@@ -42,23 +42,29 @@
 	\label{tb:dataset}
 \end{table}
 
-数据集中的部分样本可见表~\ref{tb:examples}。
+这里所有数据集中的样本都被标注为两个类别，分别表示情感极性的正向和负向。如表~\ref{tb:dataset}~所示，虽然各数据集均为情感分析任务，且数据规模相当，但其样本来自不同的产品领域，平均句子长度和词汇量大小也各不相同，因此各个任务的难度也有所差别。
+
+表~\ref{tb:examples}~给出了其中几个数据集中的部分样例。
 \begin{table}[htb]
 \centering
 \caption{数据集中的部分样本}
-\begin{tabular}{cc}
+\begin{tabular}{m{1.5cm}m{10cm}m{2cm}}
 \toprule[2pt]
-领域&样例\\
+领域 & 样例 & \ 类别\\
 \midrule[1pt]
-Books&blabla...\\
-Mag&blabla...\\
+Books&It is a very dry book and hard to stay interested in. I am barely able to stay awake while reading it. It does have some interesting things.& \ negative\\
+Mag&The magazine was shipped in a timely manner, i would use this vendor again.& \ positive\\
+Elec&Very pleased with the high capacity cartridge with my epson stylus cx6600.& \ positive\\
+MR&Just a big mess of a movie, full of images and events, but no tension or surprise.& \ negative\\
+Health&Its quality is cheap and poorly made. I bought two thinking it was a good deal but I threw them out after 2 days because the on/off switch didn't work.& \ negative\\
 \bottomrule[2pt]
 \end{tabular}
 \label{tb:examples}
 \end{table}
+
 \section{实验结果}
 \label{sec:results}
-实验结果如表~\ref{tb:results}~所示，我们的四个多任务模型在十六个文本分类任务上均超过了单任务训练的表现，验证了多任务学习在Transformer上的有效性。其中，L-I结构在四种多任务架构中表现最好，S-P结构表现最差。L-I结构和L-E结构取得的较好结果表明，在每一层都形成任务特定表示的做法相比在网络的顶层获取特征更为合理。同时，注意到S-C结构也能达到较好的准确率，这也肯定了之前被广泛使用的硬共享模式的效果，但随着任务之间差异性的增大，我们有理由认为L-I和L-E的共享架构相比传统架构将表现出更大的优越性。
+使用训练集对单任务基线模型以及四种多任务Transformer模型进行训练，选择在验证集上表现最好的模型进行测试。测试集上各模型的分类准确率如表~\ref{tb:results}~所示。可见，本文的四个多任务模型在十六个文本分类任务上均超过了单任务训练的表现，验证了多任务学习在Transformer模型上的有效性。其中，L-I结构在四种多任务架构中表现最好，S-P结构表现最差。注意到两种逐层共享的结构：L-I结构和L-E结构，取得了相对传统硬共享结构（S-P结构和S-C结构）更高的分类准确率，这说明在每一层都形成任务特定表示的模式相比在网络的顶层获取特征更为合理。随着任务之间差异性的增大，我们有理由认为L-I结构和L-E结构的共享模式将表现出更大的优越性。
 
 \begin{table}[htb]
 	\centering
@@ -92,58 +98,71 @@ Mag&blabla...\\
 	\label{tb:results}
 \end{table}
 
-在实践中，神经网络的层数通常是一个比较重要的超参数，模型性能有时会由于层数的不同而产生较大差异。之前的实验中使用的模型均为4层Transformer，为探究多任务Transformer结构对网络层数的敏感性，我们实验了四种结构在不同层数下的平均分类准确率，结果如图~\ref{fig:layer_dis}~所示。
+另外，在实践中，神经网络的层数通常是一个比较重要的超参数，模型性能有时会由于层数的不同而产生较大差异。之前的实验中使用的模型均为4层Transformer，为探究多任务Transformer结构对网络层数的敏感性，我们实验了四种结构在不同层数下的平均分类准确率，结果如图~\ref{fig:layer_dis}~所示。
 
-可见，在各个层数设定中，逐层共享结构（L-I结构和L-E结构）均优于传统的硬共享结构（S-P结构和S-C结构），且L-I结构在三种设定中都取得了最优准确率，这一实验结果证明了模型的鲁棒性。
+在各个层数设定中，逐层共享结构（L-I结构和L-E结构）均优于传统的硬共享结构（S-P结构和S-C结构），且L-I结构在三种设定中都取得了最优准确率，这一实验结果证明了模型的鲁棒性，也表明了表~\ref{tb:results}~数据的可信性。另外，在二、四、六层三种设定中，模型被设定为四层在除S-P结构中都在测试集上表现出了最高分类准确率，而S-P结构则随着层数增长而准确率下降，没有获得模型复杂度增长带来的收益。
 
-\begin{figure}[htb]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[
 	xlabel={层数},
 	ylabel={准确率},
 	legend style={
 		cells={anchor=east},
 		legend pos=outer north east,
 	}
-]
-
-\addplot coordinates{
-	(2, 0.8547)
-	(4, 0.8594)
-	(6, 0.8523)
-};
-
-\addplot coordinates{
-	(2, 0.8539)
-	(4, 0.8553)
-	(6, 0.8500)
-};
-
-\addplot [mark=x]coordinates {
-	(2, 0.8451)
-	(4, 0.8381)
-	(6, 0.8167)
-};
-
-\addplot coordinates{
-	(2, 0.8484)
-	(4, 0.8511)
-	(6, 0.8478)
-};
-\legend{L-I结构,L-E结构,S-P结构,S-C结构}
-\end{axis}
-\end{tikzpicture}
-\caption{网络层数对测试集准确率的影响}
-\label{fig:layer_dis}
+	]
+	
+	\addplot coordinates{
+		(2, 0.8547)
+		(4, 0.8594)
+		(6, 0.8523)
+	};
+	
+	\addplot coordinates{
+		(2, 0.8539)
+		(4, 0.8553)
+		(6, 0.8500)
+	};
+	
+	\addplot [mark=x]coordinates {
+		(2, 0.8451)
+		(4, 0.8381)
+		(6, 0.8167)
+	};
+	
+	\addplot coordinates{
+		(2, 0.8484)
+		(4, 0.8511)
+		(6, 0.8478)
+	};
+	\legend{L-I结构,L-E结构,S-P结构,S-C结构}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{网络层数对测试集准确率的影响}
+	\label{fig:layer_dis}
 \end{figure}
-
 \section{实验分析}
 \label{sec:analysis}
+Transformer模型由于基于注意力机制，可以将注意力分数矩阵进行可视化来揭示模型的机理，因而相比其他深度模型具备较好的可解释性。另外，在多任务学习中，相关任务之间的交互关系一直是很多研究人员关注的重点问题。
+
+考虑到以上两点，本节根据两个来自不同领域的示例输入对L-E结构中最后一层的注意力进行可视化分析，以探究模型有效的原因以及任务之间的关系。注意力矩阵的可视化结果如图~\ref{fig:l-e-attn}~所示，每一行代表一个注意力头，每一列代表输入中的一个位置，其中前16个位置为任务标识符，后续位置为句子中的各个单词，两段输入文本分别来自杂志（Mag）数据集和电影评论（MR）数据集。
 
 \begin{figure}[htb]
 \centering
-\includegraphics[scale=0.4]{L-E-attn.png}
+
+\subfloat[杂志（Mag）]{
+	\centering
+	\includegraphics[scale=0.4]{viz-mag.png}
+}
+
+\subfloat[电影评论（MR）]{
+	\centering
+	\includegraphics[scale=0.4]{viz-mr.png}
+}
 \caption{L-E结构注意力可视化}
 \label{fig:l-e-attn}
 \end{figure}
+
+可见，杂志领域情感分析任务与音乐和厨具领域的情感分析任务有很强的相关性，而电影评论情感分析任务与影碟产品领域的任务最为相似。同时还可以注意到，L-E模型还注意到了输入句子中具有较强情感指示性的单词，如图~\ref{fig:l-e-attn}~(a)中的disappointed（失望）以及图~\ref{fig:l-e-attn}~(b)中的fascinating（惊艳的），这在一定程度上解释了模型有效的原因。

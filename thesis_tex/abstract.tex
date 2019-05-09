@@ -1,32 +1,31 @@
 \begin{cabstract}
-	文本表示是自然语言处理的必要任务，表示方法的好坏对于模型性能至关重要。为得到泛化能力强的文本表示，近年来多任务学习被广泛应用在各大自然语言处理任务中，通过联合学习多个相关任务来共享任务间的知识，从而提升模型在各个任务上的表现。
+	文本表示是自然语言处理的必要任务，表示方法的好坏对于模型性能起着至关重要的作用。为得到泛化能力强的文本表示，近年来多任务学习被广泛应用在各大自然语言处理任务中，通过联合学习多个相关任务来共享任务间的知识，从而提升模型在各个任务上的表现。
 	
-	近期，一种新型的神经网络模型Transformer因其在机器翻译和迁移学习等方面取得的巨大成功开始在自然语言处理领域流行。然而，之前的工作大都在卷积网络和循环网络上研究多任务学习的共享结构，目前还很少有工作探究Transformer上的多任务共享架构。本文在Transformer上探索了句子级的多任务文本表示方法：首先设计了两种传统的硬共享结构，接着提出了两种逐层共享结构，能够在每一层根据输入动态地抽取其他任务的特征来形成任务特定表示。我们在16个情感分析任务上进行了实验，对比单任务模型，四种多任务模型的准确率均取得了较大提升，其中，本文提出的两种逐层共享结构均超越了传统共享结构。
+	近年来，一种新型的神经网络模型Transformer因其在机器翻译和迁移学习等方面取得的巨大成功开始在自然语言处理领域流行。然而，之前的工作大都在卷积网络和循环网络上研究多任务学习的共享结构，目前还很少有工作探究Transformer上的多任务共享架构。本文在Transformer上探索了句子级的多任务文本表示方法：首先设计了两种传统的硬共享结构，接着提出了两种逐层共享结构，能够在每一层根据输入动态地抽取其他任务的特征来形成任务特定表示。我们在16个情感分析任务上进行了实验，对比单任务模型，四种多任务模型的准确率均取得了较大提升，其中，本文提出的两种逐层共享结构均超越了传统共享结构。实例可视化分析的结果解释了模型的有效性，并展示了任务之间的相关性。
 	
-	最后，我们对模型进行了实例分析，总结了现有工作，并展望了未来多任务学习在自然语言处理以及深度学习的发展。
+	最后，总结了本文工作与已有研究的异同，概括了本文的创新性与局限性，并展望了未来多任务学习在自然语言处理领域的发展前景。
 \end{cabstract}
 
 
 \begin{ckeywords}
-	自然语言处理\ \ \ \ \ \ 表示学习\ \ \ \ \ \ 多任务学习
+	自然语言处理\ \ \ \ \ \ 多任务学习\ \ \ \ \ \ Transformer
 \end{ckeywords}
 
 %\cthesistype{应用基础技术}
 
 
 \begin{eabstract}
-	Language representation is an essential task for natural language processing(NLP). To learn general representation, multi-task learning(MTL) methods, which allow models to share knowledge in related tasks by joint learning, are applied to many NLP tasks.
+	Language representation is an essential task for natural language processing(NLP). Representation method plays a crucial role in the performance of the model. To obtain a general representation, multi-task learning(MTL) methods, which allow models to share knowledge between related tasks, are widely applied to many NLP tasks.
 	
-	Recently, Transformer, a novel neural network based on self-attention mechanism, has become popular in NLP due to its great success in machine translation and transfer learning. Most of previous works focus on designing multi-task sharing scheme for convolutional networks and recurrent networks. However, there is few discussion on multi-task learning in Transformer. In this paper, we propose 4 sentence-level multi-task transformer architectures: two traditional hard sharing architectures and two layerwise sharing architectures, which can dynamically combine features of related tasks and generate task-specific representation based on the input at each layer. We conduct experiments on 16 sentiment analysis tasks. Our 4 multi-task transformers consistently outperform transformers trained with single task. Besides, the proposed layerwise sharing architectures achieve better accuracy than traditional architectures.
+	Recently, Transformer, a novel neural network based on self-attention mechanism, has become popular in the field of NLP due to its great success in machine translation and transfer learning. However, most of the previous work has focused on designing multi-task sharing scheme for convolutional networks and recurrent networks. There is little exploration on multi-task learning in Transformer. In this paper, we propose 4 sentence-level multi-task transformer architectures: two traditional hard sharing architectures and two layerwise sharing architectures, which can dynamically extract features of related tasks and form task-specific representation based on the input at each layer. We conduct experiments on 16 sentiment analysis tasks. Our 4 multi-task transformers consistently outperform transformers trained with single task. Besides, the proposed layerwise sharing architectures achieve better accuracy than traditional architectures. Case study and visualization explain the validity of the proposed models and demonstrate the relationship between tasks.
 	
-	Finally, we conduct case study for our proposed model, summarize the existing works, and look forward to the future development of multi-task learning in natural language processing and deep learning.
-	
+	Finally, we summarize the similarities and differences between our proposed models and existing work, point out our contributions and defects.
 	
 \end{eabstract}
 
 
 \begin{ekeywords}
-	Natural Language Processing\ \ \ \ Deep Learning\ \ \ \ Multi-Task Learning
+	Natural Language Processing\ \ \ \ Multi-Task Learning\ \ \ \ Transformer
 \end{ekeywords}
 
 %\ethesistype{Applied Basic Technology}
