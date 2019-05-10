@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  9 MAY 2019 23:36
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  10 MAY 2019 16:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1400,35 +1400,35 @@ File: xunicode-extra.def 2017/05/15 v3.4.8 extra definition for xunicode
 (e:/texlive/2017/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
 File: xeCJK.cfg 2017/05/15 v3.4.8 Configuration file for xeCJK package
 ))
-\g__fontspec_family_AdobeSongStd_int=\count268
+\g__fontspec_family_SimSun_int=\count268
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font "Adobe Song Std/I" (it probably doesn't exist).
-.................................................
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font "Adobe Song Std/BI" (it probably doesn't exist).
+. Could not resolve font "SimSun/I" (it probably doesn't exist).
 .................................................
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font "Adobe Song Std/I" (it probably doesn't exist).
+. Could not resolve font "SimSun/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "SimSun/I" (it probably doesn't exist).
 .................................................
 .................................................
 . fontspec info: "defining-font"
 . 
-. Font family 'AdobeSongStd(0)' created for font 'Adobe Song Std' with options
+. Font family 'SimSun(0)' created for font 'SimSun' with options
 . [Mapping=tex-text,Script={CJK},AutoFakeBold={4}].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
-. - 'normal' (m/n) with NFSS spec.: <->"Adobe Song
-. Std/OT:script=hani;language=DFLT;mapping=tex-text;"
+. - 'normal' (m/n) with NFSS spec.:
+. <->"SimSun/OT:script=hani;language=DFLT;mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
-. - 'bold' (bx/n) with NFSS spec.: <->"Adobe Song
-. Std/OT:script=hani;language=DFLT;embolden=4;mapping=tex-text;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->"SimSun/OT:script=hani;language=DFLT;embolden=4;mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
 \g__fontspec_family_TimesNewRoman_int=\count269
@@ -2025,7 +2025,7 @@ your preamble.
 
 (./abstract.tex)
 Underfull \hbox (badness 10000) detected at line 49
-\TU/AdobeSongStd(0)/bx/n/12.045 班 级
+\TU/SimSun(0)/bx/n/12.045 班 级
  []
 
 LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 49.
@@ -2052,49 +2052,46 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.43146> not available
 
 
 Underfull \hbox (badness 10000) detected at line 49
-\TU/AdobeSongStd(0)/bx/n/12.045 学 号
+\TU/SimSun(0)/bx/n/12.045 学 号
  []
 
 File: xdubadge.eps Graphic file (type eps)
 <xdubadge.eps>
-Missing character: There is no   in font AdobeHeitiStd-Regular/OT!
-\g__fontspec_family_AdobeHeitiStd_int=\count317
+\g__fontspec_family_SimHei_int=\count317
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font "Adobe Heiti Std/I" (it probably doesn't exist).
-.................................................
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font "Adobe Heiti Std/BI" (it probably doesn't exist).
+. Could not resolve font "SimHei/I" (it probably doesn't exist).
 .................................................
 .................................................
 . fontspec info: "no-font-shape"
 . 
-. Could not resolve font "Adobe Heiti Std/I" (it probably doesn't exist).
+. Could not resolve font "SimHei/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "SimHei/I" (it probably doesn't exist).
 .................................................
 .................................................
 . fontspec info: "defining-font"
 . 
-. Font family 'AdobeHeitiStd(0)' created for font 'Adobe Heiti Std' with
-. options [Mapping=tex-text,Script={CJK},AutoFakeBold={4}].
+. Font family 'SimHei(0)' created for font 'SimHei' with options
+. [Mapping=tex-text,Script={CJK},AutoFakeBold={4}].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
-. - 'normal' (m/n) with NFSS spec.: <->"Adobe Heiti
-. Std/OT:script=hani;language=DFLT;mapping=tex-text;"
+. - 'normal' (m/n) with NFSS spec.:
+. <->"SimHei/OT:script=hani;language=DFLT;mapping=tex-text;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
-. - 'bold' (bx/n) with NFSS spec.: <->"Adobe Heiti
-. Std/OT:script=hani;language=DFLT;embolden=4;mapping=tex-text;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->"SimHei/OT:script=hani;language=DFLT;embolden=4;mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
-Missing character: There is no   in font AdobeHeitiStd-Regular/OT:script=hani;l
-anguage=DFLT;mapping=tex-text;!
 File: xdlogo.eps Graphic file (type eps)
  <xdlogo.eps>
 Underfull \hbox (badness 10000) detected at line 49
-\TU/AdobeSongStd(0)/bx/n/16.06 题 目
+\TU/SimSun(0)/bx/n/16.06 题 目
  []
 
 LaTeX Font Info:    Calculating math sizes for size <16.06> on input line 49.
@@ -2112,16 +2109,14 @@ LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16.06> not available
 
 
 Underfull \hbox (badness 10000) detected at line 49
-\TU/AdobeSongStd(0)/bx/n/16.06 学 院
+\TU/SimSun(0)/bx/n/16.06 学 院
  []
 
 
 Underfull \hbox (badness 10000) detected at line 49
-\TU/AdobeSongStd(0)/bx/n/16.06 专 业
+\TU/SimSun(0)/bx/n/16.06 专 业
  []
 
-Missing character: There is no   in font AdobeHeitiStd-Regular/OT:script=hani;l
-anguage=DFLT;mapping=tex-text;!
 (e:/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
@@ -2137,8 +2132,6 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 49.
 
-Missing character: There is no   in font AdobeHeitiStd-Regular/OT:script=hani;l
-anguage=DFLT;mapping=tex-text;!
 [1
 
 
@@ -2157,14 +2150,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 52.
 
-Missing character: There is no   in font AdobeHeitiStd-Regular/OT:script=hani;l
-anguage=DFLT;embolden=4;mapping=tex-text;!
-(./thesis-bachelor.toc
-Missing character: There is no   in font AdobeHeitiStd-Regular/OT:script=hani;l
-anguage=DFLT;embolden=4;mapping=tex-text;!
-Missing character: There is no   in font AdobeHeitiStd-Regular/OT:script=hani;l
-anguage=DFLT;mapping=tex-text;!
- [5])
+(./thesis-bachelor.toc [5])
 \tf@toc=\write5
 \openout5 = `thesis-bachelor.toc'.
 
@@ -2178,13 +2164,37 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.38731pt
 (hyperref)                removed on input line 1.
 
-*************************************************
-* xeCJK warning: "CJKfamily-Unknown"
-* 
-* Unknown CJK family `\CJKttdefault' is being ignored.
-* 
-* Try to use `\setCJKmonofont[...]{...}' to define it.
-*************************************************
+\g__fontspec_family_KaiTi_GB2312_int=\count318
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "KaiTi_GB2312/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "KaiTi_GB2312/BI" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font "KaiTi_GB2312/I" (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'KaiTi_GB2312(0)' created for font 'KaiTi_GB2312' with options
+. [Mapping=tex-text,Script={CJK},AutoFakeBold={4}].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->"KaiTi_GB2312/OT:script=hani;language=DFLT;mapping=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.:
+. <->"KaiTi_GB2312/OT:script=hani;language=DFLT;embolden=4;mapping=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+.................................................
 [1
 
 
@@ -2213,7 +2223,7 @@ Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Underfull \vbox (badness 6110) has occurred while \output is active []
+Underfull \vbox (badness 6300) has occurred while \output is active []
 
  [9]
 File: mtl_int.png Graphic file (type QTm)
@@ -2236,7 +2246,7 @@ File: tf.png Graphic file (type QTm)
 <use  "tf.png" > [17
 
 ]
-Underfull \vbox (badness 1205) has occurred while \output is active []
+Underfull \vbox (badness 1221) has occurred while \output is active []
 
  [18]
 [19]
@@ -2245,7 +2255,7 @@ File: tf_s.png Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-Underfull \vbox (badness 1286) has occurred while \output is active []
+Underfull \vbox (badness 1533) has occurred while \output is active []
 
  [22]
 [23] [24]
@@ -2344,11 +2354,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 82.
 ### semi simple group (level 1) entered at line 49 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 49922 strings out of 493005
- 1116572 string characters out of 6137955
- 1284804 words of memory out of 5000000
- 53160 multiletter control sequences out of 15000+600000
- 14647 words of font info for 116 fonts, out of 8000000 for 9000
+ 49946 strings out of 493005
+ 1114631 string characters out of 6137955
+ 1285239 words of memory out of 5000000
+ 53178 multiletter control sequences out of 15000+600000
+ 14663 words of font info for 118 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  62i,17n,103p,10446b,2502s stack positions out of 5000i,500n,10000p,200000b,80000s
 
