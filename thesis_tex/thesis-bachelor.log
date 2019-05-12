@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  10 MAY 2019 16:56
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  12 MAY 2019 21:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2278,16 +2278,20 @@ Overfull \hbox (9.17197pt too wide) in paragraph at lines 20--43
  [][] 
  []
 
-[28] [29] [30]
+[28] [29]
+Underfull \vbox (badness 2799) has occurred while \output is active []
+
+ [30]
 File: viz-mag.png Graphic file (type QTm)
- <use  "viz-mag.png" >
-Overfull \hbox (41.75186pt too wide) in paragraph at lines 158--159
+
+<use  "viz-mag.png" >
+Overfull \hbox (41.75186pt too wide) in paragraph at lines 179--180
  [][] 
  []
 
 File: viz-mr.png Graphic file (type QTm)
 <use  "viz-mr.png" >
-Overfull \hbox (41.75186pt too wide) in paragraph at lines 163--164
+Overfull \hbox (41.75186pt too wide) in paragraph at lines 184--185
  [][] 
  []
 
@@ -2354,10 +2358,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 82.
 ### semi simple group (level 1) entered at line 49 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 49946 strings out of 493005
- 1114631 string characters out of 6137955
+ 49947 strings out of 493005
+ 1114642 string characters out of 6137955
  1285239 words of memory out of 5000000
- 53178 multiletter control sequences out of 15000+600000
+ 53179 multiletter control sequences out of 15000+600000
  14663 words of font info for 118 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  62i,17n,103p,10446b,2502s stack positions out of 5000i,500n,10000p,200000b,80000s

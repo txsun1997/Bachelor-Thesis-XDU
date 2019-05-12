@@ -34,6 +34,6 @@
 \contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{五}章\hskip 1ex总结与展望}{33}{chapter.5}
 \contentsline {section}{\numberline {5.1}工作总结}{33}{section.5.1}
 \contentsline {section}{\numberline {5.2}未来展望}{34}{section.5.2}
-\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 致谢}{35}{section*.25}
-\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 参考文献}{37}{section*.26}
+\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 致谢}{35}{section*.26}
+\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 参考文献}{37}{section*.27}
 \contentsfinish 

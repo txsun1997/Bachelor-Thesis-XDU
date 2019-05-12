@@ -98,6 +98,27 @@ Health&Its quality is cheap and poorly made. I bought two thinking it was a good
 	\label{tb:results}
 \end{table}
 
+值得注意的是，本文的四种多任务Transformer结构相比单任务学习下的设定并不会增加过多的参数，这一特点与硬共享模式类似，相对的，传统的软共享模式常常需要很多额外的参数。表~\ref{tb:params}~给出了单任务Transformer以及四种多任务Transformer结构的参数量，各模型的网络层数均为四层，参数量的统计忽略了词嵌入、位置编码等模型无关的参数。
+
+\begin{table}[htb]
+	\centering
+	\caption{各模型参数量对比}
+	\begin{tabular}{cccc}
+		\toprule[2pt]
+		类型&模型&参数量&相对增量\\
+		\midrule[1pt]
+		单任务&Transformer&2,773,150‬&-\\
+		\multirow{4}*{多任务}&S-P结构&2,782,180&$+0.32\%$\\
+		&S-C结构&2,782,480&$+0.34\%$\\
+		&L-I结构&2,786,980&$+0.50\%$\\
+		&L-E结构&2,786,980&$+0.50\%$\\
+		\bottomrule[2pt]
+	\end{tabular}
+	\label{tb:params}
+\end{table}
+
+可见，本文提出的几种多任务Transformer结构相比单任务模型并不会增加过多的参数，即使在十六个任务的情形下，最复杂的L-I结构和L-E结构也仅增加了0.5\%的参数量。
+
 另外，在实践中，神经网络的层数通常是一个比较重要的超参数，模型性能有时会由于层数的不同而产生较大差异。之前的实验中使用的模型均为4层Transformer，为探究多任务Transformer结构对网络层数的敏感性，我们实验了四种结构在不同层数下的平均分类准确率，结果如图~\ref{fig:layer_dis}~所示。
 
 在各个层数设定中，逐层共享结构（L-I结构和L-E结构）均优于传统的硬共享结构（S-P结构和S-C结构），且L-I结构在三种设定中都取得了最优准确率，这一实验结果证明了模型的鲁棒性，也表明了表~\ref{tb:results}~数据的可信性。另外，在二、四、六层三种设定中，模型被设定为四层在除S-P结构中都在测试集上表现出了最高分类准确率，而S-P结构则随着层数增长而准确率下降，没有获得模型复杂度增长带来的收益。
