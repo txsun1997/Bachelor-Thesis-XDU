@@ -107,10 +107,14 @@
   Miami, Florida, {USA}}\@. \bibyear{2009}\thinspace{}\textnormal{:
   }\bibpages{248\thinspace{}\textnormal{--}\thinspace{}255}\@.
 
-\bibitem{mccann2018natural}
-\bibauthor{McCann B\@, Keskar N~S\@, Xiong C, et~al}\@. \bibtitle{The natural
-  language decathlon: Multitask learning as question answering}\bibmark{[J]}\@.
-  \bibjournal{arXiv preprint arXiv:1806.08730}\@, \bibyear{2018}\@.
+\bibitem{DBLP:conf/naacl/PetersNIGCLZ18}
+\bibauthor{Peters M~E\@, Neumann M\@, Iyyer M, et~al}\@. \bibtitle{Deep
+  Contextualized Word Representations}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 2018 Conference of the North
+  American Chapter of the Association for Computational Linguistics: Human
+  Language Technologies, {NAACL-HLT} 2018, New Orleans, Louisiana, USA, June
+  1-6, 2018, Volume 1 (Long Papers)}\@. \bibyear{2018}\thinspace{}\textnormal{:
+  }\bibpages{2227\thinspace{}\textnormal{--}\thinspace{}2237}\@.
 
 \bibitem{radford2018improving}
 \bibauthor{Radford A\@, Narasimhan K\@, Salimans T, et~al}\@.
@@ -118,6 +122,11 @@
   pre-training}\bibmark{[J]}\@. \bibjournal{URL https://s3-us-west-2.
   amazonaws. com/openai-assets/research-covers/languageunsupervised/language
   understanding paper. pdf}\@, \bibyear{2018}\@.
+
+\bibitem{mccann2018natural}
+\bibauthor{McCann B\@, Keskar N~S\@, Xiong C, et~al}\@. \bibtitle{The natural
+  language decathlon: Multitask learning as question answering}\bibmark{[J]}\@.
+  \bibjournal{arXiv preprint arXiv:1806.08730}\@, \bibyear{2018}\@.
 
 \bibitem{devlin2018bert}
 \bibauthor{Devlin J\@, Chang M-W\@, Lee K, et~al}\@. \bibtitle{Bert:
@@ -161,15 +170,6 @@
 \bibauthor{Liu N~F\@, Gardner M\@, Belinkov Y, et~al}\@. \bibtitle{Linguistic
   Knowledge and Transferability of Contextual Representations}\bibmark{[J]}\@.
   \bibjournal{arXiv preprint arXiv:1903.08855}\@, \bibyear{2019}\@.
-
-\bibitem{DBLP:conf/naacl/PetersNIGCLZ18}
-\bibauthor{Peters M~E\@, Neumann M\@, Iyyer M, et~al}\@. \bibtitle{Deep
-  Contextualized Word Representations}\bibmark{[C]}
-  //\thinspace{}\bibbooktitle{Proceedings of the 2018 Conference of the North
-  American Chapter of the Association for Computational Linguistics: Human
-  Language Technologies, {NAACL-HLT} 2018, New Orleans, Louisiana, USA, June
-  1-6, 2018, Volume 1 (Long Papers)}\@. \bibyear{2018}\thinspace{}\textnormal{:
-  }\bibpages{2227\thinspace{}\textnormal{--}\thinspace{}2237}\@.
 
 \bibitem{DBLP:conf/icml/CollobertW08}
 \bibauthor{Collobert R\@, Weston J}\@. \bibtitle{A unified architecture for

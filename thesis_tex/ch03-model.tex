@@ -1,6 +1,47 @@
 \chapter{模型}
 \label{cha:model}
-本章将详细介绍本文所使用的模型，首先在~\ref{sec:tf}~节介绍Transformer模型，它将作为本文实验中的单任务学习模型基线。接着在~\ref{sec:mtl_tf}~节介绍多任务Transformer的几种架构，最后在~\ref{sec:imp}~节描述了一些具体的实现细节\footnote{代码请参见：\url{https://github.com/txsun1997/Graduation}}。
+本章将详细介绍本文所使用的模型，首先在~\ref{sec:tf}~节介绍Transformer模型，它将作为本文实验中的单任务学习基线模型。接着在~\ref{sec:mtl_tf}~节介绍多任务Transformer的几种架构，最后在~\ref{sec:imp}~节描述了一些具体的实现细节。
+
+在描述模型结构之前，首先阐述即将用到的几个概念：
+
+\mypara{记号}
+模型在处理输入的句子时，能够区分的最小单位即是记号。在自然语言处理中，一个记号或位置常常是一个单词，但也可以是字符，还可以是词片。将一个输入句子切分为多个记号的过程称为\emph{记号化}，不同粒度模型的记号化过程对比可见表~\ref{tb:tokenize}，其中中文单词级的记号化需要借助分词技术。本文中使用的是单词级模型，因此下文中提到的记号和单词所指的概念是一致的。
+
+\mypara{词表}
+用于训练模型的数据集中出现的记号集合被称为词表，该集合中元素的个数就是词表大小。词表大小是衡量数据集规模和模型参数量的一个重要指标。词表大小与模型有关，通常来说，字符级的模型词表较小，单词级的模型词表较大。
+
+\mypara{任务}
+本文中的任务是对于模型而言的，并不一定是通常意义上的任务。例如，模型需要优化多个目标函数，每个目标函数就可以看作一个任务。因此，联合训练词性标注、命名实体识别、语言模型等多个NLP任务可以被视作多任务学习；联合训练多个数据集，即使这些数据集被用于处理同一个NLP任务（如中文分词），也可以被视作多任务学习。
+
+\mypara{隐编码}
+神经网络的中间层被称为\emph{隐藏层}，其前为输入层，其后为输出层。在很多用于处理NLP的神经网络（如循环网络和Transformer）中，输入句子的每一个记号在隐藏层都有对应的向量表示，我们将记号在隐藏层的向量表示称为隐编码。
+
+\begin{table}[htb]
+	\centering
+	\caption{不同粒度的记号化方式}
+	\begin{tabular}{cccc}
+	\toprule[2pt]
+	语言&粒度&输入&输出\\
+	\midrule[1pt]
+	\multirow{3}*{英文}&字符级&she looks lovely.&s h e l o o k s l o v e l y .\\
+	&单词级&she looks lovely.&she\ \ looks\ \ lovely\ \ .\\
+	&词片级&she looks lovely.&she\ \ looks\ \ love\ \ ly\ \ .\\
+	\midrule[1pt]
+	\multirow{2}*{中文}&字符级&她看起来很可爱。&她\ 看\ 起\ 来\ 很\ 可\ 爱\ 。\\
+	&单词级&她看起来很可爱。&她\ \ 看起来\ \ 很\ \ 可爱\ \ 。\\
+	\bottomrule[2pt]
+	\end{tabular}
+	\label{tb:tokenize}
+\end{table}
+
+接着，我们从数据的角度介绍神经网络模型处理NLP问题时的一般过程。
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[scale=0.55]{nlp_pipline.png}
+	\caption{神经网络处理NLP问题的一般过程}
+	\label{fig:nlp_ppl}
+\end{figure}
 
 \section{Transformer}
 \label{sec:tf}
@@ -12,7 +53,9 @@ Transformer是Google于2017年提出的一种完全基于\emph{自注意力}（s
 	\label{fig:tf_encoder}
 \end{figure}
 
-作为编码器，Transformer与卷积网络、循环网络的目标一致，都是将输入的句子序列~$(x_1, x_2, ..., x_n)$~映射成一组低维稠密的向量表示~$\mathbf{z} = (\mathbf{z}_1, \mathbf{z}_2, ..., \mathbf{z}_n)$. 其中，每个位置的编码~$\mathbf{z}_i \in \mathbb{R}^{d}$. 给定~$\mathbf{z}$，解码器根据任务的不同生成单个预测~$y$，如文本分类任务，或者多个预测~$(y_1, y_2, ..., y_n)$，如序列标注任务。以分类任务为例，生成预测的过程通常使用一线性层再加一Softmax层，即：
+作为编码器，Transformer与卷积网络、循环网络的目标一致，都是将输入的句子序列~$(x_1, x_2, ..., x_n)$~映射成一组低维稠密的向量表示~$\mathbf{z} = (\mathbf{z}_1, \mathbf{z}_2, ..., \mathbf{z}_n)$. 其中，每个位置的编码~$\mathbf{z}_i \in \mathbb{R}^{d}$. 给定~$\mathbf{z}$，解码器根据任务的不同生成不同的预测，如文本分类任务中生成文本类别~$y$，在序列标注任务中生成每个单词的标签~$(y_1, y_2, ..., y_n)$。
+
+以分类任务为例，生成预测的过程通常使用一线性层再加一Softmax层，即：
 \begin{equation}
 	\hat{y} = \mathrm{softmax}(\mathbf{w}^\top \mathbf{z} + b).
 \end{equation}

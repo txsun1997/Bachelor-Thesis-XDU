@@ -6,14 +6,13 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: refs.bib
-Warning--I didn't find a database entry for "47786"
 Warning--Require journal: tenney2018you
 Warning--Require journal: 1705.08142
 Warning--Require booktitle: Hinton:1986:DR:104279.104287
 Warning--Require journal: guo2019gaussian
 You've used 65 entries,
             3071 wiz_defined-function locations,
-            1130 strings with 26161 characters,
+            1129 strings with 26156 characters,
 and the built_in function-call counts, 122374 in all, are:
 = -- 14030
 > -- 242
@@ -52,4 +51,4 @@ warning$ -- 4
 while$ -- 1567
 width$ -- 67
 write$ -- 771
-(There were 5 warnings)
+(There were 4 warnings)
