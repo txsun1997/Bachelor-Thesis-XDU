@@ -4,16 +4,16 @@
 
 在描述模型结构之前，首先阐述即将用到的几个概念：
 
-\mypara{记号}
+\textbf{记号}\ \ 
 模型在处理输入的句子时，能够区分的最小单位即是记号。在自然语言处理中，一个记号或位置常常是一个单词，但也可以是字符，还可以是词片。将一个输入句子切分为多个记号的过程称为\emph{记号化}，不同粒度模型的记号化过程对比可见表~\ref{tb:tokenize}，其中中文单词级的记号化需要借助分词技术。本文中使用的是单词级模型，因此下文中提到的记号和单词所指的概念是一致的。
 
-\mypara{词表}
+\textbf{词表}\ \ 
 用于训练模型的数据集中出现的记号集合被称为词表，该集合中元素的个数就是词表大小。词表大小是衡量数据集规模和模型参数量的一个重要指标。词表大小与模型有关，通常来说，字符级的模型词表较小，单词级的模型词表较大。
 
-\mypara{任务}
+\textbf{任务}\ \ 
 本文中的任务是对于模型而言的，并不一定是通常意义上的任务。例如，模型需要优化多个目标函数，每个目标函数就可以看作一个任务。因此，联合训练词性标注、命名实体识别、语言模型等多个NLP任务可以被视作多任务学习；联合训练多个数据集，即使这些数据集被用于处理同一个NLP任务（如中文分词），也可以被视作多任务学习。
 
-\mypara{隐编码}
+\textbf{隐编码}\ \ 
 神经网络的中间层被称为\emph{隐藏层}，其前为输入层，其后为输出层。在很多用于处理NLP的神经网络（如循环网络和Transformer）中，输入句子的每一个记号在隐藏层都有对应的向量表示，我们将记号在隐藏层的向量表示称为隐编码。
 
 \begin{table}[htb]
@@ -34,7 +34,7 @@
 	\label{tb:tokenize}
 \end{table}
 
-接着，我们从数据的角度介绍神经网络模型处理NLP问题时的一般过程。
+接着，我们从数据的角度介绍神经网络模型处理NLP问题时的一般过程。给定一输入句子，首先按照预先定义的规则对其进行记号化，得到记号序列后通过查词表得到各记号对应的索引，该索引序列~$x = (x_1, x_2, ..., x_n)$~即模型的输入。模型的输入层一般为词嵌入（也称词向量）矩阵，假设词表大小为~$|V|$，词嵌入维度为~$d_e$，则词嵌入矩阵~$\mathbf{W}^e \in \mathbb{R}^{|V|\times d_e}$. 模型根据~$x$~查询词嵌入矩阵的对应行，再经过线性投影矩阵~$\mathbf{W}^p\in \mathbb{R}^{d_e \times d}$~得到隐藏层的输入~$\mathbf{z}^{(0)}\in \mathbb{R}^{n\times d}$，其中~$d$~为隐层维度。在很多情形下，若~$d_e = d$，也可不经过线性投影。神经网络的隐藏层将~$\mathbf{z}^{(0)}$~逐层加工，形成隐编码~$\mathbf{z}^{(1)}, \mathbf{z}^{(2)}, ..., \mathbf{z}^{(N)}$，其中~$N$~为隐层个数。最后，模型的输出层根据~$\mathbf{z}^{(N)}$~得到预测结果。以文本分类任务为例，模型在输出时首先由~$\mathbf{z}^{(N)}\in \mathbb{R}^{n\times d}$~通过某种信息汇聚手段（如最大池化、平均池化等）得到文本编码~$\mathbf{z}\in \mathbb{R}^{d_o}$~，再将其通过分类矩阵映射为各类别对应的分数，假设类别数为~$c$，则分类矩阵为~$\mathbf{W}^o\in \mathbb{R}^{d_o\times c}$. 最后，使用Softmax函数对各类别分数进行规范化，从而得到样本被模型判定为各个类别的概率。图~\ref{fig:nlp_ppl}~以文本二分类任务为例描述了这一过程。
 
 \begin{figure}[htb]
 	\centering
@@ -43,9 +43,22 @@
 	\label{fig:nlp_ppl}
 \end{figure}
 
+形式化地，给定文本编码~$\mathbf{z}$，模型将文本判断为类别~$j(0\le j < c)$~的概率为
+\begin{equation}
+	\begin{aligned}
+		P(y = j | \mathbf{z}) &= \mathrm{Softmax}_j(\mathbf{zW}^o)\\
+		&= \frac{e^{\mathbf{zW}^o_j}}{\sum_{k=1}^{c}e^{\mathbf{zW}^o_k}}.
+	\end{aligned}
+	\label{eq:softmax}
+\end{equation}
+
+而对于序列标注任务，即为句子中的每个词进行分类标注，通常不需要得到句子级的文本编码~$\mathbf{z}$，而只需要对~$\mathbf{z}^{(N)}$~执行式~(\ref{eq:softmax})~进行分类即可。其中~$\mathbf{z}^{(N)}$~可以展开为~$\mathbf{z}^{(N)}_1, \mathbf{z}^{(N)}_2, ..., \mathbf{z}^{(N)}_n$，分别表示每个记号的第~$N$~层隐编码。
+
+以上即是使用神经网络处理NLP问题的一般输入输出过程，不同的神经网络模型的区别在于如何由~$\mathbf{z}^{(0)}$~进行逐步抽象加工得到~$\mathbf{z}^{(N)}$~或~$\mathbf{z}$. 
+
 \section{Transformer}
 \label{sec:tf}
-Transformer是Google于2017年提出的一种完全基于\emph{自注意力}（self-attention）的全连接神经网络\cite{DBLP:conf/nips/VaswaniSPUJGKP17}，摒弃了之前常用的循环计算和卷积结构，又同时具备了卷积网络的并行计算特性以及循环网络的处理长距离依赖的能力。Transformer最初被用在机器翻译中，因此包含一个\emph{编码器}和一个\emph{解码器}，这里仅介绍本文用到的编码器部分\footnote{解码器的构成与编码器十分类似，只是增加了与输入端的注意力交互。}。
+Transformer是Google于2017年提出的一种完全基于\emph{自注意力}（self-attention）的全连接神经网络\cite{DBLP:conf/nips/VaswaniSPUJGKP17}，摒弃了之前常用的循环计算和卷积结构，又同时具备了卷积网络的并行计算特性以及循环网络的处理长距离依赖的能力。
 \begin{figure}[htb]
 	\centering
 	\includegraphics[scale=0.55]{tf.png}
@@ -53,11 +66,12 @@ Transformer是Google于2017年提出的一种完全基于\emph{自注意力}（s
 	\label{fig:tf_encoder}
 \end{figure}
 
-作为编码器，Transformer与卷积网络、循环网络的目标一致，都是将输入的句子序列~$(x_1, x_2, ..., x_n)$~映射成一组低维稠密的向量表示~$\mathbf{z} = (\mathbf{z}_1, \mathbf{z}_2, ..., \mathbf{z}_n)$. 其中，每个位置的编码~$\mathbf{z}_i \in \mathbb{R}^{d}$. 给定~$\mathbf{z}$，解码器根据任务的不同生成不同的预测，如文本分类任务中生成文本类别~$y$，在序列标注任务中生成每个单词的标签~$(y_1, y_2, ..., y_n)$。
+Transformer最初被用在机器翻译中，因此包含一个\emph{编码器}和一个\emph{解码器}，这里仅介绍本文用到的编码器部分\footnote{解码器的构成与编码器十分类似，只是增加了与输入端的注意力交互。}。
+作为编码器，Transformer与卷积网络、循环网络的目标一致，都是将输入的句子序列~$(x_1, x_2, ..., x_n)$~映射成一组低维稠密的向量表示~$\mathbf{z} = (\mathbf{z}_1, \mathbf{z}_2, ..., \mathbf{z}_n)$. 其中，每个位置的编码~$\mathbf{z}_i \in \mathbb{R}^{d}$. 给定~$\mathbf{z}$，解码器根据任务的不同生成不同的预测，如文本分类任务中生成文本类别~$y$，在序列标注任务中生成每个单词的标签~$(y_1, y_2, ..., y_n)$.
 
 以分类任务为例，生成预测的过程通常使用一线性层再加一Softmax层，即：
 \begin{equation}
-	\hat{y} = \mathrm{softmax}(\mathbf{w}^\top \mathbf{z} + b).
+	\hat{y} = \mathrm{Softmax}(\mathbf{w}^\top \mathbf{z} + b).
 \end{equation}
 其中，$\mathbf{w}\in \mathbb{R}^{d\times c}$，$c$~为类别个数。
 
@@ -70,7 +84,7 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 
 自注意力是指查询、键、值都出自输入本身。假设有一个向量序列输入~$H = [h_1, \hdots, h_n]^\top \in \mathbb{R}^{n\times d}$，其中~$n$~为句子长度，$d$~为输入维度，则自注意力的计算方式为：
 \begin{equation}
-	\mathrm{Attention}(Q,K,V) = \mathrm{softmax}(\frac{QK^\top}{\sqrt{d_k}})V
+	\mathrm{Attention}(Q,K,V) = \mathrm{Softmax}(\frac{QK^\top}{\sqrt{d_k}})V
 \end{equation}
 其中，$Q=HW^Q, K=HW^K, V=HW^V$\ 且\ $W^Q, W^K, W^V\in \mathbb{R}^{d\times d_k}$. 
 
@@ -186,12 +200,12 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 \subsection{S-P结构}
 S-P意为Stack-Pooling，即\emph{堆叠-汇聚结构}。S-P结构是指在Transformer的共享层上使用信息汇聚（也称池化）的方式来得到通用句子表示。常用的池化方式一般有\emph{平均池化}（mean pooling）和\emph{最大池化}（max pooling）。以平均池化为例，假设包含~$n$~个单词的句子输入为~$x$，经过Transformer共享层之后输出的隐状态为~$z = \mathcal{F}(x) \in \mathbb{R}^{n \times d}$，对于分类任务，平均池化S-P结构的预测为
 \begin{equation}
-	\hat{y} = \mathrm{softmax}(\frac{1}{n}\sum_{i=1}^{n}z_i\cdot W^{(t)} + b).
+	\hat{y} = \mathrm{Softmax}(\frac{1}{n}\sum_{i=1}^{n}z_i\cdot W^{(t)} + b).
 	\label{eq:s-p}
 \end{equation}
 其中任务~$t$的分类矩阵~$W^{(t)}\in \mathbb{R}^{d\times c}$，$c$~为分类个数。在实际实现时，平均池化后先接一多层感知机（MLP）再输入softmax层常常能取得更好的效果，此时式~\ref{eq:s-p}~可写为
 \begin{equation}
-	\hat{y} = \mathrm{softmax}(\mathrm{MLP}(\frac{1}{n}\sum_{i=1}^{n}z_i)).
+	\hat{y} = \mathrm{Softmax}(\mathrm{MLP}(\frac{1}{n}\sum_{i=1}^{n}z_i)).
 \end{equation}
 
 图~\ref{fig:s-p}~给出了S-P结构的示意，浅灰色模块表示共享部分，深灰色模块代表整个句子的表示，$A,B,C$~代表三个不同的任务。与~\ref{sec:mtl}~节中的图示不同的是，这里的一个矩形代表一个单词的特征表示，而不是神经网络的一层。
@@ -284,7 +298,7 @@ S-C意为Stack-CLS，即\emph{堆叠-CLS结构}。S-C结构是指在Transformer�
 
 假设最顶层的\texttt{CLS}的表示为~$z_{CLS}\in \mathbb{R}^d$，则S-C结构的输出为
 \begin{equation}
-	\hat{y} = \mathrm{softmax}(z_{CLS}\cdot W^{(t)} + b).
+	\hat{y} = \mathrm{Softmax}(z_{CLS}\cdot W^{(t)} + b).
 	\label{eq:cls}
 \end{equation}
 其中任务~$t$~的分类矩阵~$W^{(t)}\in \mathbb{R}^{d\times c}$，$c$~为分类个数。图~\ref{fig:s-c}~给出了S-C结构的示意图，浅灰色为共享模块，深灰色为共享句子表示。

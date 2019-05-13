@@ -12,24 +12,20 @@
 \contentsline {section}{\numberline {2.3}自然语言处理}{13}{section.2.3}
 \contentsline {section}{\numberline {2.4}神经多任务自然语言处理}{15}{section.2.4}
 \contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{三}章\hskip 1ex模型}{17}{chapter.3}
-\contentsline {paragraph}{记号.}{17}{chapter.3}
-\contentsline {paragraph}{词表.}{17}{chapter.3}
-\contentsline {paragraph}{任务.}{17}{chapter.3}
-\contentsline {paragraph}{隐编码.}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Transformer}{18}{section.3.1}
+\contentsline {section}{\numberline {3.1}Transformer}{19}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}自注意力}{20}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}多头自注意力}{20}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}前馈网络}{20}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}位置编码}{21}{subsection.3.1.4}
-\contentsline {section}{\numberline {3.2}多任务Transformer}{22}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}S-P结构}{22}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}S-C结构}{23}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}L-I结构}{24}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}L-E结构}{25}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.1.2}多头自注意力}{21}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}前馈网络}{21}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}位置编码}{22}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}多任务Transformer}{23}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}S-P结构}{23}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}S-C结构}{24}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}L-I结构}{25}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}L-E结构}{26}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}模型对比}{26}{subsection.3.2.5}
-\contentsline {section}{\numberline {3.3}实现细节}{26}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}训练过程}{26}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}超参数设定}{26}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.3}实现细节}{27}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}训练过程}{27}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}超参数设定}{27}{subsection.3.3.2}
 \contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{四}章\hskip 1ex实验}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}任务描述}{29}{section.4.1}
 \contentsline {section}{\numberline {4.2}数据集}{30}{section.4.2}
