@@ -34,7 +34,7 @@
 	\label{tb:tokenize}
 \end{table}
 
-接着，我们从数据的角度介绍神经网络模型处理NLP问题时的一般过程。给定一输入句子，首先按照预先定义的规则对其进行记号化，得到记号序列后通过查词表得到各记号对应的索引，该索引序列~$x = (x_1, x_2, ..., x_n)$~即模型的输入。模型的输入层一般为词嵌入（也称词向量）矩阵，假设词表大小为~$|V|$，词嵌入维度为~$d_e$，则词嵌入矩阵~$\mathbf{W}^e \in \mathbb{R}^{|V|\times d_e}$. 模型根据~$x$~查询词嵌入矩阵的对应行，再经过线性投影矩阵~$\mathbf{W}^p\in \mathbb{R}^{d_e \times d}$~得到隐藏层的输入~$\mathbf{z}^{(0)}\in \mathbb{R}^{n\times d}$，其中~$d$~为隐层维度。在很多情形下，若~$d_e = d$，也可不经过线性投影。神经网络的隐藏层将~$\mathbf{z}^{(0)}$~逐层加工，形成隐编码~$\mathbf{z}^{(1)}, \mathbf{z}^{(2)}, ..., \mathbf{z}^{(N)}$，其中~$N$~为隐层个数。最后，模型的输出层根据~$\mathbf{z}^{(N)}$~得到预测结果。以文本分类任务为例，模型在输出时首先由~$\mathbf{z}^{(N)}\in \mathbb{R}^{n\times d}$~通过某种信息汇聚手段（如最大池化、平均池化等）得到文本编码~$\mathbf{z}\in \mathbb{R}^{d_o}$~，再将其通过分类矩阵映射为各类别对应的分数，假设类别数为~$c$，则分类矩阵为~$\mathbf{W}^o\in \mathbb{R}^{d_o\times c}$. 最后，使用Softmax函数对各类别分数进行规范化，从而得到样本被模型判定为各个类别的概率。图~\ref{fig:nlp_ppl}~以文本二分类任务为例描述了这一过程。
+接着，我们从数据的角度介绍神经网络模型处理NLP问题时的一般过程。给定一输入句子，首先按照预先定义的规则对其进行记号化，得到记号序列后通过查词表得到各记号对应的索引，该索引序列~$x = (x_1, x_2, ..., x_n)$~即模型的输入。模型的输入层一般为词嵌入（也称词向量）矩阵，假设词表大小为~$|V|$，词嵌入维度为~$d_e$，则词嵌入矩阵~$\mathbf{W}^e \in \mathbb{R}^{|V|\times d_e}$. 模型根据~$x$~查询词嵌入矩阵的对应行，再经过线性投影矩阵~$\mathbf{W}^p\in \mathbb{R}^{d_e \times d}$~得到隐藏层的输入~$\mathbf{z}^{(0)}\in \mathbb{R}^{n\times d}$，其中~$d$~为隐层维度。在很多情形下，若~$d_e = d$，也可不经过线性投影。神经网络的隐藏层将~$\mathbf{z}^{(0)}$~逐层加工，形成隐编码~$\mathbf{z}^{(1)}, \mathbf{z}^{(2)}, ..., \mathbf{z}^{(N)}$，其中~$N$~为隐层个数。最后，模型的输出层根据~$\mathbf{z}^{(N)}$~得到预测结果。以文本分类任务为例，模型在输出时首先由~$\mathbf{z}^{(N)}\in \mathbb{R}^{n\times d}$~通过某种信息汇聚手段（如最大池化、平均池化等）得到文本编码~$\mathbf{z}_s\in \mathbb{R}^{d_o}$~，再将其通过分类矩阵映射为各类别对应的分数，假设类别数为~$c$，则分类矩阵为~$\mathbf{W}^o\in \mathbb{R}^{d_o\times c}$. 最后，使用Softmax函数对各类别分数进行规范化，从而得到样本被模型判定为各个类别的概率。图~\ref{fig:nlp_ppl}~以文本二分类任务为例描述了这一过程。
 
 \begin{figure}[htb]
 	\centering
@@ -43,22 +43,28 @@
 	\label{fig:nlp_ppl}
 \end{figure}
 
-形式化地，给定文本编码~$\mathbf{z}$，模型将文本判断为类别~$j(0\le j < c)$~的概率为
+形式化地，给定文本编码~$\mathbf{z}_s$，模型将文本判断为类别~$j~(0\le j < c)$~的概率为
 \begin{equation}
 	\begin{aligned}
-		P(y = j | \mathbf{z}) &= \mathrm{Softmax}_j(\mathbf{zW}^o)\\
-		&= \frac{e^{\mathbf{zW}^o_j}}{\sum_{k=1}^{c}e^{\mathbf{zW}^o_k}}.
+		P(y = j | \mathbf{z}_s) &= \mathrm{Softmax}_j(\mathbf{z}_s\mathbf{W}^o)\\
+		&= \frac{e^{\mathbf{z}_s\mathbf{W}^o_j}}{\sum_{k=1}^{c}e^{\mathbf{z}_s\mathbf{W}^o_k}}.
 	\end{aligned}
 	\label{eq:softmax}
 \end{equation}
+其中，~$\mathbf{W}^o_k$~表示矩阵~$\mathbf{W}^o$~的第~$k$~列。
 
-而对于序列标注任务，即为句子中的每个词进行分类标注，通常不需要得到句子级的文本编码~$\mathbf{z}$，而只需要对~$\mathbf{z}^{(N)}$~执行式~(\ref{eq:softmax})~进行分类即可。其中~$\mathbf{z}^{(N)}$~可以展开为~$\mathbf{z}^{(N)}_1, \mathbf{z}^{(N)}_2, ..., \mathbf{z}^{(N)}_n$，分别表示每个记号的第~$N$~层隐编码。
+而对于序列标注任务，即为句子中的每个词进行分类标注，通常不需要得到句子级的文本编码~$\mathbf{z}_s$，而只需要对~$\mathbf{z}^{(N)}$~执行式(\ref{eq:softmax})进行分类即可。其中~$\mathbf{z}^{(N)}$~可以展开为~$\mathbf{z}^{(N)}_1, \mathbf{z}^{(N)}_2, ..., \mathbf{z}^{(N)}_n$，分别表示每个记号的第~$N$~层隐编码。
 
-以上即是使用神经网络处理NLP问题的一般输入输出过程，不同的神经网络模型的区别在于如何由~$\mathbf{z}^{(0)}$~进行逐步抽象加工得到~$\mathbf{z}^{(N)}$~或~$\mathbf{z}$. 
+以上即是使用神经网络处理NLP问题的一般输入输出过程，该过程通常在各神经网络模型中是通用的，不同的神经网络模型的区别在于如何由~$\mathbf{z}^{(0)}$~进行逐步抽象加工得到~$\mathbf{z}^{(N)}$~或~$\mathbf{z}_s$. 
 
 \section{Transformer}
 \label{sec:tf}
-Transformer是Google于2017年提出的一种完全基于\emph{自注意力}（self-attention）的全连接神经网络\cite{DBLP:conf/nips/VaswaniSPUJGKP17}，摒弃了之前常用的循环计算和卷积结构，又同时具备了卷积网络的并行计算特性以及循环网络的处理长距离依赖的能力。
+Transformer是Google于2017年提出的一种完全基于\emph{自注意力}（self-attention）的全连接神经网络\cite{DBLP:conf/nips/VaswaniSPUJGKP17}，摒弃了之前常用的循环计算和卷积结构，又同时具备了卷积网络的并行计算特性以及循环网络的处理长距离依赖的能力。Transformer最初被用在机器翻译中，因此包含一个\emph{编码器}和一个\emph{解码器}，这里仅介绍本文用到的编码器部分\footnote{解码器的构成与编码器十分类似，只是增加了与输入端的注意力交互。}。
+
+作为编码器，一个~$N$~层的Transformer可以将输入的句子序列~$(x_1, x_2, ..., x_n)$~编码得到~$N$~组低维稠密的向量表示~$\mathbf{z}^{(1)}, \mathbf{z}^{(2)}, ..., \mathbf{z}^{(N)}$，其中每一层~$\mathbf{z}^{(i)}$~都包含句子中对应记号的隐编码~$(\mathbf{z}^{(i)}_1, \mathbf{z}^{(i)}_2, ..., \mathbf{z}^{(i)}_n)$. Transformer模型的输入输出形式与前文描述的一般过程完全一致，本节主要描述Transformer处理隐编码的过程。
+
+Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影部分表示Transformer的一层，左侧的~$N$~表示层数。每一层包含两个子层：第一个子层是一个多头自注意力模块，第二个子层是一个简单的全连接前馈网络。在每个子层都有残差连接\cite{DBLP:conf/cvpr/HeZRS16}和层归一化\cite{lei2016layer}来优化训练过程。假设输入为~$x$，每一个子层的输出为~$\mathrm{LayerNorm}(x+\mathrm{Sublayer}(x))$，其中~$\mathrm{LayerNorm}(\cdot)$~为层归一化，$\mathrm{Sublayer}(\cdot)$~表示对应子层实现的函数，即多头自注意力和前馈网络。
+
 \begin{figure}[htb]
 	\centering
 	\includegraphics[scale=0.55]{tf.png}
@@ -66,51 +72,43 @@ Transformer是Google于2017年提出的一种完全基于\emph{自注意力}（s
 	\label{fig:tf_encoder}
 \end{figure}
 
-Transformer最初被用在机器翻译中，因此包含一个\emph{编码器}和一个\emph{解码器}，这里仅介绍本文用到的编码器部分\footnote{解码器的构成与编码器十分类似，只是增加了与输入端的注意力交互。}。
-作为编码器，Transformer与卷积网络、循环网络的目标一致，都是将输入的句子序列~$(x_1, x_2, ..., x_n)$~映射成一组低维稠密的向量表示~$\mathbf{z} = (\mathbf{z}_1, \mathbf{z}_2, ..., \mathbf{z}_n)$. 其中，每个位置的编码~$\mathbf{z}_i \in \mathbb{R}^{d}$. 给定~$\mathbf{z}$，解码器根据任务的不同生成不同的预测，如文本分类任务中生成文本类别~$y$，在序列标注任务中生成每个单词的标签~$(y_1, y_2, ..., y_n)$.
-
-以分类任务为例，生成预测的过程通常使用一线性层再加一Softmax层，即：
-\begin{equation}
-	\hat{y} = \mathrm{Softmax}(\mathbf{w}^\top \mathbf{z} + b).
-\end{equation}
-其中，$\mathbf{w}\in \mathbb{R}^{d\times c}$，$c$~为类别个数。
-
-Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影部分表示Transformer的一层，左侧的~$N$~表示层数。每一层包含两个子层：第一个子层是一个多头自注意力模块，第二个子层是一个简单的全连接前馈网络。在每个子层都有残差连接\cite{DBLP:conf/cvpr/HeZRS16}和层归一化\cite{lei2016layer}来优化训练过程。因此，每一个子层的输出为~$\mathrm{LayerNorm}(x+\mathrm{Sublayer}(x))$，其中~$\mathrm{LayerNorm}$~为层归一化，$\mathrm{Sublayer}(x)$~表示对应子层实现的函数，即多头自注意力和前馈网络。
-
 下面先介绍第一个子层，该子层主要由多头自注意力模块构成。
 
 \subsection{自注意力}
-注意力机制就是把一\emph{查询}向量和一组\emph{键}-\emph{值}对映射为输出，这里的输入、查询（Query）、键（Key）、值（Value）、输出都为向量\footnote{为简便起见，下面的公式中不再对向量加粗表示。}。输出向量由值向量加权得到，每个值向量的权重由查询和键向量计算得出，查询和键向量的计算方式有点积、双线性等形式，Transformer使用的是一种缩放的点积形式。
+注意力机制首先根据\emph{查询}（Query）向量和\emph{键}（Key）向量计算得到一组注意力分数，再利用注意力分数对\emph{值}（Value）向量进行加权得到输出。其中，查询向量和键向量的计算方式有点积、双线性等形式，Transformer使用的是一种缩放的点积形式。
 
-自注意力是指查询、键、值都出自输入本身。假设有一个向量序列输入~$H = [h_1, \hdots, h_n]^\top \in \mathbb{R}^{n\times d}$，其中~$n$~为句子长度，$d$~为输入维度，则自注意力的计算方式为：
+自注意力是指查询、键、值都出自输入本身。假设有一个向量序列输入~$H = [h_1, h_2, \hdots, h_n]^\top \in \mathbb{R}^{n\times d}$，其中~$n$~为句子长度，$d$~为输入维度，则自注意力的计算方式为\footnote{为简便起见，下面的公式中不再对向量加粗表示。}
 \begin{equation}
 	\mathrm{Attention}(Q,K,V) = \mathrm{Softmax}(\frac{QK^\top}{\sqrt{d_k}})V
+	\label{eq:attn}
 \end{equation}
 其中，$Q=HW^Q, K=HW^K, V=HW^V$\ 且\ $W^Q, W^K, W^V\in \mathbb{R}^{d\times d_k}$. 
 
 \subsection{多头自注意力}
 为了捕获更丰富的语义模式，提取句子元素之间更多的交互信息，Transformer使用了\emph{多头自注意力}（multi-head self-attention）机制：
 \begin{equation}
-	\begin{aligned}
-	\mathrm{MultiHead}(Q,K,V)& = \mathrm{Concat}(\mathrm{head_1}, \hdots, \mathrm{head_h})W^O
-	\\
-	\mathrm{head_i} &= \mathrm{Attention}(HW_i^Q, HW_i^K, HW_i^V).
-	\end{aligned}
+	\mathrm{MultiHead}(Q,K,V) = \mathrm{Concat}(\mathrm{head}_1, \hdots, \mathrm{head}_h)W^O
+\end{equation}
+其中每个注意力头的结果使用式(\ref{eq:attn})计算得到：
+\begin{equation}
+	\mathrm{head}_i = \mathrm{Attention}(HW_i^Q, HW_i^K, HW_i^V).
 \end{equation}
 这里，Concat表示拼接，每个头的维度就是~$d_k$，输出矩阵~$W^O\in \mathbb{R}^{d_kh \times d}$. 在提出Transformer的论文中，作者设置~$d_k=d/h$，即令隐层维度被头的个数整除。
 
-因此，第一个子层即是通过多头自注意力对整个输入句子进行建模。同时，这种建模方式是全局的，即句子中的每个位置都可以看到其他所有位置，因此在时间步上是全连接的。
+因此，第一个子层即是通过多头自注意力对整个输入句子进行建模，通过输出矩阵~$W^O$，该子层的输入和输出的维度保持一致。同时，这种建模方式是全局的，即句子中的每个记号都可以看到其他所有记号，因此在时间步上是全连接的。
 
-\subsection{前馈网络}
+\subsection{逐点前馈网络}
 第二个子层主要由一单隐层全连接前馈网络构成，其输入为第一个子层的输出。假设第一个子层的输出为~$x\in \mathbb{R}^{n\times d}$，则前馈网络的输出为：
 \begin{equation}
 	\mathrm{FFN}(x) = \max(0, xW_1+b_1)W_2+b_2.
 \end{equation}
 其中，$W_1 \in \mathbb{R}^{d\times d_{ff}}, W_2 \in \mathbb{R}^{d_{ff} \times d}$，$d_{ff}$~为前馈网络的隐层神经元个数。前馈网络的隐层使用的激活函数为ReLU函数，即~$\mathrm{ReLU}(\cdot)=\max(0, \cdot)$.
 
-需要注意的是，该前馈网络在输入句子的每个位置是共享的，即对每个位置使用相同的前馈网络，因此被称为逐点前馈网络（Point-wise Feedforward Network），在计算机视觉中，这种计算方式也被称为$1\times 1$卷积。
+需要注意的是，该前馈网络在输入句子的每个位置是共享的，即对每个位置（或者说每个点）使用相同的前馈网络，因此被称为逐点前馈网络（Point-wise Feedforward Network），在计算机视觉中，这种计算方式也被称为$1\times 1$卷积。
+
+容易发现，第二个子层的输入和输出也保持了相同的维度。因此，Transformer的每一层处理过程~$z^{(i)} \to z^{(i+1)}$~并不改变数据维度。
 \subsection{位置编码}
-由于Transformer完全使用自注意力机制来对输入句子进行建模，无法将时序关系考虑进去，例如，对于不使用位置编码的Transformer来说，“猫坐在椅子上”和“椅子坐在猫上”两句话的表示并没有什么不同。因此需要在输入时加入额外的\emph{位置编码}（position encoding）。通常来说，加入位置编码有两种方式：一种是作为可学习的参数让模型自己学到，另一种是人为地设计对位置和维度都敏感的编码函数，例如：
+由于Transformer完全使用自注意力机制来对输入句子进行建模，无法将时序关系考虑进去，例如，对于不使用位置编码的Transformer来说，“猫坐在椅子上”和“椅子坐在猫上”两句话的表示并没有什么不同。因此需要在输入时加入额外的\emph{位置编码}（position encoding）。通常来说，加入位置编码有两种方式：一种是作为可学习的参数使用梯度下降算法训练得到，另一种是人为地设计对位置和维度都敏感的编码函数，例如：
 \begin{equation}
 	\begin{aligned}
 	\mathrm{PE}_{(pos, 2i)} &= \sin(pos/10000^{2i/d})\\
@@ -119,9 +117,10 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 \end{equation}
 其中，$pos$表示记号在句子中的位置，$i$表示向量维度。
 
+两种加入位置编码的方式互有优劣：将位置编码作为参数在数据量大时非常有效，但增加了需要学习的参数量；人为设计一种比较好的位置编码方式避免了参数量的增长，并且在很多情形中也能取得很好的效果，但这种方式常常难以与预训练好的词向量兼容。
+
 最终，句中每个单词的表示由词向量与位置编码相加组成，词向量可以随机初始化，也可以使用预训练好的词向量，如word2vec，GloVe等。
 
-至此，我们详细描述了Transformer的结构以及输入输出。容易发现，Transformer实际上就是利用注意力机制来建模句子中任意单词与其他单词之间的关系，是一种在时间步上全连接的全局建模方法。不同于传统的全连接网络，Transformer可以处理变长的句子，因为连接权重是根据输入单词来动态生成的。图~\ref{fig:tf_s}~给出了Transformer的编码过程。
 \begin{figure}[htb]
 	\centering
 	\includegraphics[scale=0.46]{tf_s.png}
@@ -129,7 +128,8 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 	\label{fig:tf_s}
 \end{figure}
 
-由于对每一位置使用了相同的前馈网络，为考虑位置之间的建模关系，可以进一步忽略掉前馈网络部分，从而可以给出一个Transformer架构的简化图~\ref{fig:tf_simp}，下一节中也将基于类似的简化图来描述我们的多任务Transformer结构。
+事实上，Transformer就是利用注意力机制来建模句子中任意单词与其他单词之间的关系，是一种在时间步上全连接的全局建模方法。不同于传统的全连接网络，Transformer可以处理变长的句子，因为连接权重是根据输入单词来动态生成的。图~\ref{fig:tf_s}~给出了Transformer的编码过程。
+
 \begin{figure}[htb]
 	\centering
 	\begin{tikzpicture}
@@ -190,6 +190,8 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 	\caption{Transformer结构的一个简化版示意图}
 	\label{fig:tf_simp}
 \end{figure}
+
+由于对每一位置使用了相同的前馈网络，为考虑位置之间的建模关系，可以进一步忽略掉前馈网络部分，从而可以给出一个Transformer架构的简化图~\ref{fig:tf_simp}，下一节中也将基于类似的简化图来描述我们的多任务Transformer结构。
 
 \section{多任务Transformer}
 \label{sec:mtl_tf}
@@ -298,10 +300,10 @@ S-C意为Stack-CLS，即\emph{堆叠-CLS结构}。S-C结构是指在Transformer�
 
 假设最顶层的\texttt{CLS}的表示为~$z_{CLS}\in \mathbb{R}^d$，则S-C结构的输出为
 \begin{equation}
-	\hat{y} = \mathrm{Softmax}(z_{CLS}\cdot W^{(t)} + b).
+	\hat{y} = \mathrm{Softmax}(z_{CLS}\cdot W^{t} + b).
 	\label{eq:cls}
 \end{equation}
-其中任务~$t$~的分类矩阵~$W^{(t)}\in \mathbb{R}^{d\times c}$，$c$~为分类个数。图~\ref{fig:s-c}~给出了S-C结构的示意图，浅灰色为共享模块，深灰色为共享句子表示。
+其中任务~$t$~的分类矩阵~$W^{t}\in \mathbb{R}^{d\times c}$，$c$~为分类个数。图~\ref{fig:s-c}~给出了S-C结构的示意图，浅灰色为共享模块，深灰色为共享句子表示。
 
 \begin{figure}[htb]
 	\centering
