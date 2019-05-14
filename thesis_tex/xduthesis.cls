@@ -177,11 +177,16 @@
 \addtolength{\textwidth}{-6cm}
 \setlength{\textheight}{\paperheight}
 \ifxdu@bachelor
-\addtolength{\textheight}{-4.5cm}
-\setlength{\topmargin}{1.45cm-1in}
-\setlength{\headheight}{20pt}
+\addtolength{\textheight}{-5.8cm}
+% \setlength{\topmargin}{1.45cm-1in}
+% \setlength{\headheight}{20pt}
+% \setlength{\headsep}{0.6cm}
+% \setlength{\footskip}{18pt}
+
+\setlength{\topmargin}{2.2cm-1in}
 \setlength{\headsep}{0.6cm}
-\setlength{\footskip}{18pt}
+\setlength{\footskip}{1cm}
+
 \else
 \addtolength{\textheight}{-5.5cm}
 \setlength\voffset{3cm-1in}
@@ -318,7 +323,7 @@
   \@afterheading}
 \def\@makeschapterhead#1{\noindent%
   \parbox[b]{\textwidth}{\vskip\xdu@chapter@before}%
-  {\sanhao\song\bfseries\centering%
+  {\sanhao\hei\centering%
    \interlinepenalty\@M
    #1\par\nobreak%
    \vskip\xdu@chapter@after%
@@ -336,7 +341,8 @@
 \titlespacing{\section}{0pt}{2ex}{\parskip}
 \fi
 \titleformat{\subsection}[block]{\xiaosi}{\thesubsection}{1ex}{}
-\titlespacing{\subsection}{\xdu@CJK@twochars}{\parskip}{\parskip}
+%\titlespacing{\subsection}{\xdu@CJK@twochars}{\parskip}{\parskip}
+
 \renewcommand{\tableofcontents}{%
   % \xdu@clearpage%
   % \phantomsection%
@@ -405,21 +411,26 @@
       \vspace{15mm}
       \includegraphics[width=44mm]{xdlogo.eps}\par
       \vspace{18mm}
-      
     \else
       \vspace{132mm}
     \fi
     \begin{minipage}{122mm}
       \flushleft\sanhao[2.5]\song%
+      
       \xdu@put@prefix{25mm}{\bf\xdu@ctitle@prefix}
       \xdu@urule{95mm}{}\par
-      \xdu@put@prefix{25mm}{}\xdu@urule{95mm}{}\par
+      \xdu@put@prefix{25mm}{}
+      \xdu@urule{95mm}{}\par
+
       \xdu@put@prefix{25mm}{\bf\xdu@cschool@prefix}
       \xdu@urule{95mm}{\xdu@cschool}\par
+
       \xdu@put@prefix{25mm}{\bf\xdu@cmajor@prefix}
       \xdu@urule{95mm}{\xdu@cmajor}\par
+
       \xdu@put@prefix{25mm}{\bf\xdu@cauthor@prefix}
       \xdu@urule{95mm}{\xdu@cauthor}\par
+
       \xdu@put@prefix{25mm}{\bf\xdu@csupervisor@prefix}
       \xdu@urule{95mm}{\xdu@csupervisor}
     \end{minipage}
@@ -658,6 +669,7 @@
   \setcounter{page}{1}
   \xdu@makeabstract
 }
+
 \renewcommand\theequation{\ifnum \c@chapter>\z@ \thechapter%
                           -\fi\@arabic\c@equation}
 \let\old@tabular\@tabular

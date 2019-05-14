@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  13 MAY 2019 21:01
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.10.28)  14 MAY 2019 21:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2024,39 +2024,14 @@ your preamble.
  on input line 30.
 
 (./abstract.tex)
-Underfull \hbox (badness 10000) detected at line 51
-\TU/SimSun(0)/bx/n/12.045 班 级
- []
 
-LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 51.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\xiaosi' on input line 54.
 
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.43146> not available
-(Font)              size <8> substituted on input line 51.
+(e:/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.43146> not available
-(Font)              size <8> substituted on input line 51.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 51.
-(e:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 51.
-
-(e:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.43146> not available
-(Font)              size <8> substituted on input line 51.
-
-
-Underfull \hbox (badness 10000) detected at line 51
-\TU/SimSun(0)/bx/n/12.045 学 号
- []
-
-File: xdubadge.eps Graphic file (type eps)
-<xdubadge.eps>
 \g__fontspec_family_SimHei_int=\count317
 .................................................
 . fontspec info: "no-font-shape"
@@ -2088,73 +2063,16 @@ File: xdubadge.eps Graphic file (type eps)
 . <->"SimHei/OT:script=hani;language=DFLT;embolden=4;mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
-File: xdlogo.eps Graphic file (type eps)
- <xdlogo.eps>
-Underfull \hbox (badness 10000) detected at line 51
-\TU/SimSun(0)/bx/n/16.06 题 目
- []
 
-LaTeX Font Info:    Calculating math sizes for size <16.06> on input line 51.
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 51.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 51.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16.06> not available
-(Font)              size <17.28> substituted on input line 51.
-
-
-Underfull \hbox (badness 10000) detected at line 51
-\TU/SimSun(0)/bx/n/16.06 学 院
- []
-
-
-Underfull \hbox (badness 10000) detected at line 51
-\TU/SimSun(0)/bx/n/16.06 专 业
- []
-
-(e:/texlive/2017/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
-File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
-
-) [1
+(./thesis-bachelor.toc [1
 
 
 
-]
-[2
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\xiaosi' on input line 51.
-
-[1
-
-
-
-] [2
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\xiaosi' on input line 51.
-
-[3] [4
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\xiaosi' on input line 54.
-
-(./thesis-bachelor.toc [5])
+])
 \tf@toc=\write5
 \openout5 = `thesis-bachelor.toc'.
 
- [6] (./ch01-intro.tex
+ [2] (./ch01-intro.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 1.
@@ -2195,73 +2113,40 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 . <->"KaiTi_GB2312/OT:script=hani;language=DFLT;embolden=4;mapping=tex-text;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 6.
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.43146> not available
+(Font)              size <8> substituted on input line 6.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.43146> not available
+(Font)              size <8> substituted on input line 6.
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
+(e:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+
+(e:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.43146> not available
+(Font)              size <8> substituted on input line 6.
+
 [1
 
 
 ]
-Underfull \vbox (badness 1490) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
 [3]
-Underfull \vbox (badness 1490) has occurred while \output is active []
-
- [4])
-(./ch02-related_work.tex [5] [6
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\xiaosi' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 5.38731pt
-(hyperref)                removed on input line 1.
-
-[7] [8]
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \vbox (badness 6300) has occurred while \output is active []
-
- [9]
-File: mtl_int.png Graphic file (type QTm)
-
-<use  "mtl_int.png" > [10] [11] [12] [13] [14]
-Underfull \vbox (badness 1490) has occurred while \output is active []
-
- [15])
-(./ch03-model.tex [16]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\xiaosi' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 5.38731pt
-(hyperref)                removed on input line 1.
-
-[17
-
-]
-File: nlp_pipline.png Graphic file (type QTm)
- <use  "nlp_pipline.png" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
-File: tf.png Graphic file (type QTm)
-
-<use  "tf.png" > [19] [20]
-Underfull \vbox (badness 3407) has occurred while \output is active []
-
- [21]
-File: tf_s.png Graphic file (type QTm)
-
-<use  "tf_s.png" > [22] [23] [24] [25] [26]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 795.
-) (./ch04-exp.tex [27] [28]
+ [4]
+[5]) (./ch02-related_work.tex [6]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 1.
@@ -2271,20 +2156,77 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.38731pt
 (hyperref)                removed on input line 1.
 
-[29
+[7
+
+] [8]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [9]
+File: mtl_int.png Graphic file (type QTm)
+ <use  "mtl_int.png" > [10] [11] [12]
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+ [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Underfull \vbox (badness 2512) has occurred while \output is active []
+
+ [15]
+[16]) (./ch03-model.tex [17] [18
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\xiaosi' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 5.38731pt
+(hyperref)                removed on input line 1.
+
+[19]
+File: nlp_pipline.png Graphic file (type QTm)
+ <use  "nlp_pipline.png" > [20] [21]
+File: tf.png Graphic file (type QTm)
+ <use  "tf.png" > [22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+[24]
+File: tf_s.png Graphic file (type QTm)
+ <use  "tf_s.png" >
+Underfull \vbox (badness 1694) has occurred while \output is active []
+
+ [25]
+[26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+[28] [29]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 797.
+ [30] [31]) (./ch04-exp.tex [32]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\xiaosi' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 5.38731pt
+(hyperref)                removed on input line 1.
+
+[33
 
 ]
 Overfull \hbox (9.17197pt too wide) in paragraph at lines 20--43
  [][] 
  []
 
-[30] [31]
-Underfull \vbox (badness 2799) has occurred while \output is active []
-
- [32]
+[34] [35] [36] [37]
 File: viz-mag.png Graphic file (type QTm)
-
-<use  "viz-mag.png" >
+ <use  "viz-mag.png" >
 Overfull \hbox (41.75186pt too wide) in paragraph at lines 179--180
  [][] 
  []
@@ -2295,7 +2237,7 @@ Overfull \hbox (41.75186pt too wide) in paragraph at lines 184--185
  [][] 
  []
 
-) (./ch05-conclusions.tex [33] [34]
+) (./ch05-conclusions.tex [38]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 1.
@@ -2305,19 +2247,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.38731pt
 (hyperref)                removed on input line 1.
 
-[35
+[39
 
-]) [36] (./acknowledgments.tex
+] [40]) [41] [42
+
+] (./acknowledgments.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 2.
 
-) (./thesis-bachelor.bbl [37
+[43
 
-
-] [38
-
-]
+]) (./thesis-bachelor.bbl [44]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\xiaosi' on input line 1.
@@ -2328,19 +2269,21 @@ Underfull \hbox (badness 2443) in paragraph at lines 75--82
 ering with Subgraph Embeddings[C]
  []
 
-[39] [40]
+[45
+
+] [46]
 Underfull \hbox (badness 2426) in paragraph at lines 209--216
 []\TU/TimesNewRoman(0)/m/n/10.53937 Liu P, Qiu X, Huang X. Adversarial Multi-ta
 sk Learning for Text Classification[C]
  []
 
-[41] [42] [43]
+[47] [48] [49]
 Underfull \hbox (badness 3271) in paragraph at lines 428--431
 []\TU/TimesNewRoman(0)/m/n/10.53937 Dehghani M, Gouws S, Vinyals O, et al. Univ
 ersal transformers[J]. arXiv preprint
  []
 
-[44]) [45]
+[50] [51]) [52]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
  (./thesis-bachelor.aux)
@@ -2349,21 +2292,17 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 84.
 
 
 LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.22pt have occurred.
+(Font)              up to 0.43146pt have occurred.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
- )
-(\end occurred inside a group at level 1)
-
-### semi simple group (level 1) entered at line 51 (\begingroup)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 49953 strings out of 493005
- 1114716 string characters out of 6137955
- 1285990 words of memory out of 5000000
- 53184 multiletter control sequences out of 15000+600000
- 14663 words of font info for 118 fonts, out of 8000000 for 9000
+ 49888 strings out of 493005
+ 1112588 string characters out of 6137955
+ 1282545 words of memory out of 5000000
+ 53133 multiletter control sequences out of 15000+600000
+ 10858 words of font info for 93 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 62i,17n,103p,10446b,2502s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,17n,103p,10446b,2290s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis-bachelor.pdf (53 pages).
+Output written on thesis-bachelor.pdf (54 pages).
