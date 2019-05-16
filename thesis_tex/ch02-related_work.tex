@@ -293,7 +293,7 @@
 其中~$\mathcal{F}$~为神经网络共享层，$\mathcal{G}^{(t)}$~为任务~$t$~的特定层。模型总参数包含共享层的参数以及任务特定层的参数，即~$\theta = [\theta_\mathcal{F}, \{ \theta_{\mathcal{G}^{(t)}}\}_{t=1}^T]$. 多任务联合学习的损失函数为
 \begin{equation}
 	\mathcal{L}(\theta) = \sum_{t=1}^T\lambda_t\sum_{n=1}^{N_t}\mathcal{L}_t(\hat{y}_n^{(t)}, y_n^{(t)}),
-s\end{equation}
+\end{equation}
 其中，$\mathcal{L}_t(\cdot)$~为第~$t$~个任务的损失函数，$\lambda_t$~为第~$t$~个任务损失函数的权重。$\lambda_t$~通常被看作是超参数，根据任务~$t$~的重要程度或困难程度来确定，也可以作为可学习参数根据任务的不确定性来自主学习\cite{DBLP:conf/cvpr/KendallGC18}。
 
 最后，通过优化如下目标来得到模型参数
@@ -304,17 +304,17 @@ s\end{equation}
 \section{自然语言处理}
 \label{sec:nlp}
 
-\emph{自然语言处理}（Natural Language Processing, NLP）有时也被称为\emph{计算语言学}（Computer Linguistics, CL），是一门计算机科学与语言学的交叉学科，也是人工智能的重要子领域，旨在使得计算机具备处理、理解和生成自然语言的能力。同时，自然语言处理也是一个包括词性标注、句法分析、语义角色分析、机器翻译、阅读理解、问答系统、对话系统等在内的庞大的研究领域。从定义上，任何与处理文本数据相关的问题都可以归为自然语言处理的问题。
+\emph{自然语言处理}（Natural Language Processing, NLP）是一门涵盖计算机科学、语言学、数学等多个领域的交叉学科，也是人工智能的核心领域之一，旨在使用计算机技术来处理、理解和生成自然语言文本。同时，自然语言处理也是一个包括词性标注、句法分析、语义角色分析、机器翻译、阅读理解、问答系统、对话系统等在内的庞大的研究领域。从定义上，任何与处理文本数据相关的问题都可以归为自然语言处理的问题。
 
-事实上，人们对NLP的研究早在人工智能被提出之前就开始了。上世纪上半叶，Claude Shannon使用概率模型来描述人类语言，提出用熵来表示语言的不确定性。1956年，Noam Chomsky提出生成语法理论，给出了语言句法结构的符号规则，此后，基于规则的符号系统开始在NLP领域流行，研究人员根据研究工具的不同分为统计和规则两个流派。到上世纪末，随着隐马尔科夫模型、核方法等方法的出现，统计自然语言处理开始因其灵活性和通用性渐渐成为主流。随着深度学习的兴起，这一趋势被再次加强，基于神经网络的方法开始在各大NLP任务上取得~\sArt~结果。
+事实上，人们对NLP的研究早在人工智能被提出之前就开始了。上世纪上半叶，Claude Shannon使用概率模型来描述人类语言，提出用熵来表示语言的不确定性。1956年，Noam Chomsky提出生成语法理论，给出了语言句法结构的符号规则，此后，基于规则的符号系统开始在NLP领域流行。研究人员根据研究工具的不同分为统计和规则两个流派。到上世纪末，随着隐马尔科夫模型、核方法等方法的出现，统计自然语言处理开始因其灵活性和通用性渐渐成为主流。随着深度学习的兴起，这一趋势被再次加强，基于神经网络的方法开始在各大NLP任务上取得~\sArt~结果。
 
 在深度学习背景下，一个使得NLP取得重大进展的关键概念是\emph{分布式表示}（Distributed Representation）\cite{Hinton:1986:DR:104279.104287}。在传统机器学习方法中，普遍采用one-hot方法表示文本特征，即在一向量中用1来表示出现的单词，用0来表示未出现的单词。然而这种表示方法下向量维度与词表大小一致，不便于扩展，且任意两单词之间正交，无法计算语义相似度。而分布式表示则将文本语义分布到向量的各个维度，或者说分布到多个神经元上进行处理。在分布式表示下，文本用低维稠密向量表示，使得语义组合和语义相似度的计算都非常灵活。分布式表示的概念是整个深度学习技术的核心，如何学到一个好的分布式表示是决定各个深度学习算法性能的关键。
 
 在NLP中，文本的分布式表示方法一直是研究重点。分布式表示的应用引出了\emph{词向量}（也被称作\emph{词嵌入}）的概念，在词嵌入矩阵中，每个单词用一个低维稠密词向量来表示。最初，Bengio等人\cite{DBLP:conf/nips/BengioDV00}将分布式表示引入语言建模，让神经网络在反向传播时同时更新网络参数和词向量。这里的词向量作为模型的参数，训练前采用随机初始化。2013年，Mikolov等人\cite{DBLP:conf/nips/MikolovSCCD13}提出了word2vec方法，可以在大规模无标注文本上预训练一组词向量，使用预训练的词向量初始化神经网络的词嵌入层可以显著提升模型效果。2014年，Pennington等人\cite{DBLP:conf/emnlp/PenningtonSM14}使用类似的思路发明了GloVe，这种词向量具备更好的线性性质。从此，在绝大多数NLP任务中，人们通常使用预训练好的词向量来作为模型输入，而不再是随机初始化。然而，这些文本表示方法将单词映射为固定的词向量，难以处理一词多义的问题，因此是\emph{未语境化}（non-contextualized）的。在现实场景中，一个词的意思常常要通过其所在的语境来确定，例如“苹果”在某些语境中表示一种水果，而在某些语境中可能表示一家公司。为处理这一问题，人们提出了\emph{语境化}（contextual）的文本表示方法，如ELMo\cite{DBLP:conf/naacl/PetersNIGCLZ18}，GPT\cite{radford2018improving}，BERT\cite{devlin2018bert}等，这些上下文敏感的文本表示方法使得神经网络模型在各大NLP任务上取得了巨大的提升。
 
-文本的分布式表示一般被认为是神经网络的输入，即第一层（词嵌入层）。为执行特定的任务，通常需要在文本表示的基础上再进行加工得到易于预测的任务特定表示。这种加工可以采用不同的神经网络来实现。在NLP中，目前普遍使用的神经网络为卷积网络\cite{DBLP:conf/icml/CollobertW08}\cite{DBLP:conf/emnlp/Kim14}\cite{DBLP:conf/icml/GehringAGYD17}和循环网络\cite{DBLP:conf/interspeech/MikolovKBCK10}\cite{DBLP:conf/emnlp/WenGMSVY15}\cite{DBLP:conf/acl/MaH16}。然而，这二者还都存在难以解决的缺陷：卷积网络一般只能建模局部位置信息，难以捕捉长距离句子依赖；而循环网络每一时间步的计算都依赖上一时间步的状态，导致其运算速度缓慢，难以并行，无法在大规模工业场景中使用。
+文本的分布式表示一般被认为是神经网络的输入，即第一层（词嵌入层）。为执行特定的任务，通常需要在文本表示的基础上再进行加工得到易于预测的任务特定表示。这种加工可以采用不同的神经网络来实现。在NLP中，目前普遍使用的神经网络为卷积神经网络（CNN）\cite{DBLP:conf/icml/CollobertW08}\cite{DBLP:conf/emnlp/Kim14}\cite{DBLP:conf/icml/GehringAGYD17}和循环神经网络（RNN）\cite{DBLP:conf/interspeech/MikolovKBCK10}\cite{DBLP:conf/emnlp/WenGMSVY15}\cite{DBLP:conf/acl/MaH16}。然而，这二者还都存在难以解决的缺陷：CNN一般只能建模局部位置信息，难以捕捉长距离句子依赖；而RNN每一时间步的计算都依赖上一时间步的状态，导致其运算速度缓慢，难以并行，无法在大规模工业场景中使用。需要注意的是，本文提到的RNN包含原始版本及其变种，如LSTM\cite{DBLP:journals/neco/GersSC00}和GRU\cite{DBLP:journals/corr/ChungGCB14}.
 
-人们在对自然语言处理、计算机视觉等问题的研究过程中也提出了一些模型无关的机制，其中的一个典型代表就是\emph{注意力机制}。在NLP中，注意力机制最初出现在机器翻译中，显著提升了翻译质量\cite{DBLP:journals/corr/BahdanauCB14}。随后，注意力机制开始在NLP的各个子问题中被广泛使用，基于双向LSTM和注意力机制的神经网络模型一度成为处理包括阅读理解、自然语言推理等在内的各个NLP任务的标配。甚至在2017年，Google提出了完全基于自注意力的神经网络：Transformer\cite{DBLP:conf/nips/VaswaniSPUJGKP17}，在机器翻译任务上取得了新的~\sArt~结果。
+另外，人们在对自然语言处理、计算机视觉等问题的研究过程中也提出了一些模型无关的机制，其中的一个典型代表就是\emph{注意力机制}。在NLP中，注意力机制最初出现在机器翻译中，显著提升了翻译质量\cite{DBLP:journals/corr/BahdanauCB14}。随后，注意力机制开始在NLP的各个子问题中被广泛使用，基于双向LSTM和注意力机制的神经网络模型一度成为处理包括阅读理解、自然语言推理等在内的各个NLP任务的标配。甚至在2017年，Google提出了完全基于自注意力的神经网络：Transformer\cite{DBLP:conf/nips/VaswaniSPUJGKP17}，在机器翻译任务上取得了新的~\sArt~结果。
 
 %\begin{figure}[htb]
 %	\centering
@@ -334,6 +334,22 @@ Transformer在语义信息提取和长距离依赖任务上都取得了富有竞
 事实上，早在十年前就已经有人在神经网络模型中应用多任务学习来解决NLP的问题：Collobert等人\cite{DBLP:conf/icml/CollobertW08}使用一个简单的卷积神经网络（Convolutional Neural Network, CNN）来同时学习词性标注、语块标注、命名实体识别、语义角色标注、语义相似度和语言模型，超越了CNN使用单任务训练时的表现。
 
 随着循环神经网络（Recurrent Neural Network, RNN）在NLP上的广泛应用，研究者开始基于RNN构造多任务学习框架，在机器翻译\cite{DBLP:conf/acl/DongWHYW15}、文本分类\cite{DBLP:conf/ijcai/LiuQH16}\cite{DBLP:conf/acl/LiuQH17}、序列标注\cite{DBLP:conf/acl/SogaardG16}等常见NLP任务上均取得了成功。
+
+图~\ref{fig:mtl_cnn_rnn}~分别给出了多任务学习在CNN和RNN上的两种模型结构：(a) 使用多任务CNN处理词性标注、命名实体识别等多个序列标注任务和语义相似度任务；(b) 使用多任务RNN处理多语言机器翻译问题。两模型均属于多任务学习中的硬共享结构，且(a)模型仅共享词表。
+
+\begin{figure}[htb]
+	\centering
+	\subfloat[一种多任务CNN模型\cite{DBLP:conf/icml/CollobertW08}]{
+		\centering
+		\includegraphics[scale=0.55]{MTL-CNN.PNG}
+	}
+	\subfloat[一种多任务RNN模型\cite{DBLP:conf/acl/DongWHYW15}]{
+		\centering
+		\includegraphics[scale=0.45]{MTL-RNN.PNG}
+	}
+	\caption{多任务学习在CNN和RNN上的应用示例}
+	\label{fig:mtl_cnn_rnn}
+\end{figure}
 
 从共享架构上看，基于神经网络的多任务学习架构涵盖了前文提到的各种共享模式。首先，最简单的硬共享模式率先得到了应用\cite{DBLP:conf/icml/CollobertW08}，并且直到今天还在被广泛的使用\cite{liu2019multi}；随后，软共享模式因其灵活性也被广泛地应用在NLP任务中，并取得了出色的表现\cite{1705.08142}；由于NLP任务对文本表示的要求不同（例如比较简单的NLP任务仅需要简单的语法知识而难度较大的任务需要复杂的语义信息），分层共享在RNN中得到了应用\cite{DBLP:conf/acl/SogaardG16}，取得了优于硬共享架构的效果；最后，Liu等人\cite{DBLP:conf/ijcai/LiuQH16}在RNN中使用共享-私有模式，在文本分类任务上取得了较大提升。
 

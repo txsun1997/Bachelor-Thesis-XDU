@@ -34,7 +34,7 @@
 	\label{tb:tokenize}
 \end{table}
 
-接着，我们从数据的角度介绍神经网络模型处理NLP问题时的一般过程。给定一输入句子，首先按照预先定义的规则对其进行记号化，得到记号序列后通过查词表得到各记号对应的索引，该索引序列~$x = (x_1, x_2, ..., x_n)$~即模型的输入。模型的输入层一般为词嵌入（也称词向量）矩阵，假设词表大小为~$|V|$，词嵌入维度为~$d_e$，则词嵌入矩阵~$\mathbf{W}^e \in \mathbb{R}^{|V|\times d_e}$. 模型根据~$x$~查询词嵌入矩阵的对应行，再经过线性投影矩阵~$\mathbf{W}^p\in \mathbb{R}^{d_e \times d}$~得到隐藏层的输入~$\mathbf{z}^{(0)}\in \mathbb{R}^{n\times d}$，其中~$d$~为隐层维度。在很多情形下，若~$d_e = d$，也可不经过线性投影。神经网络的隐藏层将~$\mathbf{z}^{(0)}$~逐层加工，形成隐编码~$\mathbf{z}^{(1)}, \mathbf{z}^{(2)}, ..., \mathbf{z}^{(N)}$，其中~$N$~为隐层个数。最后，模型的输出层根据~$\mathbf{z}^{(N)}$~得到预测结果。以文本分类任务为例，模型在输出时首先由~$\mathbf{z}^{(N)}\in \mathbb{R}^{n\times d}$~通过某种信息汇聚手段（如最大池化、平均池化等）得到文本编码~$\mathbf{z}_s\in \mathbb{R}^{d_o}$~，再将其通过分类矩阵映射为各类别对应的分数，假设类别数为~$c$，则分类矩阵为~$\mathbf{W}^o\in \mathbb{R}^{d_o\times c}$. 最后，使用Softmax函数对各类别分数进行规范化，从而得到样本被模型判定为各个类别的概率。图~\ref{fig:nlp_ppl}~以文本二分类任务为例描述了这一过程。
+接着，我们从数据的角度介绍神经网络模型处理NLP问题时的一般过程。给定一输入句子，首先按照预先定义的规则对其进行记号化，得到记号序列后通过查词表得到各记号对应的索引，该索引序列~$x = (x_1, x_2, ..., x_n)$~即模型的输入。模型的输入层一般为词嵌入（也称词向量）矩阵，假设词表大小为~$|V|$，词嵌入维度为~$d_w$，则词嵌入矩阵~$\mathbf{W}^e \in \mathbb{R}^{|V|\times d_w}$，$x_i$的取值范围为~$0 \le x_i < |V|$. 模型根据~$x$~查询词嵌入矩阵的对应行，再经过线性投影矩阵~$\mathbf{W}^p\in \mathbb{R}^{d_w \times d}$~得到隐藏层的输入~$\mathbf{z}^{(0)}\in \mathbb{R}^{n\times d}$，其中~$d$~为隐层维度。在很多情形下，若~$d_w = d$，也可不经过线性投影。神经网络的隐藏层将~$\mathbf{z}^{(0)}$~逐层加工，形成隐编码~$\mathbf{z}^{(1)}, \mathbf{z}^{(2)}, ..., \mathbf{z}^{(N)}$，其中~$N$~为隐层个数。最后，模型的输出层根据~$\mathbf{z}^{(N)}$~得到预测结果。以文本分类任务为例，模型在输出时首先由~$\mathbf{z}^{(N)}\in \mathbb{R}^{n\times d}$~通过某种信息汇聚手段（如最大池化、平均池化等）得到文本编码~$\mathbf{z}_s\in \mathbb{R}^{d_o}$~，再将其通过分类矩阵映射为各类别对应的分数，假设类别数为~$c$，则分类矩阵为~$\mathbf{W}^o\in \mathbb{R}^{d_o\times c}$. 最后，使用Softmax函数对各类别分数进行规范化，从而得到样本被模型判定为各个类别的概率。图~\ref{fig:nlp_ppl}~以文本二分类任务为例描述了这一过程。
 
 \begin{figure}[htb]
 	\centering
@@ -44,13 +44,11 @@
 \end{figure}
 
 形式化地，给定文本编码~$\mathbf{z}_s$，模型将文本判断为类别~$j~(0\le j < c)$~的概率为
-\begin{equation}
-	\begin{aligned}
-		P(y = j | \mathbf{z}_s) &= \mathrm{Softmax}_j(\mathbf{z}_s\mathbf{W}^o)\\
-		&= \frac{e^{\mathbf{z}_s\mathbf{W}^o_j}}{\sum_{k=1}^{c}e^{\mathbf{z}_s\mathbf{W}^o_k}}.
-	\end{aligned}
-	\label{eq:softmax}
-\end{equation}
+\begin{align}
+	P(y = j | \mathbf{z}_s) &= \mathrm{Softmax}_j(\mathbf{z}_s\mathbf{W}^o) \nonumber \\
+	&= \frac{e^{\mathbf{z}_s\mathbf{W}^o_j}}{\sum_{k=1}^{c}e^{\mathbf{z}_s\mathbf{W}^o_k}}.
+\label{eq:softmax}
+\end{align}
 其中，~$\mathbf{W}^o_k$~表示矩阵~$\mathbf{W}^o$~的第~$k$~列。
 
 而对于序列标注任务，即为句子中的每个词进行分类标注，通常不需要得到句子级的文本编码~$\mathbf{z}_s$，而只需要对~$\mathbf{z}^{(N)}$~执行式(\ref{eq:softmax})进行分类即可。其中~$\mathbf{z}^{(N)}$~可以展开为~$\mathbf{z}^{(N)}_1, \mathbf{z}^{(N)}_2, ..., \mathbf{z}^{(N)}_n$，分别表示每个记号的第~$N$~层隐编码。
@@ -72,17 +70,17 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 	\label{fig:tf_encoder}
 \end{figure}
 
-下面先介绍第一个子层，该子层主要由多头自注意力模块构成。
+下面先后介绍两个子层：第一个子层主要由多头自注意力模块构成，首先介绍自注意力机制的概念，接着描述Transformer中使用的多头自注意力计算方式；然后介绍第二个子层的主要构成部分——逐点前馈网络。最后介绍位置编码。
 
 \subsection{自注意力}
-注意力机制首先根据\emph{查询}（Query）向量和\emph{键}（Key）向量计算得到一组注意力分数，再利用注意力分数对\emph{值}（Value）向量进行加权得到输出。其中，查询向量和键向量的计算方式有点积、双线性等形式，Transformer使用的是一种缩放的点积形式。
+注意力机制是一种强大的信息抽取方法，能够帮助模型动态地根据输入注意到重要的信息。注意力机制首先根据\emph{查询}（Query）向量和\emph{键}（Key）向量计算得到一组注意力分数，再利用注意力分数对\emph{值}（Value）向量进行加权得到输出。其中，查询向量和键向量的计算方式有点积、双线性等形式，Transformer使用的是一种缩放的点积形式。
 
 自注意力是指查询、键、值都出自输入本身。假设有一个向量序列输入~$H = [h_1, h_2, \hdots, h_n]^\top \in \mathbb{R}^{n\times d}$，其中~$n$~为句子长度，$d$~为输入维度，则自注意力的计算方式为\footnote{为简便起见，下面的公式中不再对向量加粗表示。}
 \begin{equation}
 	\mathrm{Attention}(Q,K,V) = \mathrm{Softmax}(\frac{QK^\top}{\sqrt{d_k}})V
 	\label{eq:attn}
 \end{equation}
-其中，$Q=HW^Q, K=HW^K, V=HW^V$\ 且\ $W^Q, W^K, W^V\in \mathbb{R}^{d\times d_k}$. 
+其中，$Q=HW^Q, K=HW^K, V=HW^V$\ 且\ $W^Q, W^K, W^V\in \mathbb{R}^{d\times d_k}$. Softmax函数的形式参见式(\ref{eq:softmax})，这里未指定下标，因此函数的输出不是标量，而是样本被判定为各个类别的概率构成的向量或矩阵。特别地，在上式上，Softmax函数的输出为一个~$n\times n$~的矩阵，该矩阵被称为\emph{注意力矩阵}。
 
 \subsection{多头自注意力}
 为了捕获更丰富的语义模式，提取句子元素之间更多的交互信息，Transformer使用了\emph{多头自注意力}（multi-head self-attention）机制：
@@ -109,12 +107,10 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 容易发现，第二个子层的输入和输出也保持了相同的维度。因此，Transformer的每一层处理过程~$z^{(i)} \to z^{(i+1)}$~并不改变数据维度。
 \subsection{位置编码}
 由于Transformer完全使用自注意力机制来对输入句子进行建模，无法将时序关系考虑进去，例如，对于不使用位置编码的Transformer来说，“猫坐在椅子上”和“椅子坐在猫上”两句话的表示并没有什么不同。因此需要在输入时加入额外的\emph{位置编码}（position encoding）。通常来说，加入位置编码有两种方式：一种是作为可学习的参数使用梯度下降算法训练得到，另一种是人为地设计对位置和维度都敏感的编码函数，例如：
-\begin{equation}
-	\begin{aligned}
-	\mathrm{PE}_{(pos, 2i)} &= \sin(pos/10000^{2i/d})\\
+\begin{align}
+	\mathrm{PE}_{(pos, 2i)} &= \sin(pos/10000^{2i/d}) \\
 	\mathrm{PE}_{(pos, 2i+1)} &= \cos(pos/10000^{2i/d})
-	\end{aligned}
-\end{equation}
+\end{align}
 其中，$pos$表示记号在句子中的位置，$i$表示向量维度。
 
 两种加入位置编码的方式互有优劣：将位置编码作为参数在数据量大时非常有效，但增加了需要学习的参数量；人为设计一种比较好的位置编码方式避免了参数量的增长，并且在很多情形中也能取得很好的效果，但这种方式常常难以与预训练好的词向量兼容。
@@ -128,7 +124,7 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 	\label{fig:tf_s}
 \end{figure}
 
-事实上，Transformer就是利用注意力机制来建模句子中任意单词与其他单词之间的关系，是一种在时间步上全连接的全局建模方法。不同于传统的全连接网络，Transformer可以处理变长的句子，因为连接权重是根据输入单词来动态生成的。图~\ref{fig:tf_s}~给出了Transformer的编码过程。
+事实上，Transformer就是利用注意力机制来建模句子中任意单词与其他单词之间的关系，是一种在时间步上全连接的全局建模方法。不同于传统的全连接网络，Transformer可以处理变长的句子，因为连接权重是根据输入单词来动态生成的。图~\ref{fig:tf_s}~给出了Transformer的编码过程，可见其第一个子层在输入句子的各个位置是全连接的，第二个子层则是逐点计算的。
 
 \begin{figure}[htb]
 	\centering
@@ -191,24 +187,25 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 	\label{fig:tf_simp}
 \end{figure}
 
-由于对每一位置使用了相同的前馈网络，为考虑位置之间的建模关系，可以进一步忽略掉前馈网络部分，从而可以给出一个Transformer架构的简化图~\ref{fig:tf_simp}，下一节中也将基于类似的简化图来描述我们的多任务Transformer结构。
+本文中我们主要关注句子中各个位置之间的交互，由于对每一位置使用了相同的前馈网络，因而可以进一步忽略掉前馈网络部分，从而可以给出一个Transformer架构的简化图~\ref{fig:tf_simp}，下一节中也将基于类似的简化图来描述我们的多任务Transformer结构。
 
 \section{多任务Transformer}
 \label{sec:mtl_tf}
-在前文基础上，本节将展示四种基于Transformer的共享架构，其中两种为传统的硬共享模式，由于这种架构的任务特定层堆叠在共享层上面，在神经网络的顶层形成不同任务的表示，因此我们将其归纳为\emph{顶层分化}；另外两种为针对Transformer的结构特点提出的共享模式，我们称之为\emph{逐层分化}，即在每一层都形成任务特定表示。
+在前文基础上，本节将展示四种基于Transformer的共享架构，其中两种为传统的硬共享模式，由于这种架构的任务特定层堆叠在共享层上面，在神经网络的顶层形成不同任务的表示，因此我们将其归纳为\emph{顶层分化}；另外两种为针对Transformer的结构特点提出的共享模式，我们称之为\emph{逐层分化}，也叫\emph{逐层共享}，即在每一层都形成任务特定表示。
 
 对于顶层分化模式，我们给出了两种具体的实现结构：S-P结构和S-C结构。对于逐层分化模式，我们也给出了两种架构方式：L-I结构和L-E结构。
 
 \subsection{S-P结构}
-S-P意为Stack-Pooling，即\emph{堆叠-汇聚结构}。S-P结构是指在Transformer的共享层上使用信息汇聚（也称池化）的方式来得到通用句子表示。常用的池化方式一般有\emph{平均池化}（mean pooling）和\emph{最大池化}（max pooling）。以平均池化为例，假设包含~$n$~个单词的句子输入为~$x$，经过Transformer共享层之后输出的隐状态为~$z = \mathcal{F}(x) \in \mathbb{R}^{n \times d}$，对于分类任务，平均池化S-P结构的预测为
+S-P意为Stack-Pooling，即\emph{堆叠-池化结构}。S-P结构是指在Transformer的共享层上使用\emph{池化}（pooling）的方式来进行信息汇聚，从而得到通用句子表示。常用的池化方式一般有\emph{平均池化}（mean pooling）和\emph{最大池化}（max pooling）。以平均池化为例，假设包含~$n$~个单词的句子输入为~$x$，经过Transformer的~$N$~层共享层之后输出的隐编码为~$z^{(N)} = \mathcal{F}(x) \in \mathbb{R}^{n \times d}$，那么对于分类任务，采用平均池化的S-P结构的预测为
 \begin{equation}
-	\hat{y} = \mathrm{Softmax}(\frac{1}{n}\sum_{i=1}^{n}z_i\cdot W^{(t)} + b).
+	\hat{y} = \mathrm{Softmax}(\frac{1}{n}\sum_{i=1}^{n}z^{(N)}_i\cdot W^{t} + b).
 	\label{eq:s-p}
 \end{equation}
-其中任务~$t$的分类矩阵~$W^{(t)}\in \mathbb{R}^{d\times c}$，$c$~为分类个数。在实际实现时，平均池化后先接一多层感知机（MLP）再输入softmax层常常能取得更好的效果，此时式~\ref{eq:s-p}~可写为
-\begin{equation}
-	\hat{y} = \mathrm{Softmax}(\mathrm{MLP}(\frac{1}{n}\sum_{i=1}^{n}z_i)).
-\end{equation}
+其中任务~$t$的分类矩阵~$W^{t}\in \mathbb{R}^{d\times c}$，$c$~为分类个数。在实际实现时，平均池化后先接一多层感知机（MLP）再输入Softmax层常常能取得更好的效果。若MLP中隐层激活函数采用ReLU，则式(\ref{eq:s-p})可写为
+\begin{align}
+	\hat{y} &= \mathrm{Softmax}(\mathrm{MLP}(\frac{1}{n}\sum_{i=1}^{n}z^{(N)}_i)),\\
+	\mathrm{MLP}(x) &= \max(0, xW^t_1 + b^t_1)\cdot W^t_2 +b^t_2.
+\end{align}
 
 图~\ref{fig:s-p}~给出了S-P结构的示意，浅灰色模块表示共享部分，深灰色模块代表整个句子的表示，$A,B,C$~代表三个不同的任务。与~\ref{sec:mtl}~节中的图示不同的是，这里的一个矩形代表一个单词的特征表示，而不是神经网络的一层。
 
@@ -298,9 +295,9 @@ S-P意为Stack-Pooling，即\emph{堆叠-汇聚结构}。S-P结构是指在Trans
 \subsection{S-C结构}
 S-C意为Stack-CLS，即\emph{堆叠-CLS结构}。S-C结构是指在Transformer的输入时添加一个\texttt{CLS}记号用来捕捉句子在每一层的表示，最后使用\texttt{CLS}的顶层表示来作为句子的通用表示。\texttt{CLS}为Classification的简写，该方法与BERT\cite{devlin2018bert}中的设置一致。
 
-假设最顶层的\texttt{CLS}的表示为~$z_{CLS}\in \mathbb{R}^d$，则S-C结构的输出为
+假设记号\texttt{CLS}总是放在输入的最左端，那么最顶层的句子隐编码为~$z^{(N)}_{CLS} = z^{(N)}_0\in \mathbb{R}^d$，则S-C结构的输出为
 \begin{equation}
-	\hat{y} = \mathrm{Softmax}(z_{CLS}\cdot W^{t} + b).
+	\hat{y} = \mathrm{Softmax}(z^{(N)}_0\cdot W^{t} + b).
 	\label{eq:cls}
 \end{equation}
 其中任务~$t$~的分类矩阵~$W^{t}\in \mathbb{R}^{d\times c}$，$c$~为分类个数。图~\ref{fig:s-c}~给出了S-C结构的示意图，浅灰色为共享模块，深灰色为共享句子表示。
@@ -438,7 +435,7 @@ S-C意为Stack-CLS，即\emph{堆叠-CLS结构}。S-C结构是指在Transformer�
 	\end{scope}
 	
 	% 输入句子
-	\node at (-1.5, -.3) {[CLS]};
+	\node at (-1.5, -.3) {\texttt{CLS}};
 	\node at (0, -.3) {I};
 	\node at (1.5, -.3) {love};
 	\node at (3, -.3) {cat};
@@ -455,7 +452,7 @@ S-C意为Stack-CLS，即\emph{堆叠-CLS结构}。S-C结构是指在Transformer�
 然而，在神经网络顶层形成的句子表示上进行分化得到任务特定表示的方法限制了任务特定表示对底层语义信息的使用。不同任务关注的句子信息可能在语法和语义层面都非常不同，为鼓励不同任务表示的差异化，可以在每一层都形成任务特定的表示，这就是逐层分化模式。下面介绍该模式的两种实现结构：L-I结构和L-E结构。
 
 \subsection{L-I结构}
-L-I意为Layerwise-Implicit，即\emph{层级-隐式共享结构}。首先，L-I结构将原来的\texttt{CLS}记号替换为\texttt{TASK}，该记号表示任务编号，每个任务编号对应一个不同的任务向量。同时，在L-I结构中，若不同任务的类别数相同，可以不再单独设置任务特定层，不同任务通过输入不同的任务编号\texttt{TASK}来控制。
+L-I意为Layerwise-Implicit，即\emph{层级-隐式共享结构}。首先，L-I结构将原来的\texttt{CLS}记号替换为\texttt{TASK\_ID}，该记号表示任务编号，每个任务编号对应一个不同的任务向量，执行不同任务通过输入不同的任务编号\texttt{TASK\_ID}来控制。
 
 在L-I结构中，不同任务之间无法显式地交互，只能通过共享模块来隐式地交互，但不同任务在每一层都有自己的表示，因而称为层级隐式共享。L-I结构如图~\ref{fig:l-i}~所示。
 
@@ -583,7 +580,7 @@ L-I意为Layerwise-Implicit，即\emph{层级-隐式共享结构}。首先，L-I
 	\end{scope}
 	
 	% 输入句子
-	\node at (-1.5, -.3) {TASK\#A};
+	\node at (-1.5, -.3) {\texttt{TASK\_A}};
 	\node at (0, -.3) {I};
 	\node at (1.5, -.3) {love};
 	\node at (3, -.3) {cat};
@@ -592,10 +589,16 @@ L-I意为Layerwise-Implicit，即\emph{层级-隐式共享结构}。首先，L-I
 	\label{fig:l-i}
 \end{figure}
 
-L-I结构的输入为~$x=(task, x_1, x_2, ..., x_n)$，因此模型的输入层除词嵌入矩阵外还需设置一任务嵌入矩阵~$W\in \mathbb{R}^{T\times d_{t}}$，其中~$T$~为联合学习的任务个数，$d_{t}$~为任务向量的维度，可与词向量维度保持一致。在输入到Transformer后，\texttt{TASK}的计算过程与其他位置单词相同，模型应当学会根据输入的\texttt{TASK}的不同来在每一层使用注意力机制提取相应任务关注的单词信息。模型预测输出的过程与式~\ref{eq:cls}~相同。
+L-I结构的输入为~$x=(task\_id, x_1, x_2, ..., x_n)$，其中~$0\le task\_id < T$~且~$0 \le x_i < |V|$，其中~$T$~为联合学习的任务个数，词表大小为~$|V|$. 模型的输入层除词嵌入矩阵~$W^{word}\in \mathbb{R}^{|V|\times d_w}$~外还需设置一任务嵌入矩阵~$W^{task}\in \mathbb{R}^{T\times d_{t}}$，这里$d_{t}$~为任务向量的维度，可与词向量维度~$d_w$~保持一致。假设词嵌入和任务嵌入都被线性投影到隐层维度~$d$，那么原始输入经过L-I结构的嵌入层后得到隐层的输入
+\begin{equation}
+	z^{(0)} = W^{task}_{task\_id} \oplus W^{word}_{x_1} \oplus W^{word}_{x_2} \oplus \cdots W^{word}_{x_n}.
+\end{equation}
+其中~$\oplus$~为拼接操作，拼接得到的~$z^{(0)}\in \mathbb{R}^{(n+1) \times d}$.
+
+在输入到Transformer后，记号\texttt{TASK\_ID}的计算过程与其他位置单词相同，模型应当学会根据输入的\texttt{TASK\_ID}的不同来在每一层使用注意力机制提取相应任务关注的单词信息。假设\texttt{TASK\_ID}总是作为第一个记号放置在输入单词之前，则模型预测输出的过程与式(\ref{eq:cls})相同。
 
 \subsection{L-E结构}
-在L-I结构基础上，我们进一步提出了L-E结构，允许任务在每一层形成自己的特定表示时能够访问其他任务的表示。L-E意为Layerwise-Explicit，即\emph{层级-显式共享结构}。L-E结构如图~\ref{fig:l-e}~所示，任务~$A$~在形成自己的表示时可以访问任务~$B$~的表示，因而这种架构是显式共享的。
+在L-I结构基础上，我们进一步提出了L-E结构，允许任务在每一层形成自己的特定表示时能够访问其他任务的表示。L-E意为Layerwise-Explicit，即\emph{层级-显式共享结构}。L-E结构如图~\ref{fig:l-e}~所示，任务~$A$~在形成自己的表示时可以访问任务~$B$~的表示，因而这种架构是显式共享的。各任务的特定句子编码由相应的\texttt{CLS\_ID}形成。
 
 \begin{figure}[htb]
 	\centering
@@ -767,8 +770,8 @@ L-I结构的输入为~$x=(task, x_1, x_2, ..., x_n)$，因此模型的输入层�
 	\end{scope}
 	
 	% 输入句子
-	\node at (-3, -.3) {CLS\#A};
-	\node at (-1.5, -.3) {CLS\#B};
+	\node at (-3, -.3) {\texttt{CLS\_A}};
+	\node at (-1.5, -.3) {\texttt{CLS\_B}};
 	\node at (0, -.3) {I};
 	\node at (1.5, -.3) {love};
 	\node at (3, -.3) {cat};
@@ -780,12 +783,22 @@ L-I结构的输入为~$x=(task, x_1, x_2, ..., x_n)$，因此模型的输入层�
 	\label{fig:l-e}
 \end{figure}
 
-在L-E结构输入时，为每一个任务并列地设置一个不同的\texttt{CLS}记号，因此可以看作是S-C结构的横向扩展，但L-E结构的任务特定模块被堆叠在该任务的\texttt{CLS}相对应的那一列。L-E结构允许任务在形成自己每一层的句子表示时窃听其他任务是如何抽象句子特征的。
+需要注意的是，这里的\texttt{CLS\_ID}与L-I结构中的\texttt{TASK\_ID}不同，\texttt{CLS\_ID}是一个可学习的向量参数，无需在嵌入矩阵中查找。在L-E结构输入时，为每一个任务并列地设置一个不同的\texttt{CLS\_ID}记号，因此可以看作是S-C结构的横向扩展，但L-E结构的任务特定模块被堆叠在该任务的\texttt{CLS\_ID}相对应的那一列。虽然每一个任务的\texttt{CLS\_ID}都被同时输入给模型，但在训练和推断过程中都只使用目前关注的其中的一个任务记号。L-E结构允许任务在形成自己每一层的句子表示时窃听其他任务是如何抽象句子特征的。
+
+假设联合学习的任务数为~$T$，输入句子中记号个数为~$n$，隐层维度为~$d$，那么原始输入经过L-E结构的嵌入层后得到隐层输入及其后各隐层的隐编码为~$z^{(0)}, z^{(1)}, ..., z^{(N)}\in \mathbb{R}^{(T+n)\times d}$. L-E结构根据当前执行的任务输出对应的预测结果：
+\begin{equation}
+	\hat{y} = \mathrm{Softmax}(z^{(N)}_{task\_id}\cdot W^{t} + b).
+\end{equation}
+其中~$0\le task\_id < T$，任务~$t$~特定的分类矩阵为~$W^t$.
 
 \subsection{模型对比}
-从共享模式上看，S-P结构和S-C结构都属于硬共享模式，二者结构的低层都为任务共享层。二者的区别在于S-P结构使用汇聚的方式得到句子表示，而S-C结构利用\texttt{CLS}的顶层表示作为其句子表示。L-I结构和L-E结构允许模型在每一层都形成自己的任务特定的句子表示，增大了共享的灵活性。但L-I结构在抽取自己的句子特征时无法访问其他任务抽取的特征，因此是隐式共享的；而L-E结构允许同时形成多个任务的句子表示，从而使得每个任务在抽取自己需要的特征时可以窃听其他任务的特征，因此是显式共享的。
+最后，在本小节简要地概括上述四种多任务Transformer结构的特点以及它们与已有共享模式的异同，
 
-在形式上，L-I结构和L-E结构与软共享模式类似，都允许某个任务窃听其他任务的特征。然而，L-I结构和L-E结构与之前的很多软共享方法\cite{DBLP:conf/cvpr/MisraSGH16}\cite{1705.08142}的不同之处在于，L-I结构和L-E结构可以根据输入样本的不同动态地决定与其他任务的共享程度。
+从共享模式上看，S-P结构和S-C结构都属于硬共享模式，二者结构的低层都为任务共享层，任务特定的句子表示只能在网络顶层的任务特定模块形成。二者的区别在于S-P结构使用池化的方式根据各个记号的顶层隐编码得到句子表示，而S-C结构利用\texttt{CLS}的顶层隐编码作为其句子表示。
+
+而L-I结构和L-E结构是逐层共享的，允许模型在每一层都形成自己任务特定的句子表示，增大了共享的灵活性。但L-I结构在抽取自己的句子特征时无法访问其他任务抽取的特征，因此是隐式共享的；而L-E结构允许同时形成多个任务的句子表示，从而使得每个任务在抽取自己需要的特征时可以窃听其他任务的特征，因此是显式共享的。
+
+在形式上，L-I结构和L-E结构与软共享模式类似，都允许某个任务在形成每一层隐编码时窃听其他任务的特征。然而，L-I结构和L-E结构与之前的很多软共享方法\cite{DBLP:conf/cvpr/MisraSGH16}\cite{1705.08142}的不同之处在于，L-I结构和L-E结构可以根据输入样本的不同动态地决定与哪些任务共享以及共享多少特征。
 
 \section{实现细节}
 \label{sec:imp}
@@ -830,7 +843,7 @@ L-I结构的输入为~$x=(task, x_1, x_2, ..., x_n)$，因此模型的输入层�
 在多任务联合训练时，也存在一部分较为复杂的训练策略。例如，除了通过均匀采样的方式挑选任务外，还可以按数据集比例为不同任务分配被选中的概率\cite{sanh2018hierarchical}；也可以预先定义任务采样策略\cite{DBLP:journals/tacl/KiperwasserB18}；还可以采用不确定性来为不同任务的损失函数分配权重\cite{DBLP:conf/cvpr/KendallGC18}。
 
 \subsection{超参数设定}
-实验中使用的均为4层Transformer，模型维度为300，包含6个头，每个头为50维，前馈网络隐层维度为512维。Transformer中的位置编码作为模型参数自动学习。使用Adam算法\cite{kingma2015adam}进行参数学习，初始学习率为5e-4，最多训练30个轮次。我们使用的小批量（mini-batch）大小为50. 
+实验中使用的均为4层Transformer，模型维度为300，包含6个注意力头，每个头为50维，前馈网络隐层维度为512维。Transformer中的位置编码作为模型参数自动学习。使用Adam算法\cite{kingma2015adam}进行参数学习，初始学习率为5e-4，最多训练30个轮次。训练使用的小批次（mini-batch）大小为50. 
 
 实验中采用的词向量为在840B词汇量的Common Crawl预料集上预训练的300维GloVe\cite{DBLP:conf/emnlp/PenningtonSM14}。为避免学习算法对GloVe进行过多的修改，我们为词嵌入层设置了更小的学习率：5e-5.
 

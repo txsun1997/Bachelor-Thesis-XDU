@@ -400,6 +400,19 @@
   Association for Computational Linguistics, {ACL} 2016, August 7-12, 2016,
   Berlin, Germany, Volume 1: Long Papers}\@. \bibyear{2016}\@.
 
+\bibitem{DBLP:journals/neco/GersSC00}
+\bibauthor{Gers F~A\@, Schmidhuber J\@, Cummins F~A}\@. \bibtitle{Learning to
+  Forget: Continual Prediction with {LSTM}}\bibmark{[J]}\@. \bibjournal{Neural
+  Computation}\@, \bibyear{2000}\@,
+  \bibvolume{12}\bibnumber{(10)}\thinspace{}\textnormal{:
+  }\bibpages{2451\thinspace{}\textnormal{--}\thinspace{}2471}\@.
+
+\bibitem{DBLP:journals/corr/ChungGCB14}
+\bibauthor{Chung J\@, G{\"{u}}l{\c{c}}ehre {\c{C}}\@, Cho K, et~al}\@.
+  \bibtitle{Empirical Evaluation of Gated Recurrent Neural Networks on Sequence
+  Modeling}\bibmark{[J]}\@. \bibjournal{CoRR}\@, \bibyear{2014}\@,
+  \bibvolume{abs/1412.3555}\@.
+
 \bibitem{DBLP:journals/corr/BahdanauCB14}
 \bibauthor{Bahdanau D\@, Cho K\@, Bengio Y}\@. \bibtitle{Neural Machine
   Translation by Jointly Learning to Align and Translate}\bibmark{[C]}

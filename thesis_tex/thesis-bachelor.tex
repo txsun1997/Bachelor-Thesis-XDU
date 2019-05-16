@@ -11,6 +11,9 @@
 \usepackage{colortbl}
 \usepackage{multirow}
 \usepackage{pgfplots}
+\usepackage{mathtools}
+\newtagform{EueTag}{式~(}{)}
+\usetagform{EueTag}
 \lstset{language=TeX, basicstyle=\ttfamily}
 
 \newcommand{\figref}[1]{图\ref{#1}}
@@ -48,7 +51,7 @@
 \input{abstract}
 
 % 生成论文的封面、声明页、中英文摘要
-%\makecover
+\makecover
 
 % 论文目录
 \tableofcontents

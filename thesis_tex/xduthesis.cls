@@ -177,15 +177,21 @@
 \addtolength{\textwidth}{-6cm}
 \setlength{\textheight}{\paperheight}
 \ifxdu@bachelor
-\addtolength{\textheight}{-5.8cm}
+% \addtolength{\textheight}{-5.8cm}
 % \setlength{\topmargin}{1.45cm-1in}
 % \setlength{\headheight}{20pt}
 % \setlength{\headsep}{0.6cm}
 % \setlength{\footskip}{18pt}
 
-\setlength{\topmargin}{2.2cm-1in}
-\setlength{\headsep}{0.6cm}
-\setlength{\footskip}{1cm}
+% \setlength{\topmargin}{2.2cm-1in}
+% \setlength{\headsep}{0.6cm}
+% \setlength{\footskip}{1cm}
+
+\addtolength{\textheight}{-5cm}
+\setlength{\voffset}{1.5cm-1in}
+\setlength{\topmargin}{0.6cm}
+\setlength{\headheight}{0.6cm}
+\setlength{\headsep}{0.8cm}
 
 \else
 \addtolength{\textheight}{-5.5cm}
@@ -341,14 +347,14 @@
 \titlespacing{\section}{0pt}{2ex}{\parskip}
 \fi
 \titleformat{\subsection}[block]{\xiaosi}{\thesubsection}{1ex}{}
-%\titlespacing{\subsection}{\xdu@CJK@twochars}{\parskip}{\parskip}
+\titlespacing{\subsection}{0pt}{\parskip}{\parskip}
 
 \renewcommand{\tableofcontents}{%
   % \xdu@clearpage%
   % \phantomsection%
   % \@makeschapterhead{\contentsname}%
   % \chaptermark{\contentsname}%
-  \chapter*{\hei\contentsname}%
+  \chapter*{\contentsname}%
   \@starttoc{toc}}
 \newlength\xdu@dot@space
 \setlength\xdu@dot@space{3bp}
