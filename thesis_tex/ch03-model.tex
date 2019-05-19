@@ -849,4 +849,24 @@ L-I结构的输入为~$x=(task\_id, x_1, x_2, ..., x_n)$，其中~$0\le task\_id
 
 实验中采用的词向量为在840B词汇量的Common Crawl预料集上预训练的300维GloVe\cite{DBLP:conf/emnlp/PenningtonSM14}。为避免学习算法对GloVe进行过多的修改，我们为词嵌入层设置了更小的学习率：5e-5.
 
-对于S-P结构，实现时在输出预测前叠加了一层多层感知机（MLP）以增强其效果，其余结构无此设置。前文提到的神经网络均基于fastNLP\footnote{\url{https://github.com/fastnlp/fastNLP}}和PyTorch实现，所有实验可在一张NVIDIA TITAN Xp上进行。
+对于S-P结构，实现时在输出预测前叠加了一层多层感知机（MLP）以增强其效果，其余结构无此设置。
+
+\subsection{开发环境}
+本课题中模型实现及实验所基于的软硬件环境由表~\ref{tb:env}~给出：
+\begin{table}[htb]
+	\centering
+	\caption{开发环境}
+	\begin{tabular}{ccc}
+		\toprule[2pt]
+		\multirow{3}*{软件环境}&操作系统&Ubuntu 16.04.2 LTS\\
+		&编程框架&PyTorch 1.0 \& fastNLP 0.3\\
+		&编程语言&Python 3.6\\
+		\midrule[1pt]
+		\multirow{3}*{硬件环境}&CPU&Intel(R) Xeon(R) E5-2603 @ 1.70GHz\\
+		&内存&120GB\\
+		&显卡&NVIDIA TITAN Xp\\
+		\bottomrule[2pt]
+	\end{tabular}
+	\label{tb:env}
+\end{table}
+
