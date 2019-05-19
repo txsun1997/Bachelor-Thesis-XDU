@@ -52,6 +52,7 @@
 
 % 生成论文的封面、声明页、中英文摘要
 \makecover
+\tocmatter
 
 % 论文目录
 \tableofcontents
@@ -78,9 +79,11 @@
 % \listoftables
 
 %% 致谢
+\addcontentsline{toc}{chapter}{\bfseries{致谢}}
 \input{acknowledgments}
-
+\cleardoublepage
 % 参考文献
+\addcontentsline{toc}{chapter}{\bfseries{参考文献}}
 \bibliographystyle{gbt7714-2005}
 \bibliography{refs}
 

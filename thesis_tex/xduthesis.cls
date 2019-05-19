@@ -122,24 +122,40 @@
 \setCJKsansfont{Adobe Heiti Std}
 \setCJKfamilyfont{song}{Adobe Song Std}
 \setCJKfamilyfont{hei}{Adobe Heiti Std}
+\setCJKfamilyfont{kai}{Adobe Kaiti Std}
+\setCJKmonofont{Adobe Kaiti Std}
 \fi
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
 \setmonofont{Courier Std}
 \RequirePackage{xunicode,metalogo}
 \renewcommand\frontmatter{%
-  \xdu@clearpage%
+  \xdu@clearpagewithoutnumber
   \@mainmatterfalse
-  \ifxdu@bachelor\pagenumbering{roman}\else\pagenumbering{Roman}\fi
-  \pagestyle{xdu@front}}
+  % \ifxdu@bachelor\pagenumbering{roman}\else\pagenumbering{Roman}\fi
+  \pagestyle{xdu@front}
+}
+
+\newcommand\tocmatter{%
+  \xdu@clearpagewithoutnumber
+  \@mainmattertrue
+  \setcounter{page}{1}
+  \pagenumbering{roman}
+  \pagestyle{xdu@headings}
+}
+
 \renewcommand\mainmatter{%
   \xdu@clearpage
+  %\xdu@clearpagewithoutnumber
   \@mainmattertrue
   \pagenumbering{arabic}
-  \pagestyle{xdu@headings}}
+  \pagestyle{xdu@headings}
+}
+
 \renewcommand\backmatter{%
   \xdu@clearpage
-  \@mainmattertrue}
+  \@mainmattertrue
+}
 \newcommand{\song}{\CJKfamily{song}} % 宋体
 \def\songti{\song}
 \newcommand{\hei}{\CJKfamily{hei}} % 黑体
@@ -177,22 +193,15 @@
 \addtolength{\textwidth}{-6cm}
 \setlength{\textheight}{\paperheight}
 \ifxdu@bachelor
-% \addtolength{\textheight}{-5.8cm}
 % \setlength{\topmargin}{1.45cm-1in}
 % \setlength{\headheight}{20pt}
 % \setlength{\headsep}{0.6cm}
 % \setlength{\footskip}{18pt}
-
-% \setlength{\topmargin}{2.2cm-1in}
-% \setlength{\headsep}{0.6cm}
-% \setlength{\footskip}{1cm}
-
 \addtolength{\textheight}{-5cm}
 \setlength{\voffset}{1.5cm-1in}
 \setlength{\topmargin}{0.6cm}
 \setlength{\headheight}{0.6cm}
 \setlength{\headsep}{0.8cm}
-
 \else
 \addtolength{\textheight}{-5.5cm}
 \setlength\voffset{3cm-1in}
@@ -211,8 +220,20 @@
   \if@openright%
     \ifodd\c@page\relax\else%
       \null\thispagestyle{xdu@empty}\newpage%
+      %set xdu@empty to xdu@front to avoid blank page
     \fi%
-  \fi}
+  \fi
+}
+\def\xdu@clearpagewithoutnumber{%
+  \clearpage%
+  \if@openright%
+    \ifodd\c@page\relax\else%
+      \null\thispagestyle{xdu@empty}\newpage%
+      %set xdu@empty to xdu@front to avoid blank page
+    \fi%
+  \fi
+}
+
 \ifxdu@bachelor%
   \def\ps@xdu@header@rules{\vskip2pt\rule{\textwidth}{0.6pt}}
 \else
@@ -220,28 +241,42 @@
     \vskip4pt\rule{\textwidth}{0.6pt}%
     \vskip0.8pt\rule{\textwidth}{0.6pt}}
 \fi
+
+\def\ps@xdu@header@leftwithoutnumber{%
+  \hbox to\textwidth{%
+    \hfil{\wuhao\noindent\leftmark}\hfil}
+}
+\def\ps@xdu@header@rightwithoutnumber{%
+  \hbox to\textwidth{
+    \hfil{\let\\=\relax\wuhao\rightmark}\hfil}
+}
+
 \def\ps@xdu@header@lefttext{%
   \hbox to\textwidth{%
     \hfil{\wuhao\noindent\leftmark}\hfil%
-    {\ifxdu@bachelor\xiaowu\thepage\hskip1pt\fi}}}
+    {\xiaowu\thepage\hskip1pt}}
+}
 \def\ps@xdu@header@righttext{%
   \hbox to\textwidth{%
     {\ifxdu@bachelor\xiaowu\thepage\hskip1pt\fi}%
-    \hfil{\let\\=\relax\wuhao\rightmark}\hfil}}
+    \hfil{\let\\=\relax\wuhao\rightmark}\hfil}
+}
 \def\ps@xdu@footer@text{%
   \ifxdu@bachelor\relax\else%
-  \hbox to\textwidth{\hfil{\xiaowu\thepage}\hfil}\fi}
+  \hbox to\textwidth{\hfil{\xiaowu\thepage}\hfil}\fi
+}
 \def\ps@xdu@empty{%
   \let\@oddhead\@empty%
   \let\@evenhead\@empty%
   \let\@oddfoot\@empty%
   \let\@evenfoot\@empty}
 \def\ps@xdu@front{%
-  \def\@oddhead{\vbox{\ps@xdu@header@lefttext\ps@xdu@header@rules}}%
-  \def\@evenhead{\vbox{\ps@xdu@header@righttext\ps@xdu@header@rules}}%
+  \def\@oddhead{\vbox{\ps@xdu@header@leftwithoutnumber\ps@xdu@header@rules}}%
+  \def\@evenhead{\vbox{\ps@xdu@header@rightwithoutnumber\ps@xdu@header@rules}}%
   \def\@oddfoot{\ps@xdu@footer@text}%
   \def\@evenfoot{\ps@xdu@footer@text}%
 }
+
 \def\ps@xdu@headings{%
   \def\@oddhead{\vbox{\ps@xdu@header@lefttext\ps@xdu@header@rules}}%
   \def\@evenhead{\vbox{\ps@xdu@header@righttext\ps@xdu@header@rules}}%
@@ -323,7 +358,7 @@
    \vskip\xdu@chapter@after%
    \nointerlineskip}}
 \def\@schapter#1{%
-  \addcontentsline{toc}{chapter}{\xiaosi\song\bfseries#1}%
+  %\addcontentsline{toc}{chapter}{\xiaosi\song\bfseries#1}%
   \chaptermark{#1}%
   \@makeschapterhead{#1}
   \@afterheading}
@@ -349,13 +384,15 @@
 \titleformat{\subsection}[block]{\xiaosi}{\thesubsection}{1ex}{}
 \titlespacing{\subsection}{0pt}{\parskip}{\parskip}
 
-\renewcommand{\tableofcontents}{%
-  % \xdu@clearpage%
-  % \phantomsection%
-  % \@makeschapterhead{\contentsname}%
+\renewcommand{\tableofcontents}{
+  \xdu@clearpagewithoutnumber%
+  \phantomsection%
   % \chaptermark{\contentsname}%
-  \chapter*{\contentsname}%
-  \@starttoc{toc}}
+  \hei \chapter*{\contentsname} \song %
+
+  \@starttoc{toc}
+}
+
 \newlength\xdu@dot@space
 \setlength\xdu@dot@space{3bp}
 \titlecontents{chapter}[0pt]{}%
@@ -660,13 +697,13 @@
     \xdu@titlepage
     \end{spacing}
   \end{titlepage}
-  \xdu@clearpage
+  \xdu@clearpagewithoutnumber
   \thispagestyle{xdu@empty}
   \xdu@cheadpage
-  \xdu@clearpage
+  \xdu@clearpagewithoutnumber
   \thispagestyle{xdu@empty}
   \xdu@eheadpage
-  \xdu@clearpage
+  \xdu@clearpagewithoutnumber
 %  \addtolength{\topmargin}{15pt}
 %  \thispagestyle{xdu@empty}
 %  \xdu@make@declaration
@@ -735,8 +772,9 @@
       \endgroup%
     \fi%
   \fi%
-  \expandafter \ifx \csname xdu@eabstract\endcsname \relax%
-  \else%
+  \xdu@clearpagewithoutnumber
+  %\expandafter \ifx \csname xdu@eabstract\endcsname \relax%
+  %\else%
     \chapter*{\bfseries\eabstractname}%
     \normalsize\par\xdu@eabstract\vskip12bp%
     \begingroup\ifxdu@bachelor\normalsize\else\wuhao\fi
@@ -750,7 +788,7 @@
     \hskip1em\xdu@ethesistype
     \endgroup
     \fi%
-  \fi
+  %\fi
   \xdu@mkabstractfalse%
 }
 \def\@tocrmarg{2em}
@@ -768,17 +806,20 @@
     \leaders\hbox{$\m@th\mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
     \nobreak{\normalfont \normalcolor #5}%
     \par}%
-  \fi}
+  \fi
+}
 \def\xdu@starttoc#1{% #1: float type, prepend type name in \listof*** entry.
   \let\oldnumberline\numberline
   \def\numberline##1{\oldnumberline{\csname #1name\endcsname%
       \ifxdu@english~\else\hskip.2em\fi ##1}}
   \@starttoc{\csname ext@#1\endcsname}
-  \let\numberline\oldnumberline}
+  \let\numberline\oldnumberline
+}
 \def\xdu@listof#1{% #1: float type
   \@ifstar
     {\chapter*[]{\csname list#1name\endcsname}\xdu@starttoc{#1}}
-    {\chapter*{\csname list#1name\endcsname}\xdu@starttoc{#1}}}
+    {\chapter*{\csname list#1name\endcsname}\xdu@starttoc{#1}}
+}
 \renewcommand\listoffigures{\xdu@listof{figure}}
 \ifxdu@english
 \renewcommand*\l@figure{\@dottedtocline{1}{0em}{5em}}
