@@ -10,45 +10,50 @@ Warning--Require journal: tenney2018you
 Warning--Require journal: 1705.08142
 Warning--Require booktitle: Hinton:1986:DR:104279.104287
 Warning--Require journal: guo2019gaussian
-You've used 67 entries,
+Warning--Require address: DBLP:conf/emnlp/HashimotoXTS17
+Warning--Require address: DBLP:conf/emnlp/LiuQH16
+Warning--Require address: DBLP:conf/acl/Rei17
+Warning--Require address: DBLP:conf/eacl/PlankA17
+Warning--Require address: DBLP:conf/eacl/SogaardB17
+You've used 74 entries,
             3071 wiz_defined-function locations,
-            1144 strings with 26687 characters,
-and the built_in function-call counts, 127636 in all, are:
-= -- 14670
-> -- 250
-< -- 567
-+ -- 11949
-- -- 855
-* -- 3028
-:= -- 14792
+            1196 strings with 29146 characters,
+and the built_in function-call counts, 138955 in all, are:
+= -- 15897
+> -- 274
+< -- 622
++ -- 12900
+- -- 938
+* -- 3379
+:= -- 16026
 add.period$ -- 0
-call.type$ -- 67
+call.type$ -- 74
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 71
-duplicate$ -- 18439
-empty$ -- 4232
-format.name$ -- 732
-if$ -- 34045
+cite$ -- 83
+duplicate$ -- 20058
+empty$ -- 4684
+format.name$ -- 800
+if$ -- 37011
 int.to.chr$ -- 0
-int.to.str$ -- 67
+int.to.str$ -- 74
 missing$ -- 0
-newline$ -- 228
-num.names$ -- 67
-pop$ -- 1690
+newline$ -- 249
+num.names$ -- 74
+pop$ -- 1865
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 893
+skip$ -- 979
 stack$ -- 0
-substring$ -- 15671
-swap$ -- 2835
+substring$ -- 17012
+swap$ -- 3188
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 1616
-width$ -- 69
-write$ -- 798
-(There were 4 warnings)
+warning$ -- 9
+while$ -- 1780
+width$ -- 76
+write$ -- 902
+(There were 9 warnings)

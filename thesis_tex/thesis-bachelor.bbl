@@ -452,6 +452,66 @@
   \bibtitle{Star-Transformer}\bibmark{[J]}\@. \bibjournal{arXiv preprint
   arXiv:1902.09113}\@, \bibyear{2019}\@.
 
+\bibitem{DBLP:conf/emnlp/HashimotoXTS17}
+\bibauthor{Hashimoto K\@, Xiong C\@, Tsuruoka Y, et~al}\@. \bibtitle{A Joint
+  Many-Task Model: Growing a Neural Network for Multiple {NLP}
+  Tasks}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 2017
+  Conference on Empirical Methods in Natural Language Processing, {EMNLP} 2017,
+  Copenhagen, Denmark, September 9-11, 2017}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Association for
+  Computational Linguistics}\@, \bibyear{2017}\thinspace{}\textnormal{:
+  }\bibpages{1923\thinspace{}\textnormal{--}\thinspace{}1933}\@.
+
+\bibitem{DBLP:conf/emnlp/LiuQH16}
+\bibauthor{Liu P\@, Qiu X\@, Huang X}\@. \bibtitle{Deep Multi-Task Learning
+  with Shared Memory for Text Classification}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 2016 Conference on Empirical
+  Methods in Natural Language Processing, {EMNLP} 2016, Austin, Texas, USA,
+  November 1-4, 2016}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{The Association for Computational Linguistics}\@,
+  \bibyear{2016}\thinspace{}\textnormal{:
+  }\bibpages{118\thinspace{}\textnormal{--}\thinspace{}127}\@.
+
+\bibitem{DBLP:journals/corr/abs-1802-08969}
+\bibauthor{Chen J\@, Qiu X\@, Liu P, et~al}\@. \bibtitle{Meta Multi-Task
+  Learning for Sequence Modeling}\bibmark{[J]}\@. \bibjournal{CoRR}\@,
+  \bibyear{2018}\@, \bibvolume{abs/1802.08969}\@.
+
+\bibitem{DBLP:conf/acl/Rei17}
+\bibauthor{Rei M}\@. \bibtitle{Semi-supervised Multitask Learning for Sequence
+  Labeling}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 55th
+  Annual Meeting of the Association for Computational Linguistics, {ACL} 2017,
+  Vancouver, Canada, July 30 - August 4, Volume 1: Long Papers}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Association for
+  Computational Linguistics}\@, \bibyear{2017}\thinspace{}\textnormal{:
+  }\bibpages{2121\thinspace{}\textnormal{--}\thinspace{}2130}\@.
+
+\bibitem{DBLP:conf/eacl/PlankA17}
+\bibauthor{Plank B\@, Alonso H~M}\@. \bibtitle{When is multitask learning
+  effective? Semantic sequence prediction under varying data
+  conditions}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 15th
+  Conference of the European Chapter of the Association for Computational
+  Linguistics, {EACL} 2017, Valencia, Spain, April 3-7, 2017, Volume 1: Long
+  Papers}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Association for Computational Linguistics}\@,
+  \bibyear{2017}\thinspace{}\textnormal{:
+  }\bibpages{44\thinspace{}\textnormal{--}\thinspace{}53}\@.
+
+\bibitem{DBLP:conf/eacl/SogaardB17}
+\bibauthor{S{\o}gaard A\@, Bingel J}\@. \bibtitle{Identifying beneficial task
+  relations for multi-task learning in deep neural networks}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 15th Conference of the
+  European Chapter of the Association for Computational Linguistics, {EACL}
+  2017, Valencia, Spain, April 3-7, 2017, Volume 2: Short Papers}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Association for
+  Computational Linguistics}\@, \bibyear{2017}\thinspace{}\textnormal{:
+  }\bibpages{164\thinspace{}\textnormal{--}\thinspace{}169}\@.
+
+\bibitem{DBLP:journals/corr/abs-1808-07658}
+\bibauthor{Chen J\@, Chen K\@, Chen X, et~al}\@. \bibtitle{Exploring Shared
+  Structures and Hierarchies for Multiple {NLP} Tasks}\bibmark{[J]}\@.
+  \bibjournal{CoRR}\@, \bibyear{2018}\@, \bibvolume{abs/1808.07658}\@.
+
 \bibitem{DBLP:conf/lrec/ConneauK18}
 \bibauthor{Conneau A\@, Kiela D}\@. \bibtitle{SentEval: An Evaluation Toolkit
   for Universal Sentence Representations}\bibmark{[C]}

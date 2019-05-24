@@ -8,7 +8,7 @@
 
 文本分类即将一段文本归到某个特定的预先定义的类别。待分类的文本通常是一个句子（如情感分析）或一个句子对（如自然语言推理）。需要注意的是，这里的一个句子并不一定是常规意义上以一个句号为结束标识符的一句话，也有可能包含多句话。文本分类任务在现实生活中有着广泛的应用，如自动分析产品评价、微博情感分析、文档归类等等。文本分类任务需要模型能够抽取出易于分类的句子表示，即需要句子级的文本表示模型。
 
-具体地，本文在情感分析任务上进行实验：对于一段用户生成的文本，模型需要判断其情感极性为正向还是负向。然而对于不同领域的文本通常需要关注不同的特征，例如在食物类的评论文本中模型应当更加关注“好吃”、“美味”等词，而在电影评论文本中应当更加关注“好看”、“烂片”等词语。同时，不同领域的文本分类任务常常也需要某些通用的特征，如“很棒”、“失望”等词在所有与情感倾向有关的分类任务中都是应当被关注的。而事实上，在某个特定的领域内，文本数据量常常是有限的，这种情况下单任务学习通常难以取得很好的效果，可以通过多任务学习来利用其他领域的相关知识帮助分类。
+具体地，本文在\emph{情感分析}任务上进行实验：对于一段用户生成的文本，模型需要判断其情感极性为正向还是负向。然而对于不同领域的文本通常需要关注不同的特征，例如在食物类的评论文本中模型应当更加关注“好吃”、“美味”等词，而在电影评论文本中应当更加关注“好看”、“烂片”等词语。同时，不同领域的文本分类任务常常也需要某些通用的特征，如“很棒”、“失望”等词在所有与情感倾向有关的分类任务中都是应当被关注的。而事实上，在某个特定的领域内，文本数据量常常是有限的，这种情况下单任务学习通常难以取得很好的效果，可以通过多任务学习来利用其他领域的相关知识帮助分类。
 
 \section{数据集}
 \label{sec:ds}
@@ -42,7 +42,7 @@
 	\label{tb:dataset}
 \end{table}
 
-这里所有数据集中的样本都被标注为两个类别，分别表示情感极性的正向和负向。如表~\ref{tb:dataset}~所示，虽然各数据集均为情感分析任务，且数据规模相当，但其样本来自不同的产品领域，平均句子长度和词汇量大小也各不相同，因此各个任务的难度也有所差别。
+这里所有数据集中的样本都被标注为两个类别，分别表示情感极性的正向和负向。如表~\ref{tb:dataset}~所示，虽然各数据集均属于情感分析任务，且数据规模相当，但其样本来自不同的产品领域，平均句子长度和词汇量大小也各不相同，各个任务的难度也有所差别。
 
 表~\ref{tb:examples}~给出了其中几个数据集中的部分样例。
 \begin{table}[htb]
@@ -52,11 +52,11 @@
 \toprule[2pt]
 领域 & 样例 & \ 类别\\
 \midrule[1pt]
-Books&It is a very dry book and hard to stay interested in. I am barely able to stay awake while reading it. It does have some interesting things.& \ negative\\
-Mag&The magazine was shipped in a timely manner, i would use this vendor again.& \ positive\\
-Elec&Very pleased with the high capacity cartridge with my epson stylus cx6600.& \ positive\\
-MR&Just a big mess of a movie, full of images and events, but no tension or surprise.& \ negative\\
-Health&Its quality is cheap and poorly made. I bought two thinking it was a good deal but I threw them out after 2 days because the on/off switch didn't work.& \ negative\\
+Books&It is a very dry book and hard to stay interested in. I am barely able to stay awake while reading it. It does have some interesting things.& \ Negative\\
+Mag&The magazine was shipped in a timely manner, i would use this vendor again.& \ Positive\\
+Elec&Very pleased with the high capacity cartridge with my epson stylus cx6600.& \ Positive\\
+MR&Just a big mess of a movie, full of images and events, but no tension or surprise.& \ Negative\\
+Health&Its quality is cheap and poorly made. I bought two thinking it was a good deal but I threw them out after 2 days because the on/off switch didn't work.& \ Negative\\
 \bottomrule[2pt]
 \end{tabular}
 \label{tb:examples}
@@ -107,17 +107,17 @@ Health&Its quality is cheap and poorly made. I bought two thinking it was a good
 		\toprule[2pt]
 		类型&模型&参数量&相对增量\\
 		\midrule[1pt]
-		单任务&Transformer&2,773,150‬&-\\
-		\multirow{4}*{多任务}&S-P结构&2,782,180&$+0.32\%$\\
-		&S-C结构&2,782,480&$+0.34\%$\\
-		&L-I结构&2,786,980&$+0.50\%$\\
-		&L-E结构&2,786,980&$+0.50\%$\\
+		单任务&Transformer&$2,773,150$‬&-\\
+		\multirow{4}*{多任务}&S-P结构&$2,782,180$&$+0.32\%$\\
+		&S-C结构&$2,782,480$&$+0.34\%$\\
+		&L-I结构&$2,786,980$&$+0.50\%$\\
+		&L-E结构&$2,786,980$&$+0.50\%$\\
 		\bottomrule[2pt]
 	\end{tabular}
 	\label{tb:params}
 \end{table}
 
-可见，本文提出的几种多任务Transformer结构相比单任务模型并不会增加过多的参数，即使在十六个任务的情形下，最复杂的L-I结构和L-E结构也仅增加了0.5\%的参数量。
+可见，本文提出的几种多任务Transformer结构相比单任务模型并不会增加过多的参数，即使在十六个任务的情形下，L-I结构也仅增加了0.5\%的参数量，但能够降低22.5\%的错误率。
 
 另外，在实践中，神经网络的层数通常是一个比较重要的超参数，模型性能有时会由于层数的不同而产生较大差异。之前的实验中使用的模型均为4层Transformer，为探究多任务Transformer结构对网络层数的敏感性，我们实验了四种结构在不同层数下的平均分类准确率，结果如图~\ref{fig:layer_dis}~所示。
 
@@ -186,4 +186,4 @@ Transformer模型由于基于注意力机制，可以将注意力分数矩阵进
 \label{fig:l-e-attn}
 \end{figure}
 
-可见，杂志领域情感分析任务与音乐和厨具领域的情感分析任务有很强的相关性，而电影评论情感分析任务与影碟产品领域的任务最为相似。同时还可以注意到，L-E模型还注意到了输入句子中具有较强情感指示性的单词，如图~\ref{fig:l-e-attn}~(a)中的disappointed（失望）以及图~\ref{fig:l-e-attn}~(b)中的fascinating（惊艳的），这在一定程度上解释了模型有效的原因。
+可见，杂志领域情感分析任务与音乐和厨具领域的情感分析任务有很强的相关性，而电影评论情感分析任务与影碟产品领域的任务最为相似。同时还可以注意到，L-E模型还注意到了输入句子中具有较强情感指示性的单词，如图~\ref{fig:l-e-attn}~(a)中的disappointed（失望的）以及图~\ref{fig:l-e-attn}~(b)中的fascinating（惊艳的），这为模型的预测提供了一定的可解释性。

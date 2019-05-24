@@ -83,7 +83,7 @@
 
 随着深度学习的发展，神经网络的结构也变得日益多样和复杂。上面的多层感知机属于全连接前馈网络，而前馈网络的另一典型代表就是在计算机视觉中被广泛使用的\emph{卷积神经网络}（Convolutional Neural Network, CNN），它与全连接网络的区别在于权重共享和局部连接。除前馈网络外，还有一类网络称为反馈网络，因为反馈网络的神经元可以接收来自本身的反馈信号，从而具备一定的记忆能力，因此也被称为记忆网络。反馈网络的一种典型代表就是\emph{循环神经网络}（Recurrent Neural Network, RNN），它在自然语言处理中得到了广泛应用。另外，近年来\emph{图神经网络}（Graph Neural Network, GNN）因其在处理图结构数据上的优势也得到了迅速发展，近期也被用于处理文本和图像数据。
 
-深度学习能够成功的重要原因在于其强大的特征表示能力。在传统的机器学习中，通常需要人为地构造数据特征，再训练一个学习算法来总结这些构造出来的特征输入与输出之间的关系。例如，在文本分类任务中，传统机器学习的做法一般是利用词袋模型或TF-IDF来构造文本特征，再将其作为支持向量机等分类器的输入来进行分类。而在深层神经网络中，算法自动学习原始数据的特征表示，数据从输入到输出的过程~$\mathbf{x}\to \mathcal{F} \to y$~可以人为地划分为两个阶段：\emph{表示}和\emph{预测}\footnote{有时也被称为编码和解码}。所谓表示，就是神经网络中间隐层的状态，上文中MLP的中间隐层就可以当作某种浅层表示；而预测，比如分类或回归，一般是在上一层得到的特征表示的基础上进行简单变换得到易于预测的任务特定表示。因此，深度学习又可以看作是一种表示学习，而深度学习的成功也证明了学到好的特征表示的重要意义。
+深度学习能够成功的重要原因在于其强大的特征表示能力。在传统的机器学习中，通常需要人为地构造数据特征，再训练一个学习算法来总结这些构造出来的特征输入与输出之间的关系。例如，在文本分类任务中，传统机器学习的做法一般是利用词袋模型或TF-IDF来构造文本特征，再将其作为支持向量机等分类器的输入来进行分类。而在深层神经网络中，算法自动学习原始数据的特征表示，数据从输入到输出的过程~$\mathbf{x}\to \mathcal{F} \to y$~可以人为地划分为两个阶段：\emph{表示}和\emph{预测}\footnote{有时也被称为编码和解码}。所谓表示，就是神经网络中间隐层的状态，上文中MLP的中间隐层就可以当作某种浅层表示；而预测，比如分类或回归，一般是在上一层得到的特征表示的基础上进行进一步变换得到易于预测的任务特定表示。因此，深度学习又可以看作是一种表示学习，而深度学习的成功也证明了学到好的特征表示的重要意义。
 
 \section{多任务学习}
 \label{sec:mtl}
@@ -128,11 +128,11 @@
 		\begin{tikzpicture}
 		\begin{scope} [fill opacity = .3]
 		\draw [->, thick] (0,0) -- (0, 0.5);
-		\draw [fill=lightgray, draw = black] (-0.5,1) rectangle (0.5, 0.5);
+		\draw [fill=gray, draw = black] (-0.5,1) rectangle (0.5, 0.5);
 		\draw [->, thick] (0, 1) -- (0, 1.5);
-		\draw [fill=lightgray, draw = black] (-0.5,2) rectangle (0.5, 1.5);
+		\draw [fill=gray, draw = black] (-0.5,2) rectangle (0.5, 1.5);
 		\draw [->, thick] (0, 2) -- (0, 2.5);
-		\draw [fill=lightgray, draw = black] (-0.5,3) rectangle (0.5, 2.5);
+		\draw [fill=gray, draw = black] (-0.5,3) rectangle (0.5, 2.5);
 		\draw [draw = black] (-2,4) rectangle (-1, 3.5);
 		\draw [draw = black] (-0.5,4) rectangle (0.5, 3.5);
 		\draw [draw = black] (1,4) rectangle (2, 3.5);
@@ -165,9 +165,9 @@
 		
 		\draw [->, thick] (-1.5, 3) -- (-1.5, 3.5);
 		
-		\draw [fill=lightgray, draw = black] (-2,1) rectangle (-1, 0.5);
-		\draw [fill=lightgray, draw = black] (-2,2) rectangle (-1, 1.5);
-		\draw [fill=lightgray, draw = black] (-2,3) rectangle (-1, 2.5);
+		\draw [fill=gray, draw = black] (-2,1) rectangle (-1, 0.5);
+		\draw [fill=gray, draw = black] (-2,2) rectangle (-1, 1.5);
+		\draw [fill=gray, draw = black] (-2,3) rectangle (-1, 2.5);
 		\draw [draw = black] (-2,4) rectangle (-1, 3.5);
 		
 		\draw [->, thick] (0,0) -- (0, 0.5);
@@ -184,9 +184,9 @@
 		
 		\draw [->, thick] (0, 3) -- (0, 3.5);
 		
-		\draw [fill=lightgray, draw = black] (-0.5,1) rectangle (0.5, 0.5);
-		\draw [fill=lightgray, draw = black] (-0.5,2) rectangle (0.5, 1.5);
-		\draw [fill=lightgray, draw = black] (-0.5,3) rectangle (0.5, 2.5);
+		\draw [fill=gray, draw = black] (-0.5,1) rectangle (0.5, 0.5);
+		\draw [fill=gray, draw = black] (-0.5,2) rectangle (0.5, 1.5);
+		\draw [fill=gray, draw = black] (-0.5,3) rectangle (0.5, 2.5);
 		\draw [draw = black] (-0.5,4) rectangle (0.5, 3.5);
 		
 		\draw [->, thick] (1.5, 0) -- (1.5, 0.5);
@@ -203,9 +203,9 @@
 		
 		\draw [->, thick] (1.5, 3) -- (1.5, 3.5);
 		
-		\draw [fill=lightgray, draw = black] (1,1) rectangle (2, 0.5);
-		\draw [fill=lightgray, draw = black] (1,2) rectangle (2, 1.5);
-		\draw [fill=lightgray, draw = black] (1,3) rectangle (2, 2.5);
+		\draw [fill=gray, draw = black] (1,1) rectangle (2, 0.5);
+		\draw [fill=gray, draw = black] (1,2) rectangle (2, 1.5);
+		\draw [fill=gray, draw = black] (1,3) rectangle (2, 2.5);
 		\draw [ draw = black] (1,4) rectangle (2, 3.5);
 		\end{scope}
 		\node at (-1.5, 3.75) {A};
@@ -227,9 +227,9 @@
 		\draw [->, thick] (0, 1) -- (-1.5, 1.5);
 		\draw [->, thick] (0, 2) -- (1.5, 2.5);
 		
-		\draw [fill=lightgray, draw = black] (-0.5,1) rectangle (0.5, 0.5);
-		\draw [fill=lightgray, draw = black] (-0.5,2) rectangle (0.5, 1.5);
-		\draw [fill=lightgray, draw = black] (-0.5,3) rectangle (0.5, 2.5);
+		\draw [fill=gray, draw = black] (-0.5,1) rectangle (0.5, 0.5);
+		\draw [fill=gray, draw = black] (-0.5,2) rectangle (0.5, 1.5);
+		\draw [fill=gray, draw = black] (-0.5,3) rectangle (0.5, 2.5);
 		
 		\draw [ draw = black] (-0.5,4) rectangle (0.5, 3.5);
 		\draw [ draw = black] (-2,2) rectangle (-1, 1.5);
@@ -251,9 +251,9 @@
 		\draw [->, thick] (-1.5, 2) -- (-1.5, 2.5);
 		\draw [->, thick] (-1.5, 3) -- (-1.5, 3.5);
 		
-		\draw [fill=lightgray, draw = black] (-2,1) rectangle (-1, 0.5);
-		\draw [fill=lightgray, draw = black] (-2,2) rectangle (-1, 1.5);
-		\draw [fill=lightgray, draw = black] (-2,3) rectangle (-1, 2.5);
+		\draw [fill=gray, draw = black] (-2,1) rectangle (-1, 0.5);
+		\draw [fill=gray, draw = black] (-2,2) rectangle (-1, 1.5);
+		\draw [fill=gray, draw = black] (-2,3) rectangle (-1, 2.5);
 		\draw [ draw = black] (-2,4) rectangle (-1, 3.5);
 		
 		\draw [->, thick] (-1.5,0) -- (-.1, .4);
@@ -263,18 +263,18 @@
 		\draw [->, thick] (0, 3) -- (-1.4, 3.4);
 		\draw [->, thick] (0, 3) -- (1.4, 3.4);
 		
-		\draw [fill=lightgray, draw = black] (-0.5,1) rectangle (0.5, 0.5);
-		\draw [fill=lightgray, draw = black] (-0.5,2) rectangle (0.5, 1.5);
-		\draw [fill=lightgray, draw = black] (-0.5,3) rectangle (0.5, 2.5);
+		\draw [fill=gray, draw = black] (-0.5,1) rectangle (0.5, 0.5);
+		\draw [fill=gray, draw = black] (-0.5,2) rectangle (0.5, 1.5);
+		\draw [fill=gray, draw = black] (-0.5,3) rectangle (0.5, 2.5);
 		
 		\draw [->, thick] (1.5, 0) -- (1.5, 0.5);
 		\draw [->, thick] (1.5, 1) -- (1.5, 1.5);
 		\draw [->, thick] (1.5, 2) -- (1.5, 2.5);
 		\draw [->, thick] (1.5, 3) -- (1.5, 3.5);
 		
-		\draw [fill=lightgray, draw = black] (1,1) rectangle (2, 0.5);
-		\draw [fill=lightgray, draw = black] (1,2) rectangle (2, 1.5);
-		\draw [fill=lightgray, draw = black] (1,3) rectangle (2, 2.5);
+		\draw [fill=gray, draw = black] (1,1) rectangle (2, 0.5);
+		\draw [fill=gray, draw = black] (1,2) rectangle (2, 1.5);
+		\draw [fill=gray, draw = black] (1,3) rectangle (2, 2.5);
 		\draw [ draw = black] (1,4) rectangle (2, 3.5);
 		\end{scope}
 		\node at (-1.5, 3.75) {A};
@@ -329,7 +329,7 @@ Transformer在语义信息提取和长距离依赖任务上都取得了富有竞
 
 \section{神经多任务自然语言处理}
 \label{sec:mtl4nlp}
-在前文中，介绍了深度学习的基本概念，以及多任务学习和自然语言处理在深度学习背景下的研究现状。在这一基础上，本节将介绍使用基于神经网络的多任务学习在自然语言处理中的主要进展。
+在前文中，介绍了深度学习的基本概念，以及多任务学习和自然语言处理在深度学习背景下的研究现状。在这一基础上，本节将介绍基于神经网络的多任务学习在自然语言处理中的主要进展。
 
 事实上，早在十年前就已经有人在神经网络模型中应用多任务学习来解决NLP的问题：Collobert等人\cite{DBLP:conf/icml/CollobertW08}使用一个简单的卷积神经网络（Convolutional Neural Network, CNN）来同时学习词性标注、语块标注、命名实体识别、语义角色标注、语义相似度和语言模型，超越了CNN使用单任务训练时的表现。
 
@@ -351,10 +351,20 @@ Transformer在语义信息提取和长距离依赖任务上都取得了富有竞
 	\label{fig:mtl_cnn_rnn}
 \end{figure}
 
-从共享架构上看，基于神经网络的多任务学习架构涵盖了前文提到的各种共享模式。首先，最简单的硬共享模式率先得到了应用\cite{DBLP:conf/icml/CollobertW08}，并且直到今天还在被广泛的使用\cite{liu2019multi}；随后，软共享模式因其灵活性也被广泛地应用在NLP任务中，并取得了出色的表现\cite{1705.08142}；由于NLP任务对文本表示的要求不同（例如比较简单的NLP任务仅需要简单的语法知识而难度较大的任务需要复杂的语义信息），分层共享在RNN中得到了应用\cite{DBLP:conf/acl/SogaardG16}，取得了优于硬共享架构的效果；最后，Liu等人\cite{DBLP:conf/ijcai/LiuQH16}在RNN中使用共享-私有模式，在文本分类任务上取得了较大提升。
+从共享架构上看，基于神经网络的多任务自然语言处理架构涵盖了前文提到的各种共享模式，也出现了一些新颖的共享模式。
 
-近期，随着迁移学习在NLP领域取得了巨大成功\cite{DBLP:conf/naacl/PetersNIGCLZ18}\cite{radford2018improving}\cite{devlin2018bert}，人们发现学习一个通用的任务无关的表示能够给特定任务带来的收益远远大于根据任务特点对模型结构的改进。为了评测模型的通用表示能力，研究者们开始使用多个任务的性能来测试单一模型，开发了通用表示能力评测工具（SentEval\cite{DBLP:conf/lrec/ConneauK18}）以及一些多任务基准平台（DecaNLP\cite{mccann2018natural}、GLUE\cite{DBLP:conf/emnlp/WangSMHLB18}）。
+首先，最简单的硬共享模式率先在CNN上得到了应用\cite{DBLP:conf/icml/CollobertW08}，Dong等人\cite{DBLP:conf/acl/DongWHYW15}又将硬共享模式应用在基于RNN的编码器-解码器框架中来进行多语言机器翻译，将编码器作为共享模块，为每种目标语言设置特定的解码器，该模型可以将源语言同时翻译为多种目标语言，且翻译质量优于使用单任务学习时的效果。Liu等人\cite{DBLP:conf/ijcai/LiuQH16}和Zheng等人\cite{DBLP:conf/ijcai/ZhengCQ18}则将基于硬共享模式的RNN应用在多领域文本分类任务中，前者为每个领域设置不同的输出层，而后者为每个领域使用不同的注意力对共享层特征进行选择。Subramanian等人\cite{DBLP:conf/iclr/SubramanianTBP18}使用包括机器翻译、自然语言推理、成分句法分析等多个句对任务预训练了一个序列到序列的模型，该模型可以作为一个通用句子编码器为下游任务提取句子表示。基于深度学习的硬共享模式简单有效，易于实现，一般无需增加过多参数，直到今天还在作为多任务学习的典型应用模式被广泛使用\cite{liu2019multi}。
+
+然而，硬共享模式由于设置了统一的共享层，限制了多任务共享的灵活性，也限制了共享任务间的跨度，对于弱相关或不相关的任务，硬共享模式甚至可能会损害模型性能。因此，一种更加灵活的共享模式，软共享，随即被应用在NLP问题中。Liu等人\cite{DBLP:conf/ijcai/LiuQH16}提出使用软共享模式的LSTM进行多领域文本分类，具体地，该模型为每一个任务分配一个LSTM层，在执行某一任务时该任务对应的LSTM可以通过门控机制获取其他任务的隐状态信息来形成自己的隐状态。除了使用门控机制对其他任务进行窃听之外，还可以对其他任务特征进行简单的线性加权。Misra等人\cite{DBLP:conf/cvpr/MisraSGH16}基于AlexNet提出了十字缝（cross-stitch）网络来处理多个计算机视觉任务，该网络在池化层和全连接层之间设置十字缝单元，将各任务在某一层得到的特征进行线性组合得到下一层特征。Ruder等人\cite{1705.08142}在十字缝网络的基础上基于RNN提出了水闸网络（sluice network）来联合学习词性标注、命名实体识别、语义角色标注等多个NLP任务。
+
+由于NLP任务对文本表示的要求不同，例如比较简单的NLP任务仅需要简单的语法知识而难度较大的任务需要复杂的语义信息，分层共享在RNN中得到了应用。S{\o}gaard等人\cite{DBLP:conf/acl/SogaardG16}使用双向LSTM在词性标注、语块标注和CCG标注三个序列标注任务上进行了实验，结果表明相较于硬共享模式将所有任务放置在同一层的做法，将词性标注这样的低级任务放置在神经网络的低层能够得到更好的效果。Hashimoto等人\cite{DBLP:conf/emnlp/HashimotoXTS17}进一步提出了一种分层多任务学习模型，该模型能够处理更多级别的任务，包含词级别任务（词性标注和语块标注）、语法任务（依存句法分析）和语义任务（语义相似度和文本蕴含任务）。
+
+Liu等人还提出使用基于LSTM的共享-私有模式来解决多领域文本分类问题，其中私有模块可以是LSTM中的内部记忆单元\cite{DBLP:conf/ijcai/LiuQH16}，也可以是外部记忆网络\cite{DBLP:conf/emnlp/LiuQH16}。为将共享模块和私有模块的职责分开，避免二者相互干扰，还可以引入对抗训练（adversarial training）的方法，训练一任务判别器并使其无法根据共享层的特征分辨当前样本来自哪一个任务，从而得到更纯净的共享表示\cite{DBLP:conf/acl/LiuQH17}。Chen等人\cite{DBLP:journals/corr/abs-1802-08969}将元学习（meta learning）方法应用到多任务学习中，使用一个元LSTM作为共享模块来捕捉各任务学习的方式，并用其来控制各任务私有模块的参数。
+
+除了前文提到的四种共享模式之外，在NLP中还出现了很多较新颖的多任务学习模型。例如，Rei\cite{DBLP:conf/acl/Rei17}将语言建模作为辅助任务来增强自己的序列标注模型，Plank等人\cite{DBLP:conf/eacl/PlankA17}和S{\o}gaard等人\cite{DBLP:conf/eacl/SogaardB17}进行了大量实验来探究辅助任务的特点。近年来，随着神经网络架构搜索（network architecture search, NAS）的发展，有人提出多任务共享架构搜索，使用强化学习的方法来自动根据任务和数据的特点选择合适的共享架构\cite{DBLP:journals/corr/abs-1808-07658}。
+
+近期，随着迁移学习在NLP领域取得了巨大成功\cite{DBLP:conf/naacl/PetersNIGCLZ18}\cite{radford2018improving}\cite{devlin2018bert}，人们发现学习一个通用的任务无关的表示能够给特定任务带来的收益远远大于根据任务特点对模型结构的改进，这引起了人们对模型的可迁移性和通用性的兴趣。为了评测模型的通用表示能力，研究者们开始关注单一模型在多个任务上的表现，开发出了一些多任务评测基准工具或平台，如SentEval\cite{DBLP:conf/lrec/ConneauK18}、DecaNLP\cite{mccann2018natural}、GLUE\cite{DBLP:conf/emnlp/WangSMHLB18}等。
 
 2018年10月，BERT\cite{devlin2018bert}，一个预训练的Transformer模型，在GLUE的多个任务上的表现都大幅度超越了之前的模型。最近，人们发现在BERT的基础上使用多任务学习对模型进行微调能够取得进一步提升\cite{liu2019multi}\cite{anonymous2018bam!}。
 
-然而，目前还很少有工作在Transformer上探索多任务学习的使用。随着Transformer在机器翻译\cite{DBLP:conf/nips/VaswaniSPUJGKP17}、迁移学习\cite{radford2018improving}\cite{devlin2018bert}中取得了巨大成功，如何使其通过多任务学习取得额外的收益，以及如何对其设计新的共享模式都是值得探索的问题。
+BERT的成功证明了Transformer具备强大的共享知识存储能力，然而，相比CNN和RNN，目前还很少有工作探索Transformer上的多任务学习架构。随着Transformer在机器翻译\cite{DBLP:conf/nips/VaswaniSPUJGKP17}、迁移学习\cite{radford2018improving}\cite{devlin2018bert}中取得了巨大成功，如何使其通过多任务学习取得额外的收益，以及如何对其设计新的共享模式都是值得探索的问题。
