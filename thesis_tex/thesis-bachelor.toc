@@ -3,12 +3,12 @@
 \contentsline {section}{\numberline {1.2}相关研究进展}{3}{section.1.2}
 \contentsline {section}{\numberline {1.3}本文研究内容}{5}{section.1.3}
 \contentsline {section}{\numberline {1.4}论文结构}{6}{section.1.4}
-\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{二}章\hskip 1ex相关工作}{7}{chapter.2}
+\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{二}章\hskip 1ex相关背景与研究进展}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}深度学习与神经网络}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}多任务学习}{10}{section.2.2}
 \contentsline {section}{\numberline {2.3}自然语言处理}{13}{section.2.3}
 \contentsline {section}{\numberline {2.4}神经多任务自然语言处理}{15}{section.2.4}
-\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{三}章\hskip 1ex模型}{19}{chapter.3}
+\contentsline {chapter}{\xiaosi \CJKfamily {song}\bfseries 第{三}章\hskip 1ex模型设计与实现}{19}{chapter.3}
 \contentsline {section}{\numberline {3.1}Transformer}{21}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}自注意力}{22}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}多头自注意力}{23}{subsection.3.1.2}

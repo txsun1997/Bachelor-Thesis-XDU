@@ -3,12 +3,12 @@
 \BOOKMARK [1][-]{section.1.2}{相关研究进展}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.3}{本文研究内容}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.4}{论文结构}{chapter.1}% 5
-\BOOKMARK [0][-]{chapter.2}{第二章相关工作}{}% 6
+\BOOKMARK [0][-]{chapter.2}{第二章相关背景与研究进展}{}% 6
 \BOOKMARK [1][-]{section.2.1}{深度学习与神经网络}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.2}{多任务学习}{chapter.2}% 8
 \BOOKMARK [1][-]{section.2.3}{自然语言处理}{chapter.2}% 9
 \BOOKMARK [1][-]{section.2.4}{神经多任务自然语言处理}{chapter.2}% 10
-\BOOKMARK [0][-]{chapter.3}{第三章模型}{}% 11
+\BOOKMARK [0][-]{chapter.3}{第三章模型设计与实现}{}% 11
 \BOOKMARK [1][-]{section.3.1}{Transformer}{chapter.3}% 12
 \BOOKMARK [2][-]{subsection.3.1.1}{自注意力}{section.3.1}% 13
 \BOOKMARK [2][-]{subsection.3.1.2}{多头自注意力}{section.3.1}% 14
