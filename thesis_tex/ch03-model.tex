@@ -1,11 +1,11 @@
-\chapter{模型}
+\chapter{模型设计与实现}
 \label{cha:model}
 本章将详细介绍本文所使用的模型，首先在~\ref{sec:tf}~节介绍Transformer模型，它将作为本文实验中的单任务学习基线模型。接着在~\ref{sec:mtl_tf}~节介绍多任务Transformer的几种架构，最后在~\ref{sec:imp}~节描述了一些具体的实现细节。
 
 在描述模型结构之前，首先阐述即将用到的几个概念：
 
 \textbf{记号}\ \ 
-模型在处理输入的句子时，能够区分的最小单位即是记号。在自然语言处理中，一个记号或位置常常是一个单词，但也可以是字符，还可以是词片。将一个输入句子切分为多个记号的过程称为\emph{记号化}，不同粒度模型的记号化过程对比可见表~\ref{tb:tokenize}，其中中文单词级的记号化需要借助分词技术。本文中使用的是单词级模型，因此下文中提到的记号和单词所指的概念是一致的。
+模型在处理输入的句子时，能够区分的最小单位即是记号。在自然语言处理中，一个记号常常是一个单词，但也可以是字符，还可以是词片。将一个输入句子切分为多个记号的过程称为\emph{记号化}，不同粒度模型的记号化过程对比可见表~\ref{tb:tokenize}，其中中文单词级的记号化需要借助分词技术。本文中使用的是单词级模型，因此下文中提到的记号和单词所指的概念是一致的。
 
 \textbf{词表}\ \ 
 用于训练模型的数据集中出现的记号集合被称为词表，该集合中元素的个数就是词表大小。词表大小是衡量数据集规模和模型参数量的一个重要指标。词表大小与模型有关，通常来说，字符级的模型词表较小，单词级的模型词表较大。
@@ -79,7 +79,7 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 
 自注意力是指查询、键、值都出自输入本身。假设有一个向量序列输入~$H = [h_1, h_2, \hdots, h_n]^\top \in \mathbb{R}^{n\times d}$，其中~$n$~为句子长度，$d$~为输入维度，则自注意力的计算方式为\footnote{为简便起见，下面的公式中不再对向量加粗表示。}
 \begin{equation}
-	\mathrm{Attention}(Q,K,V) = \mathrm{Softmax}(\frac{QK^\top}{\sqrt{d_k}})V
+	\mathrm{Attention}(Q,K,V) = \mathrm{Softmax}(\frac{QK^\top}{\sqrt{d_k}})V.
 	\label{eq:attn}
 \end{equation}
 其中，$Q=HW^Q, K=HW^K, V=HW^V$\ 且\ $W^Q, W^K, W^V\in \mathbb{R}^{d\times d_k}$. Softmax函数的形式参见式(\ref{eq:softmax})，这里未指定下标，因此函数的输出不是标量，而是样本被判定为各个类别的概率构成的向量或矩阵。特别地，在上式上，Softmax函数的输出为一个~$n\times n$~的矩阵，该矩阵被称为\emph{注意力矩阵}。
@@ -87,7 +87,7 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 \subsection{多头自注意力}
 为了捕获更丰富的语义模式，提取句子元素之间更多的交互信息，Transformer使用了\emph{多头自注意力}（multi-head self-attention）机制：
 \begin{equation}
-	\mathrm{MultiHead}(Q,K,V) = \mathrm{Concat}(\mathrm{head}_1, \hdots, \mathrm{head}_h)W^O
+	\mathrm{MultiHead}(Q,K,V) = \mathrm{Concat}(\mathrm{head}_1, \hdots, \mathrm{head}_h)W^O.
 \end{equation}
 其中每个注意力头的结果使用式(\ref{eq:attn})计算得到：
 \begin{equation}
@@ -185,7 +185,7 @@ Transformer编码器的结构如图~\ref{fig:tf_encoder}~所示，图中阴影�
 	\node at (-1.5, -.3) {I};
 	\node at (1.5, -.3) {cat};
 	\end{tikzpicture}
-	\caption{Transformer结构的一个简化版示意图}
+	\caption{Transformer结构简化示意图}
 	\label{fig:tf_simp}
 \end{figure}
 
@@ -806,13 +806,13 @@ L-I结构的输入为~$x=(task\_id, x_1, x_2, ..., x_n)$，其中~$0\le task\_id
 \label{sec:imp}
 
 \subsection{训练过程}
-为了避免可能出现的个别任务长时间不被选中的情况，本文采取的训练方式与一般的做法\footnote{更一般的训练方法可见文献\cite{Caruana1997}。}稍有不同。下面的算法~\ref{alg:train}~给出了具体的训练算法。
+为了避免可能出现的个别任务长时间不被选中的情况，本文采取的训练方式与一般的做法\footnote{一般的训练方法在每次切换任务时随机选择一个任务\cite{Caruana1997}。}稍有不同。下面的算法~\ref{alg:train}~给出了具体的训练算法。
 
 \begin{algorithm}
 	\caption{多任务联合训练过程}
 	\label{alg:train}
 	\begin{algorithmic}[1]
-		\Require $M$~个任务的数据集~$\mathcal{D}_m, 1\le m \le M$；每个任务的批量大小~$K_m, 1\le m \le M$；最大迭代次数~$T$；学习率~$\alpha$.
+		\Require $M$~个任务的数据集~$\mathcal{D}_m, 1\le m \le M$；每个任务的批次大小~$K_m, 1\le m \le M$；最大迭代轮数~$T$；学习率~$\alpha$.
 		\Ensure 模型参数~$\theta$.
 		\Function {TrainModel}{$\mathcal{D}_m$, $K_m$, $T$, $\alpha$}
 		\State 初始化模型参数$\theta_0$
@@ -827,7 +827,7 @@ L-I结构的输入为~$x=(task\_id, x_1, x_2, ..., x_n)$，其中~$0\le task\_id
 			\State 打乱任务列表$L$顺序
 			\For {\textbf{each} $m \in L$}
 			\If {$\mathcal{I}_{m,i}$存在}
-			\State 计算小批量样本$\mathcal{I}_{m,i}$上的损失$\mathcal{L}$
+			\State 计算小批次样本$\mathcal{I}_{m,i}$上的损失$\mathcal{L}$
 			\State 更新参数：$\theta_t = \theta_{t-1}-\alpha \cdot \nabla_\theta \mathcal{L}(\theta) $
 			\Else 
 			\State 将$m$从任务列表$L$中删除
@@ -842,12 +842,12 @@ L-I结构的输入为~$x=(task\_id, x_1, x_2, ..., x_n)$，其中~$0\le task\_id
 	\end{algorithmic}
 \end{algorithm}
 
-在多任务联合训练时，也存在一部分较为复杂的训练策略。例如，除了通过均匀采样的方式挑选任务外，还可以按数据集比例为不同任务分配被选中的概率\cite{sanh2018hierarchical}；也可以预先定义任务采样策略\cite{DBLP:journals/tacl/KiperwasserB18}；还可以采用不确定性来为不同任务的损失函数分配权重\cite{DBLP:conf/cvpr/KendallGC18}。
+在多任务联合训练时，也存在一部分较为复杂的训练策略。例如，除了通过均匀采样的方式挑选任务外，还可以按数据集比例为不同任务分配不同的被选中概率\cite{sanh2018hierarchical}；也可以预先定义任务采样策略\cite{DBLP:journals/tacl/KiperwasserB18}；还可以采用不确定性来为不同任务的损失函数分配权重\cite{DBLP:conf/cvpr/KendallGC18}。
 
 \subsection{超参数设定}
 实验中使用的均为4层Transformer，模型维度为300，包含6个注意力头，每个头为50维，前馈网络隐层维度为512维。Transformer中的位置编码作为模型参数自动学习。使用Adam算法\cite{kingma2015adam}进行参数学习，初始学习率为5e-4，最多训练30个轮次。训练使用的小批次（mini-batch）大小为50. 
 
-实验中采用的词向量为在840B词汇量的Common Crawl预料集上预训练的300维GloVe\cite{DBLP:conf/emnlp/PenningtonSM14}。为避免学习算法对GloVe进行过多的修改，我们为词嵌入层设置了更小的学习率：5e-5.
+实验中采用的词向量为在840B词汇量的Common Crawl语料集上使用GloVe算法\cite{DBLP:conf/emnlp/PenningtonSM14}预训练的300维词向量。为避免学习算法对词向量进行过多的修改，我们为词嵌入层设置了更小的学习率：5e-5.
 
 对于S-P结构，实现时在输出预测前叠加了一层多层感知机（MLP）以增强其效果，其余结构无此设置。
 
