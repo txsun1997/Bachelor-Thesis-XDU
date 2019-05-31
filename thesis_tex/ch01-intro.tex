@@ -17,7 +17,7 @@
 
 本节将简要介绍深度学习背景下的自然语言处理、多任务学习、深度学习以及它们相结合的研究进展及现状，并阐述了它们之间的联系以及目前存在的不足。
 
-自然语言处理（NLP）是一门旨在使得计算机具备处理、理解和生成自然语言（人类语言）能力的学科。近年来，以神经网络为代表的深度学习在自然语言处理\cite{DBLP:journals/jmlr/CollobertWBKKK11}\cite{DBLP:conf/emnlp/BordesCW14}\cite{DBLP:conf/acl/JeanCMB15}\cite{DBLP:conf/nips/SutskeverVL14}中取得了广泛的成功。然而，不同于语音、图像等连续实值信号，自然语言是由离散的符号构成，这使其难以直接作为神经网络的输入。为解决这一问题，人们使用低维稠密向量来表征文本的语义信息\cite{DBLP:conf/nips/MikolovSCCD13}\cite{DBLP:conf/emnlp/PenningtonSM14}，由于语义信息被分布到向量的各个维度，因此这种方法被称为分布式表示。随着分布式表示的引入，深度学习在自然语言处理领域得到了广泛的应用，卷积神经网络（CNN）、循环神经网络（RNN）相继被用于处理文本数据，近年来又提出了完全基于自注意力机制的全连接网络Transformer。这些神经网络的应用使得过去很多难以解决的NLP问题取得了巨大进展。
+自然语言处理是一门旨在使得计算机具备处理、理解和生成自然语言（人类语言）能力的学科。近年来，以神经网络为代表的深度学习在自然语言处理中取得了广泛的成功\cite{DBLP:journals/jmlr/CollobertWBKKK11}\cite{DBLP:conf/emnlp/BordesCW14}\cite{DBLP:conf/acl/JeanCMB15}\cite{DBLP:conf/nips/SutskeverVL14}。然而，不同于语音、图像等连续实值信号，自然语言是由离散的符号构成，这使其难以直接作为神经网络的输入。为解决这一问题，人们使用低维稠密向量来表征文本的语义信息\cite{DBLP:conf/nips/MikolovSCCD13}\cite{DBLP:conf/emnlp/PenningtonSM14}，由于语义信息被分布到向量的各个维度，因此这种方法被称为分布式表示。随着分布式表示的引入，深度学习在自然语言处理领域得到了广泛的应用，卷积神经网络（Convolutional Neural Network, CNN）、循环神经网络（Recurrent Neural Network, RNN）相继被用于处理文本数据，近年来又提出了完全基于自注意力机制的全连接网络Transformer。这些神经网络的应用使得过去很多难以解决的NLP问题取得了巨大进展。
 
 事实上，文本的分布式表示的好坏对于模型的性能起着至关重要的作用。以分类任务为例，给定数据的一个好的表示，即使简单的线性分类器也能取得非常高的分类准确率\cite{tenney2018you}\cite{liu2019linguistic}。进入深度学习时代以来，自然语言处理领域中取得的许多突破都来自于对文本的通用表示方法的研究，如word2vec\cite{DBLP:conf/nips/MikolovSCCD13}，ELMo\cite{DBLP:conf/naacl/PetersNIGCLZ18}，BERT\cite{devlin2018bert}等。然而，相较于语音和图像数据，由于文本数据本身的离散性和歧义性，以及标注成本高、难度大等问题，如何得到一个好的文本表示仍然是自然语言处理领域的重大难题。
 
